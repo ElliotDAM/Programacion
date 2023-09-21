@@ -70,4 +70,31 @@ Pasos:
  - __Fin_Si__
  - __Fin__
 
+
+
+  ## Ejercicio 3 <a name="ejercicio3"></a>
+Desarrolle un algoritmo que realice la sumatoria de los números enteros comprendidos entre el 1 y el 10, es decir, 1 + 2 + 3 + .... + 10.
+
+ ### Diagrama de Flujo
+
+<img src="images">
+ 
+### Pseudocógido
+
+Pasos:
+ - __Inicio__
+ - Declaración de variables:
+    N = 0, Suma = 0
+ - Asignación Contador:
+    N = N + 1
+
+ - Asignación Acumulador:
+    Suma = Suma + N
+    
+ - __Si__ N = 10 __Entonces__
+ - Escribir Suma
+ - __De lo contrario__, repetir desde el paso 3
+ - __Fin_Si__
+ - __Fin__
+
 </div>
