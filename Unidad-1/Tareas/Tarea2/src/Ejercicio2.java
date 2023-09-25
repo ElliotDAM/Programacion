@@ -1,7 +1,7 @@
 /**
  * @author Nombre del autor
  */
-public class Ejercicio1 {
+public class Ejercicio2 {
 
     /**
      * Descripcion del algoritmo
