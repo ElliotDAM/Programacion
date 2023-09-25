@@ -21,7 +21,7 @@ Desarrolle un algoritmo que permita leer tres valores y almacenarlos en las vari
 
 ## Diagrama de flujos
 
-<img src="images/images/Diagrama2.png">
+<img src="images/Diagrama2.png">
 
 ## Pseudocódigo
 
