@@ -24,14 +24,14 @@ public class Main {
             System.out.println("Valor de la variable B: "+valorB);
             System.out.println("Los números son iguales. Vuelve a ingresar los datos si quieres compararlos.");
         }while(valorA == valorB);
-
+        //Bloque 3: Verifica si A es mayor que B y muestra por pantalla el valor mayor
         if (valorA > valorB){
             System.out.println(valorA+" es mayor que "+valorB);
         }else{
             System.out.println(valorB+" es mayor que "+valorA);
         }
     }
-        //Bloque 3: Verifica si A es mayor que B y muestra por pantalla el valor mayor
+
 
 
 
