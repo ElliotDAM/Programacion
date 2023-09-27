@@ -17,7 +17,8 @@
 -->
 
 ## Descripción del ejercicio
-Desarrolle un algoritmo que permita leer tres valores y almacenarlos en las variables A, B y C respectivamente. El algoritmo debe imprimir cual es el mayor y cual es el menor. Recuerde constatar que los tres valores introducidos por el teclado sean valores distintos. Presente un mensaje de alerta en caso de que se detecte la introducción de valores iguales.
+
+Desarrolle un algoritmo que realice la sumatoria de los números enteros comprendidos entre el 1 y el 10, es decir, 1 + 2 + 3 + …. + 10.
 
 ## Diagrama de flujos
 
@@ -27,17 +28,15 @@ Desarrolle un algoritmo que permita leer tres valores y almacenarlos en las vari
 
 Pasos:
 - __Inicio__
-- Inicializar las variables A, B y C
-- __Leer__ los tres valores
-- Almacenar en las variables A, B y C
-- __Si__ A > B y A > C __Entonces__
-- __Escribir__ A "Es el mayor"
-- __Sino__
-- __Si__ B > A y B > C __Entonces__
-- __Escribir__ B "Es el mayor"
-- __Sino__
-- __Escribir__ C "Es el mayor"
-- __Fin_Si__
+- Declaracion de variables:
+    N = 0, Suma = 0
+- Asignacion Contador :
+    N = N + 1
+- Asignacion Acumulador:
+    Suma = Suma + N
+- __Si__ N = 10 __Entonces__
+- __Escribir__ Suma
+- __De lo contrario__, Repetir desde el paso 3
 - __Fin_Si__
 - __Fin__
 
