@@ -1,8 +1,8 @@
 /**
  * @author ElliotDAM
- * Ejercicio número 2
+ * Ejercicio número 5
  */
-public class Ejercicio2 {
+public class Ejercicio5 {
 
     /**
      * Descripcion del algoritmo

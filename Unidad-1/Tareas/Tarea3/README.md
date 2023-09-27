@@ -1,6 +1,6 @@
 <div align="justify">
 
-# Ejercicio 2 <a name="ejercicio2"></a>
+# Ejercicio 3 <a name="ejercicio3"></a>
 
 <!-- Recuerda que
 
