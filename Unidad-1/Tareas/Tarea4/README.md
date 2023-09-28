@@ -22,7 +22,7 @@ Desarrolle un algoritmo que permita leer un valor cualquiera N y escriba si dich
 
 ## Diagrama de flujos
 
-<img src="images/Diagrama2.png">
+<img src="images/Diagrama4.png">
 
 ## Pseudocódigo
 

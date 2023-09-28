@@ -21,13 +21,13 @@ public class Ejercicio2 {
             int A = sc.nextInt();
             System.out.println("Indique el segundo número");
             int B = sc.nextInt();
-            if (A == B || A == C || B == C){
+            if (A == B){
                 System.out.println("Hay algunos numeros iguales, pruebe de nuevo.");
                 return;
             }
             System.out.println("Indique un tercer número");
             int C = sc.nextInt();
-            if (C == A || C == B ){
+            if ((C == A)||(C == B) ){
                 System.out.println("El tercer número se repite. Inténtelo de nuevo.");
                 return;
             }else {
@@ -41,7 +41,13 @@ public class Ejercicio2 {
             System.out.println("El número mayor es: "+ mayor);
             }
         
-            
-       
+            int menor = A;
+            if(B < menor){
+                menor = B;
+            }
+            if (C < menor){
+                menor = C;
+            }
+            System.out.println("El número menor es: "+menor);
     }
 }

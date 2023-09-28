@@ -12,6 +12,7 @@ public class Ejercicio3BucleFor {
     public static void main(String[] args) {
         System.out.println("Sumatoria entre números del 1 al 10.");
         int suma = 0;
+        int i = 0;
         while(i <= 10){
             suma = suma + 1;
             i++;

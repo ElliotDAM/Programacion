@@ -1,4 +1,3 @@
-<div align="justify">
 
 # Ejercicio 3 <a name="ejercicio3"></a>
 
@@ -22,7 +21,7 @@ Desarrolle un algoritmo que realice la sumatoria de los números enteros compren
 
 ## Diagrama de flujos
 
-<img src="images/Diagrama2.png">
+<img src="images/Diagrama3.png">
 
 ## Pseudocódigo
 
@@ -43,4 +42,3 @@ Pasos:
 ## Referencias
 
 
-</div>
