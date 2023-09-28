@@ -5,7 +5,7 @@
 public class Ejercicio4 {
 
     /**
-     * Descripcion del algoritmo
+     * Desarrolle un algoritmo que permita leer un valor cualquiera N y escriba si dicho número es par o impar.
      * @param args
      */
     public static void main(String[] args) {
