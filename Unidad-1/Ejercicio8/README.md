@@ -25,14 +25,14 @@ Desarrolle un algoritmo que permita calcular Promedio de Notas; finaliza cuando 
  - Declaración de variables:
     N = 0, Promedio = 0, Acumula = 0
  - Leer N
- - __Mientras__ N <> 0 hacer
- -      Cuenta = Cuenta + 1
- -      Acumula = Acumula + N
+ - __Mientras__ N <> 0 hacer: 
+    Cuenta = Cuenta + 1;
+    Acumula = Acumula + N
  - __Fin Mientras__
  - Promedio = Acumula / Cuenta
  - Imprimir "Promedio"; Promedio
  - __Fin__
- 
+
 ## Referencias
 
 
