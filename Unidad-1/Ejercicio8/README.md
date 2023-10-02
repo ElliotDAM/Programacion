@@ -19,7 +19,11 @@
 ## Descripción del ejercicio
 Desarrolle un algoritmo que permita calcular Promedio de Notas; finaliza cuando N = 0.
 ## Diagrama de flujos
+
+<div align="center">
     <img src="images/Ejercicio8.png">
+</div>
+
 ## Pseudocódigo
  - __Inicio__
  - Declaración de variables:

@@ -1,13 +1,23 @@
 /**
- * @author Nombre del autor
+ * @author ElliotDAM
  */
 public class Ejercicio1 {
 
     /**
-     * Descripcion del algoritmo
+     * Desarrolle un algoritmo que permita calcular Promedio de Notas; finaliza cuando N = 0.
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        
+        int N = 0;
+        int Cuenta = 0;
+        int promedio = 0;
+        int acumula = 0;
+
+        while(N <> 0){
+            Cuenta = Cuenta + 1;
+            acumula = acumula + 1;
+        }
+        
     }
 }
