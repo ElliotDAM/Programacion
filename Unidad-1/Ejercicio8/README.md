@@ -1,6 +1,6 @@
 <div align="justify">
 
-# Título tarea
+# Ejercicio 8
 
 <!-- Recuerda que
 
@@ -17,9 +17,9 @@
 -->
 
 ## Descripción del ejercicio
-
+Desarrolle un algoritmo que permita calcular Promedio de Notas; finaliza cuando N = 0.
 ## Diagrama de flujos
-
+    <img src="images/diagrama-flujo.png"/>
 ## Pseudocódigo
 
 ## Referencias
