@@ -1,3 +1,5 @@
+package org.example;
+
 /**
  * @author ElliotDAM
  */
@@ -8,14 +10,14 @@ public class Ejercicio8 {
      * @param args
      */
     public static void main(String[] args) {
-        
+
         int N = 0;
-        int Cuenta = 0;
+        int cuenta = 0;
         int promedio = 0;
         int acumula = 0;
 
-        while(N <> 0){
-            Cuenta = Cuenta + 1;
+        while(N != 0){
+            cuenta = cuenta + 1;
             acumula = acumula + 1;
         }
         
