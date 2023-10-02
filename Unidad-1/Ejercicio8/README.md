@@ -37,7 +37,6 @@ Desarrolle un algoritmo que permita calcular Promedio de Notas; finaliza cuando 
  - Imprimir "Promedio"; Promedio
  - __Fin__
 
-## Referencias
 
 
 </div>

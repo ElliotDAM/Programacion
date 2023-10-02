@@ -1,7 +1,7 @@
 /**
  * @author ElliotDAM
  */
-public class Ejercicio1 {
+public class Ejercicio8 {
 
     /**
      * Desarrolle un algoritmo que permita calcular Promedio de Notas; finaliza cuando N = 0.
@@ -19,5 +19,8 @@ public class Ejercicio1 {
             acumula = acumula + 1;
         }
         
+        promedio = acumula / cuenta;
+
+        System.out.println("El promedio es: "+ promedio);
     }
 }
