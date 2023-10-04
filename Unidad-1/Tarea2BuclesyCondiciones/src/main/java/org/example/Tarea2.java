@@ -15,7 +15,7 @@ public class Tarea2 {
         //Pedimos el rango entre los que deseamos observar los numeros.
         int numeroMenor;
         int numeroMayor;
-        int divisor;
+        int suma;
 
         System.out.println("Números perfectos");
         System.out.println("Indicamos el rango que queremos buscar.");
@@ -24,12 +24,21 @@ public class Tarea2 {
         System.out.println("Rango mayor");
         numeroMayor = sc.nextInt();
 
-        // Calculamos qué números son perfectos entre 1 y 1000
-
+        //Se hace la iteración sobre los rangos dados por el usuario
         for (int i = numeroMenor; i <= numeroMayor ; i++) {
-
+                suma = 0;
+        //Se calcula la suma de los divisores de cada número
+                for (int j = numeroMenor; j < i; j++) {
+                        if (i % j == 0){
+                            suma = suma + i;
+                        }
+                }
+        //Se comprueba si la suma de sus divisores es igual al numero. Si lo es, se imprime.
+                if (suma == i){
+                    System.out.println(i);
+                }
         }
-
+        
 
 
     }
