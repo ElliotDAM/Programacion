@@ -13,7 +13,7 @@ public class Ejercicio2 {
         Scanner sc = new Scanner(System.in);
         int numero1;
         int numero2;
-        int divisor;
+        int mcd;
 
         //Pedir números al usuario
 
@@ -23,9 +23,16 @@ public class Ejercicio2 {
         System.out.println("Dame el segundo número a calcular");
         numero2 = sc.nextInt();
 
-        //Descomponemos los divisores de los números
+        //Iteramos en el bucle para encontrar el divisor que coincide entre ellos
 
-        //Comparamos cual es su divisor mayor en común
-
+        for (int i = 1; i <= numero1 && i <= numero2; i++) {
+            //Se comprueba si es un divisor valido para los dos numeros
+            if (numero1 % i == 0 && numero2 % i == 0){
+                mcd = i;
+            }
+            
+        }
+        //
+        System.out.println("El maximo comun divisor de los dos números es: " + mcd);
     }
 }
