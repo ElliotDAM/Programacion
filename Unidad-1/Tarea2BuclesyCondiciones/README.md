@@ -27,7 +27,18 @@ El ejercicio consiste en escribir un programa que encuentre e imprima todos los 
 
 ## Pseudocódigo
 
-
+ - Inicio
+ - Declara las variables:
+    numeroMenor = 0; numeroMayor = 0; suma = 0;
+ - Imprimir "Indicamos el rango que queremos buscar"
+ - Leer los dos numeros que facilitara el usuario:
+    numeroMenor, numeroMayor
+ - Para cada numero i desde numeroMenor hasta numeroMayor: Inicializar suma como 0.
+ - Para cada numero j desde numeroMenor hasta i-1: 
+    Si i es divisible por j: Sumar i a la variable suma
+ - Su suma es igual a i:
+    Imprimir i
+ - Fin
 
 
 </div>
