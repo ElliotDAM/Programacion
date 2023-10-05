@@ -22,7 +22,7 @@ El ejercicio consiste en escribir un programa que encuentre e imprima todos los 
 ## Diagrama de flujos
 
 <div align="center">
-    <img src="images/Diagramatarea2Bucles.png">
+    <img src="images/DiagramaTarea2Bucles.png">
 </div>
 
 ## Pseudocódigo
