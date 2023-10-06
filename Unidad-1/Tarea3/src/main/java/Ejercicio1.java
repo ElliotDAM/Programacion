@@ -22,11 +22,12 @@ public class Ejercicio1 {
         
 
         for (int i = 1; i <= filas; i++){
+            System.out.println();
             for (int j = 0; j < i; j++) {
                 System.out.println(numero + " ");
                 numero++;
             }
-            System.out.println();
+           
         }
 
 

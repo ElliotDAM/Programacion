@@ -11,7 +11,7 @@ public class Ejercicio5 {
         int numUsuario;
         int primerNumero = 0;
         int segundoNumero = 1;
-        int resultado;
+        int resultado = 0;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Dame la posicion que desea en la secuencia de Fibonacci");
