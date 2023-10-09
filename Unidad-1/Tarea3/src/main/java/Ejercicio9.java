@@ -16,7 +16,7 @@ public class Ejercicio9 {
         int numero = sc.nextInt();
         for (int i = 1; i < 10 ; i++) {
             int multiplicacion = numero * i;
-            System.out.println(multiplicacion);            
+            System.out.println(numero+" x " + i +" = "+multiplicacion);            
         }
      }
 }

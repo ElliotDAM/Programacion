@@ -33,7 +33,7 @@ public class Ejercicio8 {
                 }
         //Se comprueba si la suma de sus divisores es igual al numero. Si lo es, se imprime.
                 if (suma == i){
-                    System.out.println(i);
+                    System.out.println("El número "+ i + "es un número perfecto.");
                 }
         }
     }
