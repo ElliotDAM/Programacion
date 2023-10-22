@@ -13,7 +13,11 @@ public class Ejercicio2 {
         Scanner sc = new Scanner(System.in);
         int numero1;
         int numero2;
+<<<<<<< HEAD
         int mcd;
+=======
+        int mcd =0;
+>>>>>>> 4e703476a00f0bcf3b8e1bf0fc675a13ea385938
 
         //Pedir números al usuario
 

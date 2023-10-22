@@ -22,11 +22,19 @@ public class Ejercicio1 {
         
 
         for (int i = 1; i <= filas; i++){
+<<<<<<< HEAD
+=======
+            System.out.println();
+>>>>>>> 4e703476a00f0bcf3b8e1bf0fc675a13ea385938
             for (int j = 0; j < i; j++) {
                 System.out.println(numero + " ");
                 numero++;
             }
+<<<<<<< HEAD
             System.out.println();
+=======
+           
+>>>>>>> 4e703476a00f0bcf3b8e1bf0fc675a13ea385938
         }
 
 
