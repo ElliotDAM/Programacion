@@ -1,23 +1,9 @@
-<<<<<<< HEAD
-=======
 import java.util.Scanner;
->>>>>>> 4e703476a00f0bcf3b8e1bf0fc675a13ea385938
 /**
  * author ElliotDAM
  */
 public class Ejercicio4 {
-    /**
-<<<<<<< HEAD
-     * @param args
-     * 
-     */
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Indique el número que desea comprobar");
-        int numeroUsuario = sc.nextInt();
-
-        String numeroString = String.valueOf(numero);
-=======
+    
      * Escribe un programa en Java que verifique si un número es palíndromo. Se debe solicitar el número por teclado.
      * @param args
      */
@@ -45,7 +31,6 @@ public class Ejercicio4 {
  */
 
      
->>>>>>> 4e703476a00f0bcf3b8e1bf0fc675a13ea385938
 
 
     }

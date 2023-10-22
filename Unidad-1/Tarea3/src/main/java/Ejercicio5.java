@@ -11,11 +11,8 @@ public class Ejercicio5 {
         int numUsuario;
         int primerNumero = 0;
         int segundoNumero = 1;
-<<<<<<< HEAD
-        int resultado;
-=======
+
         int resultado = 0;
->>>>>>> 4e703476a00f0bcf3b8e1bf0fc675a13ea385938
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Dame la posicion que desea en la secuencia de Fibonacci");
@@ -32,8 +29,5 @@ public class Ejercicio5 {
         System.out.println("El número de Fibonacci en la posicion " + numUsuario + " es: " + resultado);
      }
 }
-<<<<<<< HEAD
 }
-=======
 
->>>>>>> 4e703476a00f0bcf3b8e1bf0fc675a13ea385938
