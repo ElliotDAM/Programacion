@@ -4,9 +4,7 @@ package ies.puerto;
  * @author ElliotDAM
  */
 public class Ejercicio1 {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
+
 /**
  * Función que calcula el área de un triángulo
  * @param base del triángulo

@@ -4,9 +4,7 @@ package ies.puerto;
  * @author ElliotDAM
  */
 public class Ejercicio3 {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
+   
     /**
      * Función que tiene como objetivo calcular el área de un cuadrado
      * @param lado tamaño del lado del cuadrado
@@ -14,6 +12,7 @@ public class Ejercicio3 {
      */
 
     public int areaCuadrado(int lado) {
+
         int area = lado * lado;
 
         return area;
@@ -25,6 +24,7 @@ public class Ejercicio3 {
  * @return area del rectángulo
  */
     public int areaRectangulo(int ladoA, int ladoB) {
+
         int area = ladoA * ladoB;
 
         return area;

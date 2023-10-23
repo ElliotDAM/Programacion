@@ -1,5 +1,7 @@
 package ies.puerto;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,5 +22,6 @@ public class Ejercicio1Test {
         int resultado = ejercicio1.areaTriangulo(base, altura);
         Assertions.assertEquals(resultado, 3, "No se ha obtenido el resultado esperado");
     }
+
 
 }

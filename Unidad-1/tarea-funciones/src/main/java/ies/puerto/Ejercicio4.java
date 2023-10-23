@@ -1,4 +1,4 @@
-package main.java.ies.puerto;
+package ies.puerto;
 /**
  * Clase dedicada a obtener una función en la que calcule el máximo de dos números,
  * y otra función en la que se obtenga el máximo de 3 números dados
@@ -15,11 +15,12 @@ public class Ejercicio4 {
  * @return numero1, numero2, según cuál sea el máximo
  */
     public int maximo (int numero1, int numero2){
-        if (numero1 > numero2) {
-            return numero1;
-        }else {
-            return numero2;
+        int resultado = numero1;
+        if (numero1 < numero2) {
+            resultado = numero2;
         }
+        return resultado;
+
     }
     
     /**

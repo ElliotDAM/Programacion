@@ -12,14 +12,13 @@ public class Ejercicio5 {
      * @return booleano si determina que es primo o no
      */
     public boolean numeroPrimo(int numero){
-
+        boolean resultado = true;
         for (int i = 2; i < numero; i++) {
             if (numero % i == 0) {
-                return false; 
-          
+                resultado = false;
             }
         }
-        return true;
+        return resultado;
         
     }
 }
