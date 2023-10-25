@@ -1,4 +1,5 @@
-package main.java;
+
+import java.util.Scanner;
 
 /**
  * author ElliotDAM
@@ -14,7 +15,7 @@ public class Ejercicio3 {
         int numUsuario;
         int primerNumero = 0;
         int segundoNumero = 1;
-        int resultado;
+        int resultado = 0;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Dame la posiciton que desea en la secuencia de Fibonacci");

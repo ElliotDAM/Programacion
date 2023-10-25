@@ -13,6 +13,6 @@ public class Ejercicio6 {
      */
     public int conversorFarenheitCelsius(double farenheit){
         double celsius = ((5 / 9)*(farenheit - 32));
-        return celsius;
+        return (int) celsius;
     }
 }

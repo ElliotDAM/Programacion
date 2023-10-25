@@ -23,7 +23,7 @@ public class Ejercicio6 {
         calculoDigitos = numero;
         int suma = 0;
         int digito = 0;
-        while ( > 0){
+        while ( digito > 0){
             resto =  calculoDigitos % 10;
             calculoDigitos = calculoDigitos / 10;
 

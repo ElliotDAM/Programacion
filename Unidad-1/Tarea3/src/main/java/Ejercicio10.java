@@ -1,6 +1,5 @@
-package main.java;
-
 import java.util.Scanner;
+
 /**
  * author ElliotDAM
  */
@@ -38,4 +37,4 @@ public class Ejercicio10 {
         }
         
     }
-}
+

@@ -10,6 +10,18 @@ public class Ejercicio1Test {
     @Test
     public void calcularSueldoHorasOkTest(){
         int resultado = ejercicio1.calcularSueldoHoras(10);
-        Assertions.assertEquals(100,resultado, "No se ha obtenido el resultado esperado");
+        Assertions.assertEquals(100,resultado, "Se ha obtenido el resultado esperado");
+    }
+
+    @Test
+    public void calcularSueldoHorasErrorTest(){
+        int resultado = ejercicio1.calcularSueldoHoras(0);
+        Assertions.assertEquals(10, resultado, "No está permitido pagar por 0 horas.");
+    }
+
+    @Test
+    public void calcularSueldoHorasNegativasTest(){
+        int resultado = ejercicio1.calcularSueldoHoras(-10);
+        Assertions.assertEquals(0, resultado, "No se pueden introducir horas negativas.");
     }
 }

@@ -29,5 +29,5 @@ public class Ejercicio5 {
         System.out.println("El número de Fibonacci en la posicion " + numUsuario + " es: " + resultado);
      }
 }
-}
+
 
