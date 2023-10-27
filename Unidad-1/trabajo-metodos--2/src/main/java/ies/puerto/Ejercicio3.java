@@ -41,10 +41,28 @@ public class Ejercicio3 {
      * Funcion que suma los valores dados por el usuario
      */
 
-    public int sumaNumerosDados(){
-        int suma = numero1 + numero2 + numero3 + numero4 + numero5;
-        return suma;
-    }
+  
+
+    
+      public int suma(int valor1, int valor2){
+          return valor1 + valor2;
+      }
+     
+      public int suma(int valor1, int valor2, int valor3){
+          int resultado = suma(valor1, valor2);
+          return resultado = suma(resultado, valor3);
+      }
+     
+      public int suma(int valor1, int valor2, int valor3, int valor4){
+          int resultado = suma(valor1, valor2, valor3);
+          return resultado = suma(resultado + valor4);
+      }
+     
+      public int suma(int valor1, int valor2, int valor3, int valor4, int valor5){
+          int resultado = suma(valor1, valor2, valor3, valor4);
+         return resultado(resultado + valor5);
+      }
+     
 
     /**
      * Funcion que ordena y muestra los valores en orden creciente.
@@ -92,6 +110,31 @@ public class Ejercicio3 {
 
         System.out.println();
     }
+
+    /**
+     * public String ordenCreciente(int numero1, int numero2){
+     *
+     *      int resultado = numero1 + ", " + numero2;
+     *      if (numero1 < numero2){
+     *          resultado = numero 2 + ", " + numero1;
+     *      }
+     *      return resultado;
+     * }
+     *
+     * public int ordenCreciente(int numero1, int numero2, int numero3){
+     *
+     *      int orden = ordenCreciente(numero1, numero2);
+     *      return ordenCreciente(orden, numero3);
+     *
+     * }
+     *
+     * public int ordenCreciente(int numero1, int numero2, int numero3, int numero4){
+     *
+     *     int orden = ordenCreciente (
+     * }
+     *
+     *
+     */
 
     /**
      * Funcion que ordena y muestra los valores en orden decreciente.

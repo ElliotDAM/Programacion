@@ -12,10 +12,10 @@ public class Ejercicio1 {
      * @return sueldo que cobrara el usuario
      */
     
-    public int calcularSueldoHoras(int numeroHoras){
-        int sueldo = 0;
-        int valorHoras = 10;
-        sueldo = numeroHoras * valorHoras;
+    public float calcularSueldoHoras(float numeroHoras){
+        
+        //float valorHoras = 10;
+        float sueldo = numeroHoras * 10;
         return sueldo;
     }
 }
