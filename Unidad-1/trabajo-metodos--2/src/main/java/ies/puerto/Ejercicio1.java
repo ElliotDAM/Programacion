@@ -6,6 +6,8 @@ package ies.puerto;
  */
 public class Ejercicio1 {
 
+
+
     /**
      * @param numeroHoras numero de horas que trabaja el usuario
      * @param valorHoras precio a la que se paga la hora de trabajo
@@ -13,7 +15,7 @@ public class Ejercicio1 {
      */
     
     public float calcularSueldoHoras(float numeroHoras){
-        
+
         //float valorHoras = 10;
         float sueldo = numeroHoras * 10;
         return sueldo;
