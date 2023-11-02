@@ -1,3 +1,5 @@
+package ies.puerto;
+
 /**
  * Clase realizada para buscar un elemento dado dentro de un array
  * @author ElliotDAM
@@ -12,12 +14,21 @@ public class Ejercicio5{
     public int posicionArray(int valor){
 
         int[] array = {10, 30, 60, 90, 100};
+        int posicion = -1;
 
         for (int i = 0; i < array.length ; i++) {
             if (valor == array[i]){
-                int posicion = i;
-                System.out.println("El valor " + valor + " se encuentra en la posicion " + posicion + ".");
+                posicion = i;
+                break;
             }
         }
+
+        if (posicion == -1){
+            System.out.println("El valor " + valor + " no se encuentra en el array.");
+        }else {
+            System.out.println("El valor " + valor + " se encuentra en la posicion " + posicion + " del array.");
+        }
+
+        return posicion;
     }
 }

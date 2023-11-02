@@ -7,6 +7,12 @@ package ies.puerto;
 public class Ejercicio1 {
 
     public static void main(String[] args) {
+        
+        Ejercicio1 ejercicio1 = new Ejercicio1();
+
+        int resultado = ejercicio1.mostrarResultado();
+        
+        System.out.println("La suma del array es: " + resultado + ".");
 
     }
 
@@ -30,7 +36,7 @@ public class Ejercicio1 {
      */
     public int mostrarResultado(){
 
-        int resultado = calcularSuma(suma);
+        int resultado = calcularSuma();
 
         return resultado;
 
