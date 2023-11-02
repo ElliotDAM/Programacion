@@ -7,7 +7,7 @@ public class Ejercicio5{
     /**
      * Metodo que se utiliza para buscar si existe un valor dentro de un array y su posicion.
      * @param valor que introduce el usuario
-     * @return 
+     * @return
      */
     public int posicionArray(int valor){
 
