@@ -13,7 +13,7 @@ public class Ejercicio3 {
 
         int[] array = {20, 40, 70, 30, 10};
         int numeroMayor = array[0];
-        for (int i = 0; i < array.length ; i++) {
+        for (int i = 1; i < array.length ; i++) {
             if (array[i] > numeroMayor){
                 numeroMayor = array[i];
             }
@@ -29,8 +29,8 @@ public class Ejercicio3 {
 
         int[] array = {20, 40, 70, 30, 10};
         int numeroMenor = array[0];
-        for (int i = 0; i < array.length - 1 ; i++) {
-            if (array[i] > numeroMenor){
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < numeroMenor){
                 numeroMenor = array[i];
             }
         }

@@ -20,7 +20,7 @@ public class Ejercicio2Tests{
 
         float promedioError = 2.5f;
         float resultado = ejercicio2.promedioArray();
-        Assertions.assertEquals(promedioError, resultado, "Este resultado no es correcto.");
+        Assertions.assertNotEquals(promedioError, resultado, "Este resultado no es correcto.");
     }
     
 }

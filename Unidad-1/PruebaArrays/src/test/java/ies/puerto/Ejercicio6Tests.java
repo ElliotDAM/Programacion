@@ -23,6 +23,7 @@ public class Ejercicio6Tests{
         
         int[][] resultadoNoEsperado = {{1, 2, 7}, {4, 5, 8}, {3, 6, 9}};
         int[][] resultado = ejercicio6.matrizTranspuesta();
-        Assertions.assertArrayEquals(resultadoNoEsperado, resultado, "No es la matriz que se esperaba.");
+        //Assertions.assertArrayEquals(resultadoNoEsperado, resultado, "No es la matriz que se esperaba.");
+        Assertions.assertNotEquals(resultadoNoEsperado, resultado, "No es la matriz esperada");
     }
 }

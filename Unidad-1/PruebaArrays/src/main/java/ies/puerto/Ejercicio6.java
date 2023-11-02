@@ -15,7 +15,6 @@ public class Ejercicio6{
     
     /**
      * Metodo que transpone la matriz dada a una posicion distinta.
-     * @param matriz inicial
      * @return matriz transpuesta
      */
     public int[][] matrizTranspuesta(){

@@ -1,11 +1,14 @@
 package ies.puerto;
+
+import java.util.Arrays;
+
 /**
  * Clase dedicada a la ordenacion de un array en forma ascendente.
  * @author ElliotDAM
  */
 public class Ejercicio7{
 
-    public void ordenAscendente(){
+    public int[] ordenAscendente(){
 
         int[] array = {7,3,25,4,18};
         for (int i = 0; i < array.length; i++) {
@@ -17,6 +20,13 @@ public class Ejercicio7{
                 }
             }
         }
+        return array;
         
+    }
+
+    public void mostrarArrayOrdenado(){
+
+        int[] resultado = ordenAscendente();
+        System.out.println(Arrays.toString(resultado));
     }
 }
