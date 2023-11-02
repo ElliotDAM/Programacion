@@ -1,5 +1,8 @@
 package ies.puerto;
-
+/**
+ * Clase creada con el objetivo de la creacion de metodos para transponer una matriz dada.
+ * @author ElliotDAM
+ */
 public class Ejercicio6{
 
     public static void main(String[] args) {
@@ -9,6 +12,12 @@ public class Ejercicio6{
         ejercicio6.matrizTranspuesta();
     }
 
+    
+    /**
+     * Metodo que transpone la matriz dada a una posicion distinta.
+     * @param matriz inicial
+     * @return matriz transpuesta
+     */
     public int[][] matrizTranspuesta(){
 
         int[][] matriz ={ {1,2,3},{4,5,6},{7,8,9} };
