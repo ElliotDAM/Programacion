@@ -1,3 +1,5 @@
+package ies.puerto;
+
 /**
  * Clase destinada al calculo del promedio de los datos de un array.
  * @author ElliotDAM
@@ -8,7 +10,7 @@ public class Ejercicio2 {
      * Metodo que calcula el promedio de los numeros de un array.
      * @return promedio de los numeros calculados.
      */
-    public int promedioArray(){
+    public float promedioArray(){
 
         float suma = 0;
         float promedio = 0;
@@ -27,10 +29,10 @@ public class Ejercicio2 {
      * Metodo para mostrar el resultado del promedio anteriormente calculado.
      * @return resultado del promedio calculado.
      */
-    public void mostrarResultado(){
+    public float mostrarResultado(){
 
-        int resultado = promedioArray(promedio);
+        float resultado = promedioArray();
 
-        System.out.println(resultado);
+       return resultado;
     }
 }

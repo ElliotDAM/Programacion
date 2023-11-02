@@ -1,3 +1,5 @@
+package ies.puerto;
+
 /**
  * Clase dedicada al calculo de un numero mayor y un numero menor en un Array.
  * @author ElliotDAM
@@ -10,12 +12,10 @@ public class Ejercicio3 {
     public int numeroMayorArray(){
 
         int[] array = {20, 40, 70, 30, 10};
-        int[] numeroMayor = new int[array.length - 1];
+        int numeroMayor = array[0];
         for (int i = 0; i < array.length ; i++) {
-            if (array[i] > array[i + 1]){
-                aux = array[i];
-                array[i+1] = aux;
-                array[i] = array[i+1];
+            if (array[i] > numeroMayor){
+                numeroMayor = array[i];
             }
         }
         return numeroMayor;
@@ -30,10 +30,8 @@ public class Ejercicio3 {
         int[] array = {20, 40, 70, 30, 10};
         int numeroMenor = array[0];
         for (int i = 0; i < array.length - 1 ; i++) {
-            if (array[i] > array[i+1]){
-                aux = array[i];
-                array[i+1] = aux;
-                array[i] = array[i+1];
+            if (array[i] > numeroMenor){
+                numeroMenor = array[i];
             }
         }
         return numeroMenor;
@@ -45,7 +43,9 @@ public class Ejercicio3 {
     public void mostrarMayorMenor(){
 
         int numeroMayor = numeroMayorArray();
-        int numeroMenorArray = numeroMenorArray();
+        int numeroMenor = numeroMenorArray();
+        System.out.println("El numero mayor es: " + numeroMayor + ".");
+        System.out.println("El numero menor es: " + numeroMenor + ".");
     }
 
 }
