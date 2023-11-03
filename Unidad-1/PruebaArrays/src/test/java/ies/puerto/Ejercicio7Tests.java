@@ -7,10 +7,10 @@ public class Ejercicio7Tests {
 
     Ejercicio7 ejercicio7 = new Ejercicio7();
     @Test
-    public void testOrdenAscendenteOk(){
+    public void testOrdenAscendenteOk(int[] array){
 
         int[] resultadoEsperado = {3,4,7,18,25};
-        int[] resultado = ejercicio7.ordenAscendente();
+        int[] resultado = ejercicio7.ordenAscendente(array);
         Assertions.assertArrayEquals(resultadoEsperado, resultado, "Este resultado es el esperado.");
     }
 /* 
