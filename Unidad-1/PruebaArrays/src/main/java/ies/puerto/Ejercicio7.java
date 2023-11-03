@@ -8,11 +8,11 @@ import java.util.Arrays;
  */
 public class Ejercicio7{
 
-    public int[] ordenAscendente(){
+    public int[] ordenAscendente(int[] array){
 
-        int[] array = {7,3,25,4,18};
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+        //int[] array = {7,3,25,4,18};
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
                 if(array[j] > array[j+1]){
                     int aux = array[j];
                     array[j]=array[j+1];
@@ -24,9 +24,9 @@ public class Ejercicio7{
         
     }
 
-    public void mostrarArrayOrdenado(){
+    /*public void mostrarArrayOrdenado(){
 
         int[] resultado = ordenAscendente();
         System.out.println(Arrays.toString(resultado));
-    }
+    }*/
 }
