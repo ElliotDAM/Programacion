@@ -1,4 +1,4 @@
-package ies.puerto
+package ies.puerto;
 /**
  * Clase persona hecha como ejemplo.
  * @author ElliotDAM
@@ -94,6 +94,15 @@ public class Persona {
 
         return "Nombre: "+ nombre + "Edad: " + edad + "Email: " + email + "Telefono: " + telefono ;
     }
+
+    /**
+     * Test
+     * Declaramos variables.
+     * Declaramos "Persona"
+     * AssertTrue("----", edad, persona.getEdad());
+     * AssertTrue("----", nombre, persona.getNombre());
+     * Luego testear cualquier metodo que haya dentro
+     */
 
 
 
