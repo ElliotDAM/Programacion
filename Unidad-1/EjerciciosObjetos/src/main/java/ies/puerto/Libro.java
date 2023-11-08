@@ -7,7 +7,7 @@ public class Libro{
 
     private String titulo;
     private String autor;
-    private String anioPublicacion;
+    private int anioPublicacion;
 
     /**
      * Constructor por defecto de la clase
@@ -62,14 +62,22 @@ public class Libro{
         this.autor = autor;
     }
 
-    public String getAnioPublicacion() {
+    public int getAnioPublicacion() {
         return anioPublicacion;
     }
 
-    public void setAnioPublicacion(String anioPublicacion) {
+    public void setAnioPublicacion(int anioPublicacion) {
         this.anioPublicacion = anioPublicacion;
     }
 
+    /**
+     * 
+     * @return
+     */
+
+     public void cambiarAutor(String autor){
+        this.autor = autor;
+     }
     /**
      * ToString creado para mostrar la información de cada libro.
      * @return informacion del libro.

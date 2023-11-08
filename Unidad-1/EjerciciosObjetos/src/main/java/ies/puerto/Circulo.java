@@ -36,7 +36,7 @@ public class Circulo{
      * @param radio
      * @return area del circulo.
      */
-    public double areaCirculo(int radio){
+    public double areaCirculo(){
 
         double area = (radio * radio) * Math.PI;
         return area;
@@ -47,9 +47,9 @@ public class Circulo{
      * @param radio
      * @return perimetro del circulo
      */
-    public double perimetroCirculo(int radio){
-        int diametro = 2 * radio;
-        int perimetro = diametro * Math.PI;
+    public double perimetroCirculo(){
+        
+        double perimetro = 2 * Math.PI * radio;
         return perimetro;
     }
 }

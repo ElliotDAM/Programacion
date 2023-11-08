@@ -7,7 +7,7 @@ package ies.puerto;
 public class Estudiante{
 
     private String nombre;
-    private String edad;
+    private int edad;
     private String carrera;
     private double promedio;
 
@@ -23,16 +23,16 @@ public class Estudiante{
     public Estudiante(String nombre){
         this.nombre = nombre;
     }
-    public Estudiante(String nombre, String edad){
+    public Estudiante(String nombre, int edad){
         this.nombre = nombre;
         this.edad = edad;
     }
-    public Estudiante(String nombre, String edad, String carrera){
+    public Estudiante(String nombre, int edad, String carrera){
         this.nombre = nombre;
         this.edad = edad;
         this.carrera = carrera;
     }
-    public Estudiante(String nombre, String edad, String carrera, double promedio){
+    public Estudiante(String nombre, int edad, String carrera, double promedio){
         this.nombre = nombre;
         this.edad = edad;
         this.carrera = carrera;
@@ -47,11 +47,11 @@ public class Estudiante{
         this.nombre = nombre;
     }
 
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
@@ -75,13 +75,12 @@ public class Estudiante{
         return "Nombre: " + nombre + ", Edad: " + edad + ", Carrera: " + carrera + ", Promedio: " + promedio + ".";
     }
 
-    public String comprobarAprobado(int promedio){
-        String resultado = "";
+    public String comprobarAprobado(){
         if (promedio < 5){
-            resultado = "Está suspendido";
+            return "Esta suspendido";
         } else {
-            resultado = "Está aprobado";
+            return"Esta aprobado";
         }
-        return resultado;
+       
     }
 }

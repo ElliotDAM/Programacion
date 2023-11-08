@@ -1,6 +1,9 @@
-package main.java.ies.puerto;
+package ies.puerto;
+
+import java.lang.reflect.Array;
 
 public class Producto{
+
     private String nombre;
     private int precio;
     private int stock;
@@ -19,7 +22,7 @@ public class Producto{
         this.precio = precio;
         this.stock = stock;
     }
-    public mostrarInformacion(){
+    public String mostrarInformacion(){
         return "Nombre: " + nombre + ", Precio: " + precio + ", Stock: " + stock + ". ";
     }
 
@@ -33,11 +36,11 @@ public class Tienda {
     }
 
     public void agregarProducto(Producto productos){
-        productos.add(producto);
+        productos.add(productos);
     }
 
     public void venderProducto(Producto productos){
-        productos.remove(producto);
+        productos.remove(productos);
     }
     
 }

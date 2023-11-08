@@ -82,6 +82,15 @@ public class Persona {
     public void setEdad(int edad){
         this.edad = edad;
     }
+
+/**
+ * Metodo para cambiar nombre de la persona.
+ * @param nuevoNombre
+ */
+
+    public void cambiarNombre(String nuevoNombre){
+        this.nombre = nuevoNombre;
+    }
     /*
     public void imprimir(){
         System.out.println("Nombre: " + nombre);
@@ -90,7 +99,7 @@ public class Persona {
         System.out.println("Telefono: " + telefono);
     }
     */
-    public String imprimir(){
+    public String imprimirInformacion(){
 
         return "Nombre: "+ nombre + "Edad: " + edad + "Email: " + email + "Telefono: " + telefono ;
     }
