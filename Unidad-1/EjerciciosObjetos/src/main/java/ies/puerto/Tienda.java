@@ -1,46 +1,9 @@
-/*package ies.puerto;
+package main.java.ies.puerto;
 
-import java.lang.reflect.Array;
+public class Tienda {
+    
+    Producto producto;
 
-public class Producto{
-
-    private String nombre;
-    private int precio;
-    private int stock;
-
-    public Producto(){}
-
-    public Producto(String nombre){
-        this.nombre = nombre;
-    }
-    public Producto(String nombre, int precio){
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-    public Producto(String nombre, int precio, int stock){
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-    }
-    public String mostrarInformacion(){
-        return "Nombre: " + nombre + ", Precio: " + precio + ", Stock: " + stock + ". ";
-    }
+    //Generar constructor, getters y setters.
 
 }
-public class Tienda {
-
-    private List <Producto> productos;
-   
-    public Tienda (){
-        this.productos = new ArrayList<>();
-    }
-
-    public void agregarProducto(Producto productos){
-        productos.add(productos);
-    }
-
-    public void venderProducto(Producto productos){
-        productos.remove(productos);
-    }
-    
-}*/

@@ -1,5 +1,9 @@
 package ies.puerto;
 
+import org.junit.jupiter.api.BeforeEach;
+
+import java.beans.Transient;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -48,4 +52,26 @@ public class LibroTests {
 
         Assertions.assertEquals(libroEsperado, libroObtenido, "La informacion del libro no coincide.");
     }
+
+    @Test
+    public void testSetTituloOk(){
+        
+        String miTitulo = "Otro titulo";
+
+        libro.setTitulo(miTitulo);
+
+        Assertions.assertEquals(miTitulo, libro.getTitulo(), "El titulo no coincide.");
+    }
+
+    @Test
+    public void testSetAnioPublicacionOk(){
+
+        int otroAnio = 2000;
+
+        libro.setAnioPublicacion(otroAnio);
+
+        Assertions.assertEquals(otroAnio, libro.getAnioPublicacion(), "El año no coincide.");
+    }
+
+     
 }
