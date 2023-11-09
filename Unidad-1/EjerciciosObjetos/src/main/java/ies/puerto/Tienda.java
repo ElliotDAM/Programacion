@@ -1,4 +1,4 @@
-package ies.puerto;
+/*package ies.puerto;
 
 import java.lang.reflect.Array;
 
@@ -43,4 +43,4 @@ public class Tienda {
         productos.remove(productos);
     }
     
-}
+}*/

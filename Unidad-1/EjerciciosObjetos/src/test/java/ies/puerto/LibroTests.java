@@ -4,15 +4,26 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LibroTests {
-    
+
+    /**
+     * Se instancian los atributos y la clase para que se utilice para todas las pruebas.
+     */
+    String titulo = "Don Quijote de la Mancha";
+    String autor = "Miguel de Cervantes";
+    int anioPublicacion = 1605;
+
+    Libro libro;
+
+    /**
+     * Metodo de test que se utiliza para instanciar una clase para todas las pruebas de cada test unitario.
+     */
+    @BeforeEach
+    public void beforeEach(){
+        libro = new Libro(titulo, autor, anioPublicacion);
+    }
+
     @Test
     public void testCrearLibro(){
-
-        String titulo = "Don Quijote de la Mancha";
-        String autor = "Miguel de Cervantes";
-        int anioPublicacion = 1605;
-
-        Libro libro = new Libro(titulo, autor, anioPublicacion);
 
         Assertions.assertEquals(titulo, libro.getTitulo(), "El titulo del libro no coincide.");
         Assertions.assertEquals(autor, libro.getAutor(), "El autor del libro no coincide.");
@@ -23,12 +34,6 @@ public class LibroTests {
     @Test
     public void testCambiarAutorOk(){
 
-        String titulo ="Don Quijote de la Mancha";
-        String autor = "Miguel de Cervantes";
-        int anioPublicacion = 1605 ;
-
-        Libro libro = new Libro(titulo, autor, anioPublicacion);
-
         String nuevoAutor = "Sancho Panza";
         libro.setAutor(nuevoAutor);
 
@@ -37,12 +42,6 @@ public class LibroTests {
 
     @Test
     public void testInfoLibroOk(){
-
-        String titulo ="Don Quijote de la Mancha";
-        String autor = "Miguel de Cervantes";
-        int anioPublicacion = 1605 ;
-
-        Libro libro = new Libro(titulo, autor, anioPublicacion);
 
         String libroEsperado = "Titulo: Don Quijote de la Mancha, Autor: Miguel de Cervantes, Anio Publicacion: 1605.";
         String libroObtenido = libro.infoLibro();
