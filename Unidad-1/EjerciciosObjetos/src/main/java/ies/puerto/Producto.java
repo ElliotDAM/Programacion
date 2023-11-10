@@ -1,6 +1,4 @@
-package main.java.ies.puerto;
-
-import java.lang.reflect.Array;
+package ies.puerto;
 
 public class Producto{
 

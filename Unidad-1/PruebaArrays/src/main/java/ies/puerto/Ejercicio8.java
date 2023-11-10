@@ -4,9 +4,9 @@ public class Ejercicio8{
 
     static Ejercicio7 ejercicio7 = new Ejercicio7();
 
-    public static int[] eliminarDuplicados(){
+    public static int[] eliminarDuplicados(int[] array){
 
-        int[] array = {1,3,4,5,4,6};
+        //int[] array = {1,3,4,5,4,6};
         int[] arrayOrdenado= ejercicio7.ordenAscendente(array);
         int tamañoArray = array.length;
 

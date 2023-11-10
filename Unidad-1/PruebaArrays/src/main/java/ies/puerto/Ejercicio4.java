@@ -10,7 +10,7 @@ public class Ejercicio4{
 
     public static void main(String[] args) {
         int[] array = {15,30,45,60,75};
-        int[] resultado = mostrarNumerosPares(array);
+        mostrarNumerosPares(array);
     }
     /**
      * Metodo que se utiliza para localizar los numeros pares dentro de un array.

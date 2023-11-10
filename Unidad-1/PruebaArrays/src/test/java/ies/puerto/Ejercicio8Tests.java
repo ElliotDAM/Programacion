@@ -13,7 +13,7 @@ public class Ejercicio8Tests{
         //int[] arrayDuplicados = {1,3,4,5,4,6};
         int[] resultadoEsperado = {1,3,4,5,6};
 
-        int[] resultado = ejercicio8.eliminarDuplicados(array);
+        int[] resultado = Ejercicio8.eliminarDuplicados(array);
         Assertions.assertArrayEquals(resultadoEsperado, resultado, "Se han eliminado los duplicados.");
 
     }

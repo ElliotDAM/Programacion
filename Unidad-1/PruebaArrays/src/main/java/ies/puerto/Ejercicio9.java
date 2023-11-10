@@ -7,6 +7,7 @@ public class Ejercicio9{
 
     public int[] combinarArrays(){
 
-        
+        int[] array = {};
+        return array;
     }
 }

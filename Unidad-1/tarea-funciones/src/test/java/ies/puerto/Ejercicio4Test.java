@@ -15,8 +15,11 @@ public class Ejercicio4Test {
     }
     @Test
     public void maximoTresTest(int numero1, int numero2, int numero3){
-        int maximo = ejercicio4.maximo(numero1, numero2);
-        int maximoTres = ejercicio4.maximo(maximo, numero3);
+        int maximo1 = ejercicio4.maximo(numero1, numero2);
+        int maximoObtenido = ejercicio4.maximo(maximo1, numero3);
+        int maximoEsperado = maximoObtenido;
+
+        Assertions.assertEquals(maximoEsperado, maximoObtenido, "Los maximos no coinciden.");
 
     }
 }

@@ -7,13 +7,10 @@ import java.util.Scanner;
  */
 public class Ejercicio1 {
     public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+    try (Scanner sc = new Scanner(System.in)) {
         int valorA, valorB;
 
         //Bloque 1: Pide por pantalla y asigna los valores.
-
-
-
         //Bloque 2: Verifica si los valores son iguales
         do{
             System.out.println("Determina el valor de la variable A:");
@@ -30,10 +27,11 @@ public class Ejercicio1 {
         }else{
             System.out.println(valorB+" es mayor que "+valorA);
         }
+    }
+    }
     
     }
 
 
 
 
-}

@@ -16,7 +16,6 @@ public class Ejercicio3Test {
     @Test
     public void calcularCuadradoTest() {
         int ladoA = 3;
-        int ladoB = 4;
         double resultadoOk = 0;
         double resultado = ejercicio3.areaCuadrado(ladoA);
         Assertions.assertEquals(resultadoOk, resultado, "No se ha obtenido el resultado esperado");

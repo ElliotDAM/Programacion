@@ -17,10 +17,11 @@ public class Ejercicio3 {
         int segundoNumero = 1;
         int resultado = 0;
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Dame la posiciton que desea en la secuencia de Fibonacci");
-        numUsuario = sc.nextInt();
-      //Iteramos hasta la posicion del usuario
+        try (Scanner sc = new Scanner(System.in)) {
+          System.out.println("Dame la posiciton que desea en la secuencia de Fibonacci");
+          numUsuario = sc.nextInt();
+        }
+        //Iteramos hasta la posicion del usuario
         for (int i = 1; i < numUsuario; i++) {
          //Sustituimos la variable resultado cada vez que itera el bucle
            resultado = primerNumero + segundoNumero;
