@@ -13,6 +13,11 @@ public class Ejercicio4Tests{
     Ejercicio4 usuario = new Ejercicio4(titular,saldo);
 
     @Test
+    public void constructorTestOk(){
+        Assertions.assertNotNull(usuario, "El objeto no puede ser nulo");
+    }
+
+    @Test
     public void testCreacionCuentaBancaria(){
 
 

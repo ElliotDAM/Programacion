@@ -14,7 +14,7 @@ public class Ejercicio3{
     public String determinacionNotasIf(double nota){
 
         String resultado = "";
-        if (nota < 4.99){
+        if (nota <= 4.99){
             resultado = "Suspenso";
         } else if (nota < 6 && nota >= 5){
             resultado = "Aprobado";
@@ -35,24 +35,18 @@ public class Ejercicio3{
      * Metodo en switch para determinar la calificacion de la nota de un estudiante.
      * @param nota
      */
-    public void determinacionNotasSwitch(int nota){
+    public void determinacionNotasSwitch(float nota){
 
         String resultado = "";
 
-        switch(nota){
+        int enteroNota = (int) nota;
+
+        switch(enteroNota){
 
             case 0:
-                    resultado = "Suspendido";
-                    break;
             case 1:
-                    resultado = "Suspendido";
-                    break;
             case 2:
-                    resultado = "Suspendido";
-                    break;
             case 3:
-                    resultado = "Suspendido";
-                    break;
             case 4:
                     resultado = "Suspendido";
                     break;
@@ -63,8 +57,6 @@ public class Ejercicio3{
                     resultado = "Bien";
                     break;
             case 7:
-                    resultado = "Notable";
-                    break;
             case 8:
                     resultado = "Notable";
                     break;
@@ -76,6 +68,7 @@ public class Ejercicio3{
                     break;
             default:
                     resultado = "La nota no corresponde al criterio de calificacion.";
+                    break;
 
         }
     }

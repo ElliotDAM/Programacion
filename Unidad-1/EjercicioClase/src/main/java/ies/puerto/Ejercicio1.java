@@ -13,7 +13,7 @@ public class Ejercicio1 {
  */
     public int busquedaBinaria(int[] array, int posicion){
 
-        int inicio = array[0];
+        int inicio = 0;
         int finalArray = array.length -1;
 
         while (inicio <= finalArray){
@@ -30,3 +30,23 @@ public class Ejercicio1 {
 
     }
 }
+
+/*
+    public int busquedaBinaria(int[] array, int valor){
+        int posicion = 0;
+        int inicio = 0;
+        int final = array.length - 1;
+
+        while(inicio <= final) {
+            posicion = (inicio + final) / 2;
+            if(array[posicion] == valor){
+                return posicion;
+            } else if (array[posicion] < valor){
+                inicio = posicion + 1;
+            } else {
+                final = posicion - 1;
+            }
+
+        return posicion;
+    }
+ */

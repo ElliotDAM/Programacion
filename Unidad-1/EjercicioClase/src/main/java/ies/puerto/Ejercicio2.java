@@ -28,3 +28,24 @@ public class Ejercicio2{
         return array;
     }
 }
+//Metodo correccion en clase.
+/*
+    public int[] burbuja(int[] array){
+        int tamanio = array.length();
+        boolean intercambio;
+
+        do
+            intercambio = false;
+            for (int i = 1; i < tamanio -1 ; i++) {
+                if(array[i-1] > array[i]{
+                    aux = array[i];
+                    array[i] = array[i - 1];
+                    array[i-1] = aux;
+                    intercambio = true;
+                }
+            }
+        while(intercambio);
+
+
+    }
+ */

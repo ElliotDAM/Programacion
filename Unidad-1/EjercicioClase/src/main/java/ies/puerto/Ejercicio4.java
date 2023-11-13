@@ -52,9 +52,10 @@ public class Ejercicio4{
      * Metodo para depositar saldo en la cuenta del usuario
      * @param ingreso
      */
-    public void depositarSaldo(double ingreso){
-
-        saldo = saldo + ingreso;
+    public void depositarSaldo(double ingreso) {
+        if (ingreso > 0) {
+            saldo = saldo + ingreso;
+        }
     }
 
     /**
