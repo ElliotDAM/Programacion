@@ -26,10 +26,11 @@ public class Ejercicio5{
         int posicion = 0;
         boolean encontrado = false;
         while(i < array.length && !encontrado){
-                posicion++;
             if (valor == array[i]){
                 encontrado = true;
-
+            } else{
+                posicion++;
+                i++;
             }
         }
 
