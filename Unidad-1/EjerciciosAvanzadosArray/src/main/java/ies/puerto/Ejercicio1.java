@@ -21,7 +21,7 @@ public class Ejercicio1{
         do {
             System.out.println("Introduzca el valor" + (i + 1));
             temporal = scanner.nextFloat();
-            if((temporal <= 10) && (temporal >= 0){
+            if((temporal <= 10) && (temporal >= 0)){
                 array[i] = temporal;
                 i++;
             }
