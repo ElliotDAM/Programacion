@@ -1,6 +1,8 @@
 package main.java.ies.puerto;
 import java.util.Scanner;
 /**
+ * Escribe un programa que solicite al usuario dos numeros e imprima el resultado de la division.
+ * Asegurate de manejar la excepcion ArithmeticException si el segundo numero ingresado es 0.
  * @author ElliotDAM
  */
 public class Ejercicio1 {
