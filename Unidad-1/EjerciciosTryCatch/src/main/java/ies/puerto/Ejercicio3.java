@@ -17,7 +17,7 @@ public class Ejercicio3 {
  */
     public static void arrayElementos(){
 
-        int posicionFallida = 4;
+        int posicionFallida = 3;
         try {
             int valorArray = array[posicionFallida];
             System.out.println("Numero en la posicion del array indicada:"+valorArray+".");

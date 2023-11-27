@@ -4,12 +4,12 @@ package main.java.ies.puerto;
  * @author ElliotDAM
  */
 public class Ejercicio7 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         int numero = -3;
         try {
             numero = comprobarNumero(numero); 
         } catch (IllegalArgumentException illegalArgumentException) {
-            System.out.println("Mensaje de error:"+illegalArgumentException.getMessage());
+            System.out.println("Mensaje de error:"+comprobarNumero.illegalArgumentException.getMessage());
         }
     }
 /**

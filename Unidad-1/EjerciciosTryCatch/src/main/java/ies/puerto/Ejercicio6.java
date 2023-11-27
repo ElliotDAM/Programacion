@@ -4,32 +4,34 @@ package main.java.ies.puerto;
  * Maneja la excepcion ParseException.
  * @author ElliotDAM
  */
-
+import java.util.Scanner;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class Ejercicio6 {
     
 
     public static void main(String[] args) {
-        solicitarFecha();
         
-        try {
-            
-        } catch (Exception e) {
-            System.out.println("Formato de fecha incorrecto.");
-        }
-    }
-
-    public static String solicitarFecha(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese una fecha con este orden: mes/dia/año:");
-        int fechaMal = sc.nextInt();
-        return fechaMal;
+        String fechaAString = sc.nextLine();
+        
+        Date fecha = fechaADate(fechaAString);
+    
     }
 
-    public Date fechaADate(){
-        int date = "";
+
+    public static Date fechaADate(String fechaString){
+        Date fecha = null;
+        SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
         
-        return date;
+        try {
+            fecha = formato.parse(fechaString);
+        } catch (ParseException e) {
+            System.out.println("Estoy capturando una excepcion porque la fecha es incorrecta.");
+        }
+        return fecha;
     }
 }

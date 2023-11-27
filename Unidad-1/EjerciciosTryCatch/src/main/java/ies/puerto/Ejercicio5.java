@@ -8,23 +8,19 @@ import java.util.Scanner;
  */
 public class Ejercicio5 {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         matematicas();
     }
 
     public static matematicas(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Dame una expresion algebraica:");
-        String expresion = sc.nextLine();
-
         try {
-           
+            System.out.println("Dame una expresion algebraica:");
+            int expresion = sc.nextLine();
         } catch (ArithmeticException arithmeticException) {
-            System.out.println("No se ha podido evaluar la operacion.");
+            throw new Exception("No se ha podido evaluar la operacion.");
         }
     }
 
-    public void evaluarExpresion(){
-        
-    }
+   
 }
