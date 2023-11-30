@@ -16,19 +16,23 @@ public class Ejercicio8 {
 
             System.out.println("Division de dos numeros.");
             System.out.println("Ingrese el primero:");
-            double numero1 = sc.nextDouble();
+            float numero1 = sc.nextFloat();
             System.out.println("Ingrese el segundo:");
-            double numero2 = sc.nextDouble(); 
-            double resultado = division(numero1, numero2);
+            float numero2 = sc.nextFloat(); 
+            float resultado = division(numero1, numero2);
 
             System.out.println("El resultado de la division es:"+division);
-        } catch (InputMismatchException inputMismatchException) {
-            System.out.println("En esta operacion solo se pueden agregar numeros.");            
+        } catch (ArithmeticException e) {
+            System.out.println("En esta operacion solo se pueden agregar numeros.");    
+            throw new InputMismatchException("Ingrese un numero valido.");        
         }
     }    
 
-    public static int division(double numero1, double numero2){
+    public static float division(float numero1, float numero2)throws ArithmeticException{
 
+        if(numero2 == 0){
+            throw new ArithmeticException("No se puede dividir por 0");
+        }
         return numero1 / numero2;
 
     }
