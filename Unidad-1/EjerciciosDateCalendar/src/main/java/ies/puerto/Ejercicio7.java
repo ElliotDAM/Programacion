@@ -22,4 +22,23 @@ public class Ejercicio7 {
         
         System.out.println("La diferencia en dias entre las dos fechas es de: "+diferenciaDias);
     }
+
+
+    /*public static void main(String[] args) {
+       int resta = 0;
+    Calendar fecha1 = Calendar.getInstance();
+    Calendar fecha2 = Calendar.getInstance();
+        
+    if(fecha1 < fecha2){
+        resta = fecha2 - fecha1;
+    }else{
+        resta = fecha1 - fecha2;
+    }
+
+    Para hacerlo sin los ifs, realizar:
+
+    Math.abs(fecha1 - fecha2);
+
+    Con las fechas declaradas en milisegundos.
+    }*/
 }

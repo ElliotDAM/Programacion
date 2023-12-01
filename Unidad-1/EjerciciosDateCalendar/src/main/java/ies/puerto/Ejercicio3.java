@@ -1,4 +1,3 @@
-package ies.puerto;
 import java.util.Calendar;
 /**
  * Escribir un programa que utilice la clase Calendar para obtener y mostrar la fecha actual con los componentes separados(anio, mes, dia)

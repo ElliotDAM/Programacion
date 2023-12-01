@@ -10,9 +10,13 @@ public class Ejercicio8 {
         String patron = "dd-MM-yyyy";
 
         SimpleDateFormat format = new SimpleDateFormat(patron);
+        try {
+            Date fechaParse = format.parse(fecha);
 
-        Date fechaParse = format.parse(fecha);
-
-        System.out.println("La fecha parseada es:"+fechaParse);
+            System.out.println("La fecha parseada es:"+fechaParse); 
+        } catch (Exception e) {
+            System.out.println("Error al parsear la fecha. Asegurate de ingresarla en el formato adecuado.");
+        }
+       
     }
 }

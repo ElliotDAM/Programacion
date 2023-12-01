@@ -12,6 +12,7 @@ public class Ejercicio4 {
 
         calendar.add(Calendar.DAY_OF_MONTH, 10);
         
+        
         int anio = calendar.get(Calendar.YEAR);
         int mes = calendar.get(Calendar.MONTH) + 1;
         int dia = calendar.get(Calendar.DAY_OF_MONTH);
