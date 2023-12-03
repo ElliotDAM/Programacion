@@ -6,8 +6,12 @@ package String;
 public class Ejercicio9 {
     public static void main(String[] args) {
         String cadena = "Esto es una frase";
-        String subcadena = "frase";
-        boolean empiezaCon = cadena.startsWith("Esto");
-        boolean terminanCon = cadena.endsWith(subcadena);
+        String inicioCadena = "Esto";
+        String finalCadena = "frase";
+        boolean empiezaCon = cadena.startsWith(inicioCadena);
+        boolean terminanCon = cadena.endsWith(finalCadena);
+
+        System.out.println("La cadena comienza con 'Esto': "+empiezaCon);
+        System.out.println("La cadena termina con 'frase': "+terminanCon);
     }
 }

@@ -19,7 +19,12 @@ public class Ejercicio2 {
     }
 
     public static int stringAEntero(String palabra){
-        int numero = Integer.parseInt(palabra);
-        return numero;
+        try {
+            int numero = Integer.parseInt(palabra);
+            return numero;
+        } catch (NumberFormatException numberFormatException) {
+            System.out.println("El string ingresado no coincide con un numero.");
+            return 0;
+        }
     }
 }

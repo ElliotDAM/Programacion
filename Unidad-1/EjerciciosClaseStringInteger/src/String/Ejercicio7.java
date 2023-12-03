@@ -7,13 +7,14 @@ public class Ejercicio7 {
 
     public static void main(String[] args) {
         String frase = "      Esto es una frase.     ";
-        eliminaEspacios(frase);
+        String fraseSinEspacios = eliminaEspacios(frase);
+        System.out.println("Su frase sin espacios: "+fraseSinEspacios);
     }
     
     public static String eliminaEspacios(String frase){
         
-        String fraseSinEspacios = frase.trim;
+        String fraseSinEspacios = frase.trim();
         
-        return frase;
+        return fraseSinEspacios;
     }
 }

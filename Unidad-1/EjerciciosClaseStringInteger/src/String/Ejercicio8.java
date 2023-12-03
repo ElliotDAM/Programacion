@@ -7,9 +7,9 @@ public class Ejercicio8 {
     
     public static void main(String[] args) {
         
-        fraseAMinuscula("ESTO ES UNA FRASE");
-
-        //fraseAMayuscula("Esto es una frase.");
+        String frase = "Esto es una frase.";
+        String fraseMayuscula = fraseAMayuscula(frase);
+        String fraseMinuscula = fraseAMinuscula(fraseMayuscula);
 
     }
 
