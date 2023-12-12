@@ -1,4 +1,4 @@
-package ies.puerto;
+
 import java.util.Scanner;
 /**
  * Implementa un programa que invierta una cadena de texto dada. La cadena debe de tener al menos 10 caracteres no vacíos.
