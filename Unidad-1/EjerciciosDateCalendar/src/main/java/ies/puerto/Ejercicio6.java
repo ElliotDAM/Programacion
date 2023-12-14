@@ -3,7 +3,7 @@
  * Desarrollar un programa que compare dos fechas utilizando la clase Date y muestre si son iguales o diferentes.
  * @author ElliotDAM
  */
-public class Ejercicio6 {
+public class Evento {
     public static void main(String[] args){
 
         Date fecha1 = new Date();

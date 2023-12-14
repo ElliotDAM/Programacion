@@ -6,5 +6,14 @@
 public class Ejercicio7 {
     public static void main(String[] args) {
         
+        int numero = 50;
+
+        String binario = conversionBinario(numero);
+
+        System.out.println("El numero en binario es: "+binario);
+    }
+
+    public static String conversionBinario(int numero){
+        return Integer.toBinaryString(numero);
     }
 }
