@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
  * Desarrollar un programa que formatee la fecha actual en el formato "dd-MM-yyyy HH:mm:ss" utilizando la clase SimpleDateFormat de DateFormat.
  * @author ElliotDAM
  */
-public class Ejercicio2 {
+public class Persona {
     
     public static void main(String[] args){
 

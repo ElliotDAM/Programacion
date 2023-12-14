@@ -29,4 +29,12 @@ public class Apuntesarray {
         }
 
     }
+
+    /**
+     * for(int i = 0;i < tamanio ; i++){
+     *  for(j = i; j < tamanio - i - j;i++){
+     *      sout('*');
+     * }
+     * }
+     */
 }
