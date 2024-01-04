@@ -2,7 +2,7 @@
 
 # Objetivo del proyecto
 
-Este proyecto mavenn tiene como objetivo ayudar a comprender al alumno el úso de métodos en java, y la documentación de los módulos.
+Realizar ejercicios de repaso sobre Java.
 
 ## Comandos maven a utilizar
 
