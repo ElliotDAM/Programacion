@@ -4,6 +4,7 @@ public class ApuntesBuclesDibujos {
      * for (int i = 3; i >=0;i--{
      * int posicionI = (tamanio/2)-i;
      * 
+     * 
      * for(j=posicionI;i < tamanio - posicionI;j--){
      * sout('*');
      * }
