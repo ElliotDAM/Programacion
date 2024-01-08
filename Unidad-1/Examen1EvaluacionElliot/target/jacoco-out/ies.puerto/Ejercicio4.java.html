@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ejercicio4.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Examen1EvaluacionElliot</a> &gt; <a href="index.source.html" class="el_package">ies.puerto</a> &gt; <span class="el_source">Ejercicio4.java</span></div><h1>Ejercicio4.java</h1><pre class="source lang-java linenums">package ies.puerto;
+
+import java.util.Scanner;
+
+/**
+ * Clase creada para simular el juego de las 5 puertas.
+ * @author ElliotDAM
+ */
+<span class="nc" id="L9">public class Ejercicio4 {</span>
+
+<span class="nc" id="L11">    int[] arrayPuertas = {0, 0, 0, 0, 0};</span>
+
+    /**
+     * Metodo para abrir una de las puertas señaladas por el usuario.
+     * @param numeroPuerta numero de puerta que determina el usuario
+     * @return abierta la puerta
+     */
+    public boolean abrirPuerta(int numeroPuerta) {
+
+<span class="nc" id="L20">        boolean abierta = false;</span>
+
+<span class="nc bnc" id="L22" title="All 2 branches missed.">        if (arrayPuertas[numeroPuerta] == 0) {</span>
+<span class="nc" id="L23">            arrayPuertas[numeroPuerta] = 1;</span>
+<span class="nc" id="L24">            abierta = true;</span>
+        }
+
+<span class="nc" id="L27">        return abierta;</span>
+    }
+
+    /**
+     * Metodo para cerrar una de las puertas indicadas por el usuario
+     * @param numeroPuerta que determina el usuario
+     * @return cerrada la puerta
+     */
+    public boolean cerrarPuerta(int numeroPuerta) {
+
+<span class="nc" id="L37">        boolean cerrada = false;</span>
+
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        if (arrayPuertas[numeroPuerta] == 1) {</span>
+<span class="nc" id="L40">            arrayPuertas[numeroPuerta] = 0;</span>
+<span class="nc" id="L41">            cerrada = true;</span>
+        }
+
+<span class="nc" id="L44">        return cerrada;</span>
+    }
+
+    /**
+     * Metodo creado para cambiar el estado de la puerta dada.
+     * @param numeroPuerta que determina el usuario
+     * @return estadoActualPuerta que determina que estado tiene actualmente
+     */
+    public String cambiarEstadoPuerta(int numeroPuerta) {
+
+<span class="nc" id="L54">        String estadoActualPuerta = &quot;&quot;;</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">        if (arrayPuertas[numeroPuerta] == 1) {</span>
+<span class="nc" id="L56">            arrayPuertas[numeroPuerta] = 0;</span>
+<span class="nc" id="L57">            estadoActualPuerta = &quot;Puerta cerrada&quot;;</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        } else if (arrayPuertas[numeroPuerta] == 0) {</span>
+<span class="nc" id="L59">            arrayPuertas[numeroPuerta] = 1;</span>
+<span class="nc" id="L60">            estadoActualPuerta = &quot;Puerta abierta&quot;;</span>
+        }
+
+<span class="nc" id="L63">        return estadoActualPuerta;</span>
+    }
+
+    /**
+     * Metodo creado para mostrar en que estado se encuentran todas las puertas.
+     * @return estadoPuerta en el que describe si la puerta esta abierta o cerrada
+     */
+        public String mostrarEstadoPuertas(){
+
+<span class="nc" id="L72">            String estadoPuerta = &quot;&quot;;</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">            for (int i = 0; i &lt; arrayPuertas.length; i++) {</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">                if (arrayPuertas[i] == 0) {</span>
+<span class="nc" id="L75">                    estadoPuerta = &quot;La puerta&quot; + (i + 1) + &quot; esta cerrada.&quot;;</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">                } else if (arrayPuertas[i] == 1) {</span>
+<span class="nc" id="L77">                    estadoPuerta = &quot;La puerta&quot; + (i + 1) + &quot; esta abierta.&quot;;</span>
+                }
+            }
+<span class="nc" id="L80">            return estadoPuerta;</span>
+
+        }
+
+    public static void main(String[] args) {
+<span class="nc" id="L85">            Ejercicio4 ejercicio4 = new Ejercicio4();</span>
+<span class="nc" id="L86">            Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L87">        System.out.println(&quot;Tenemos 5 puertas con diferentes funciones.&quot; +</span>
+                &quot;1. Abrir puerta.&quot; +
+                &quot;2. Cerrar puerta.&quot; +
+                &quot;3. Cambiar estado puerta.&quot; +
+                &quot;4. Mostrar estado puertas.&quot; +
+                &quot;¿Que opcion desea utilizar?&quot;);
+<span class="nc" id="L93">        int opcion = sc.nextInt();</span>
+<span class="nc" id="L94">        int puerta = 0;</span>
+<span class="nc bnc" id="L95" title="All 5 branches missed.">        switch(opcion){</span>
+            case 1:
+<span class="nc" id="L97">                System.out.println(&quot;¿Qué puerta desea abrir?&quot;);</span>
+<span class="nc" id="L98">                puerta = sc.nextInt();</span>
+<span class="nc" id="L99">                    ejercicio4.abrirPuerta(puerta);</span>
+<span class="nc" id="L100">                    break;</span>
+            case 2:
+<span class="nc" id="L102">                System.out.println(&quot;¿Qué puerta desea cerrar?&quot;);</span>
+<span class="nc" id="L103">                puerta = sc.nextInt();</span>
+<span class="nc" id="L104">                ejercicio4.cerrarPuerta(puerta);</span>
+<span class="nc" id="L105">                break;</span>
+            case 3:
+<span class="nc" id="L107">                System.out.println(&quot;¿A que puerta desea cambiarle el estado?&quot;);</span>
+<span class="nc" id="L108">                puerta = sc.nextInt();</span>
+<span class="nc" id="L109">                    ejercicio4.cambiarEstadoPuerta(puerta);</span>
+<span class="nc" id="L110">                    break;</span>
+            case 4:
+<span class="nc" id="L112">                    ejercicio4.mostrarEstadoPuertas();</span>
+<span class="nc" id="L113">                    break;</span>
+            default:
+<span class="nc" id="L115">                System.out.println(&quot;No hay opcion para el numero introducido.&quot;);</span>
+                break;
+        }
+
+
+<span class="nc" id="L120">    }</span>
+    }
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

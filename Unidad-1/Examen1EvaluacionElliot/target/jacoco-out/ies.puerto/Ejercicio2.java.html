@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ejercicio2.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Examen1EvaluacionElliot</a> &gt; <a href="index.source.html" class="el_package">ies.puerto</a> &gt; <span class="el_source">Ejercicio2.java</span></div><h1>Ejercicio2.java</h1><pre class="source lang-java linenums">package ies.puerto;
+
+/**
+ * Clase creada para la representacion de la informacion de un estudiante y el calculo de su IMC.
+ * @author ElliotDAM
+ */
+public class Ejercicio2 {
+
+    private String nombre;
+    private int edad;
+    private double peso;
+    private double altura;
+
+    /**
+     * Constructor por defecto.
+     */
+<span class="nc" id="L17">    public Ejercicio2(){}</span>
+
+    /**
+     * Constructores de clase.
+     */
+<span class="nc" id="L22">    public Ejercicio2(String nombre){</span>
+<span class="nc" id="L23">        this.nombre = nombre;</span>
+<span class="nc" id="L24">    }</span>
+
+<span class="nc" id="L26">    public Ejercicio2(int edad){</span>
+<span class="nc" id="L27">        this.edad = edad;</span>
+<span class="nc" id="L28">    }</span>
+
+<span class="nc" id="L30">    public Ejercicio2(double peso){</span>
+<span class="nc" id="L31">        this.peso = peso;</span>
+<span class="nc" id="L32">    }</span>
+
+    /*public Ejercicio2(double altura){
+        this.altura = altura;
+    }*/
+
+<span class="nc" id="L38">    public Ejercicio2(String nombre, int edad){</span>
+<span class="nc" id="L39">        this.nombre = nombre;</span>
+<span class="nc" id="L40">        this.edad = edad;</span>
+<span class="nc" id="L41">    }</span>
+
+<span class="nc" id="L43">    public Ejercicio2(String nombre, int edad, double peso){</span>
+<span class="nc" id="L44">        this.nombre = nombre;</span>
+<span class="nc" id="L45">        this.edad = edad;</span>
+<span class="nc" id="L46">        this.peso = peso;</span>
+<span class="nc" id="L47">    }</span>
+
+<span class="nc" id="L49">    public Ejercicio2(String nombre, int edad, double peso, double altura){</span>
+<span class="nc" id="L50">        this.nombre = nombre;</span>
+<span class="nc" id="L51">        this.edad = edad;</span>
+<span class="nc" id="L52">        this.peso = peso;</span>
+<span class="nc" id="L53">        this.altura = altura;</span>
+<span class="nc" id="L54">    }</span>
+
+    /**
+     * Getters y setters.
+     */
+    public String getNombre() {
+<span class="nc" id="L60">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="nc" id="L64">        this.nombre = nombre;</span>
+<span class="nc" id="L65">    }</span>
+
+    public int getEdad() {
+<span class="nc" id="L68">        return edad;</span>
+    }
+
+    public void setEdad(int edad) {
+<span class="nc" id="L72">        this.edad = edad;</span>
+<span class="nc" id="L73">    }</span>
+
+    public double getPeso() {
+<span class="nc" id="L76">        return peso;</span>
+    }
+
+    public void setPeso(double peso) {
+<span class="nc" id="L80">        this.peso = peso;</span>
+<span class="nc" id="L81">    }</span>
+
+    public double getAltura() {
+<span class="nc" id="L84">        return altura;</span>
+    }
+
+    public void setAltura(double altura) {
+<span class="nc" id="L88">        this.altura = altura;</span>
+<span class="nc" id="L89">    }</span>
+
+    /**
+     * Metodo para calcular el indice de masa muscular de un estudiante.
+     * @param peso
+     * @param altura
+     * @return imc
+     */
+    public double calcularIMC(double peso, float altura){
+
+<span class="nc" id="L99">        double imc = 0;</span>
+
+<span class="nc" id="L101">        imc = peso / (altura * altura);</span>
+
+<span class="nc" id="L103">        return imc;</span>
+    }
+
+    /**
+     * Metodo para mostrar la informacion del estudiante.
+     * @return
+     */
+
+    public String mostrarInformacion(){
+
+<span class="nc" id="L113">        return &quot;Nombre:&quot;+nombre+&quot;,Edad:&quot;+edad+&quot;,Peso:&quot;+peso+&quot;,Altura:&quot;+altura+&quot;.&quot;;</span>
+    }
+
+    public static void main(String[] args) {
+
+<span class="nc" id="L118">        Ejercicio2 ejercicio2 = new Ejercicio2(&quot;Juan&quot;, 25, 66.2, 1.76);</span>
+
+<span class="nc" id="L120">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
