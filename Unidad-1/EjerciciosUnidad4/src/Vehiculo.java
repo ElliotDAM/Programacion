@@ -4,6 +4,18 @@
 public class Vehiculo {
 
 
+   public Vehiculo(String marca, String modelo, double precio) {
+      this.marca = marca;
+      this.modelo = modelo;
+      this.precio = precio;
+   }
+
+   public Vehiculo(String marca, String modelo, double precio) {
+      this.marca = marca;
+      this.modelo = modelo;
+      this.precio = precio;
+   }
+
     private String color;
 
     public Vehiculo(String color) {
