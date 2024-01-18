@@ -1,4 +1,4 @@
-package main.java.ies.puerto.abstracto;
+package ies.puerto.abstracto;
 
 public abstract class LecturaDatosAbstract {
 

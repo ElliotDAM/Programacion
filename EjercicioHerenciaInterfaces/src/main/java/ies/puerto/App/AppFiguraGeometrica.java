@@ -1,7 +1,9 @@
-package main.java.ies.puerto.App;
+package ies.puerto.App;
 
-import main.java.ies.puerto.impl.Rectangulo;
-import main.java.ies.puerto.interfaz.IFormaGeometrica;
+import ies.puerto.impl.Circulo;
+import ies.puerto.impl.Cuadrado;
+import ies.puerto.impl.Rectangulo;
+import ies.puerto.interfaz.IFormaGeometrica;
 
 public class AppFiguraGeometrica {
     static IFormaGeometrica circulo;

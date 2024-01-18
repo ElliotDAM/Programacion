@@ -1,6 +1,6 @@
-package main.java.ies.puerto.impl;
+package ies.puerto.impl;
 
-import main.java.ies.puerto.interfaz.IReproductor;
+import ies.puerto.interfaz.IReproductor;
 
 public class ReproductorMp3 implements IReproductor{
 

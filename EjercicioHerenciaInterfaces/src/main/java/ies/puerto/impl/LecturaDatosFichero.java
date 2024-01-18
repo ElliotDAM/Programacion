@@ -1,4 +1,6 @@
-package main.java.ies.puerto.impl;
+package ies.puerto.impl;
+
+import ies.puerto.interfaz.ILecturaDatos;
 
 public class LecturaDatosFichero implements ILecturaDatos{
 

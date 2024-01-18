@@ -1,6 +1,7 @@
-package main.java.ies.puerto.App;
+package ies.puerto.App;
 
-import main.java.ies.puerto.interfaz.ILecturaDatos;
+import ies.puerto.impl.LecturaDatosFichero;
+import ies.puerto.interfaz.ILecturaDatos;
 
 public class AppLecturaDatos {
     static ILecturaDatos lecturaDatos;

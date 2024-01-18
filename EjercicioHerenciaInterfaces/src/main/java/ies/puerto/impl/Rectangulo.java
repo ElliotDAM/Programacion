@@ -1,4 +1,4 @@
-package main.java.ies.puerto.impl;
+package ies.puerto.impl;
 
 public class Rectangulo extends Cuadrado{
 

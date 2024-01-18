@@ -1,7 +1,6 @@
-package main.java.ies.puerto.impl;
+package ies.puerto.impl;
 
-import main.java.ies.puerto.abstracto.LecturaDatosAbstract;
-import main.java.ies.puerto.interfaz.ILecturaDatos;
+import ies.puerto.abstracto.LecturaDatosAbstract;
 
 public class LecturaDatosBaseDatos extends LecturaDatosAbstract{
 

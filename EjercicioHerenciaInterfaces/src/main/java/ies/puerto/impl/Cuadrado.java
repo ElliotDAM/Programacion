@@ -1,7 +1,7 @@
-package main.java.ies.puerto.impl;
+package ies.puerto.impl;
 
-import main.java.ies.puerto.abstracto.RegularesAbstract;
-import main.java.ies.puerto.interfaz.IFormaGeometrica;
+import ies.puerto.abstracto.RegularesAbstract;
+import ies.puerto.interfaz.IFormaGeometrica;
 
 public class Cuadrado extends RegularesAbstract implements IFormaGeometrica{
 

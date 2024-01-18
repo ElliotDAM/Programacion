@@ -1,4 +1,4 @@
-package main.java.ies.puerto.interfaz;
+package ies.puerto.interfaz;
 /**
  * Definiendo interfaz para un reproductor Mp3.
  * @author ElliotDAM

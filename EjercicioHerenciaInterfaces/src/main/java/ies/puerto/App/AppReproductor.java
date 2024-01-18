@@ -1,6 +1,6 @@
-package main.java.ies.puerto.App;
+package ies.puerto.App;
 
-import main.java.ies.puerto.impl.ReproductorMp3;
+import ies.puerto.impl.ReproductorMp3;
 
 public class AppReproductor {
     static ReproductorMp3 reproductorMp3;

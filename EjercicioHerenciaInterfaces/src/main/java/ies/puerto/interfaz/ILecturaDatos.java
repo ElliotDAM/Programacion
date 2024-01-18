@@ -1,4 +1,4 @@
-package main.java.ies.puerto.interfaz;
+package ies.puerto.interfaz;
 
 public interface ILecturaDatos {
     
