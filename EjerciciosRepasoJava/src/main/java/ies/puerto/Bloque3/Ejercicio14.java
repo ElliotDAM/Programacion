@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque3;
+package ies.puerto.Bloque3;
 import java.util.Scanner;
 /**
  * Escribe un programa que utilice una variable booleana para determinar si un número ingresado por el usuario es par o impar.

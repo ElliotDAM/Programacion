@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque5;
+package ies.puerto.Bloque5;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Ejercicio44 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese un valor booleano");
-        boolean valorBooleano = scanner.nextBoolean();
+        boolean valorBooleano = sc.nextBoolean();
 
         if(valorBooleano){
             System.out.println("El valor es verdadero");

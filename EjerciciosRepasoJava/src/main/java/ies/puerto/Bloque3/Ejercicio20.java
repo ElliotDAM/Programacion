@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque3;
+package ies.puerto.Bloque3;
 /**
  * Crea un programa que declare dos variables booleanas, representando por ejemplo si está lloviendo y si es de noche, 
  * y luego utilice operadores lógicos para determinar si se debe encender una lámpara.

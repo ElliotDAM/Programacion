@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque3;
+package ies.puerto.Bloque3;
 /**
  * Escribe un programa que declare una variable double y otra int, luego realiza una conversión explícita de double a int y muestre el resultado.
  * @author ElliotDAM

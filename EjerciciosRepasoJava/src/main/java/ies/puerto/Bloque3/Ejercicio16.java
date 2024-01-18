@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque3;
+package ies.puerto.Bloque3;
 /**
  * Haz un programa que utilice una constante para representar el valor de PI (3.14159265) y calcule el área de un círculo.
  * @author ElliotDAM

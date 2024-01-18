@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque1;
+package ies.puerto.Bloque1;
 /**
  * Escribe un programa que muestre tu nombre, tu edad y tu hobbie favorito,
  * en lineas separadas, similar a un perfil basico.

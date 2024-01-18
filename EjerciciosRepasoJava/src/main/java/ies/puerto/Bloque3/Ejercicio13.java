@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque3;
+package ies.puerto.Bloque3;
 /**
  * Crea un programa que declare una variable de tipo String con tu nombre y otra con tu apellido, y luego muestre tu nombre completo.
  * @author ElliotDAM

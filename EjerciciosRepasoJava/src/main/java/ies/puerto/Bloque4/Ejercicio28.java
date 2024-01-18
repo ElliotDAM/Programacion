@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque4;
+package ies.puerto.Bloque4;
 import java.util.Scanner;
 /**
  * Desarrolla un programa que tome dos cadenas ingresadas por el usuario y determine si tienen la misma longitud.
@@ -12,7 +12,7 @@ public class Ejercicio28 {
         System.out.println("Segunda cadena");
         String cadena2 = sc.nextLine();
 
-        if(cadena1.length == cadena2.length){
+        if(cadena1.length() == cadena2.length()){
             System.out.println("Las dos cadenas tienen la misma longitud");
         }
     }

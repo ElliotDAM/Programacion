@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque3;
+package ies.puerto.Bloque3;
 /**
  * Escribe un programa que declare dos variables de tipo entero e imprima su suma, resta, multiplicación y división.
  * @author ElliotDAM

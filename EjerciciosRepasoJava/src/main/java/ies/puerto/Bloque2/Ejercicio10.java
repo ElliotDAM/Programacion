@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque2;
+package ies.puerto.Bloque2;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Ejercicio10 {
   public static void main(String[] args) {
-    Scanner sc = new Scanner(Systen.in);
+    Scanner sc = new Scanner(System.in);
     System.out.println("Ingrese el precio del producto sin IGIC");
     double precioSinIgic = sc.nextDouble();
     double igic = 0.07;

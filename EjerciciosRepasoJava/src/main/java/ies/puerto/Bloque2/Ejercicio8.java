@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque2;
+package ies.puerto.Bloque2;
 
 import java.util.Scanner;
 
@@ -12,6 +12,6 @@ public class Ejercicio8 {
         System.out.println("Calculo de area de circulo");
         System.out.println("Ingrese el radio del circulo");
         double radio = sc.nextDouble();
-        double areaCirculo = MathPI*(radio*radio);
+        double areaCirculo = Math.PI*(radio*radio);
     }
 }

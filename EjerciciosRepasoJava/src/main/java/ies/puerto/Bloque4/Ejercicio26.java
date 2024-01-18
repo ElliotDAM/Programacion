@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque4;
+package ies.puerto.Bloque4;
 import java.util.Scanner;
 /**
  * Haz un programa que utilice una constante para representar el valor máximo permitido para la temperatura. 

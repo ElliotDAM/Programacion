@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque3;
+package ies.puerto.Bloque3;
 import java.util.Scanner;
 /**
  * Crea un programa que tome un número entero y un número decimal ingresados por el usuario y muestre su suma, considerando conversiones necesarias.

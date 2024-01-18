@@ -1,4 +1,7 @@
-package main.java.ies.puerto.Bloque4;
+package ies.puerto.Bloque4;
+
+import java.util.Scanner;
+
 /**
  * Crea un programa que determine si un año ingresado por el usuario es bisiesto o no (recuerda que un año es bisiesto si es divisible por 4, pero no por 100, o si es divisible por 400).
  * @author ElliotDAM

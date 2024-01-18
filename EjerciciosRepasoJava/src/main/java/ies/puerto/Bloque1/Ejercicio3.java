@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque1;
+package ies.puerto.Bloque1;
 /**
  * Desarrolla un programa que imprima "Gracias por usar este programa" en una linea.
  * @author ElliotDAM

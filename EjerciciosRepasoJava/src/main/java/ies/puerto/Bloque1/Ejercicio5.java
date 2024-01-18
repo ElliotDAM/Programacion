@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque1;
+package ies.puerto.Bloque1;
 /**
  * Haz un programa que muestre "¡Sigue aprendiendo y creciendo en Java!".
  * @author ElliotDAM

@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Bloque1;
+package ies.puerto.Bloque1;
 
 import java.util.Scanner;
 
