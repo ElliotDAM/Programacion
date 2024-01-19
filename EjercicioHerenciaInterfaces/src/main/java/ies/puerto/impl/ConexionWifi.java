@@ -1,8 +1,8 @@
 package ies.puerto.impl;
 
-import ies.puerto.interfaz.IConexionRed;
+import ies.puerto.abstracto.ConexionRedAbstract;
 
-public class ConexionWifi implements IConexionRed {
+public class ConexionWifi extends ConexionRedAbstract {
 
     @Override
     public String conectar() {

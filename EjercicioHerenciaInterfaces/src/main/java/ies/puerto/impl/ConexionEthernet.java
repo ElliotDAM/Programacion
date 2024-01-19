@@ -1,8 +1,7 @@
 package ies.puerto.impl;
 
-import ies.puerto.interfaz.IConexionRed;
-
-public class ConexionEthernet implements IConexionRed {
+import ies.puerto.abstracto.ConexionRedAbstract;
+ public class ConexionEthernet extends ConexionRedAbstract {
 
     @Override
     public String conectar() {
