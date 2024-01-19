@@ -6,7 +6,7 @@ public abstract class PersonaAbstract {
     private String nombre;
     private String fechaNacimiento;
     
-    public abstract int anios(Date fechaNacimiento);
+    public abstract int anios();
         
     
 }
