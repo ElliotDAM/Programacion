@@ -7,7 +7,7 @@ public class Alumno extends PersonaAbstract {
     private String nivel;
 
     @Override
-    public int anios(Date fechaNacimiento) {
+    public int anios() {
         Date fechaHoy = new Date();
        //Hacer resta anios.
         return 0;
