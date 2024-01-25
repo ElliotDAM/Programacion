@@ -1,6 +1,8 @@
-package main.java.ies.puerto.Ejercicios.Ejercicio2;
+package ies.puerto.Ejercicio2;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Escribe un método en una clase llamada OperacionesArrayList que reciba 
@@ -8,17 +10,36 @@ import java.util.ArrayList;
  * con la letra 'A'. a la lista.
  * @author ElliotDAM
  */
-public class Ejercicio2 {
+public class OperacionesArrayList {
     static List<String> listaString;
    
     public static boolean comienzaPorA(String cadena){
-    String regex = "^[a|A].*";
-        
-    if(Pattern.matches(regex, cadena)){
+        String regex = "^[a|A].*";
+            
+        if(Pattern.matches(regex, cadena)){
+            return true;
+        }
+        return false;
+    }
+
+    public List<Integer> numerosPares(ArrayList<Integer> listaNumeros){
+        List<Integer> listaPares = new ArrayList<>();
+        for (Integer numero : listaNumeros) {
+            if(numero % 2 == 0){
+                listaPares.add(numero);
+            }
+        }
+        return listaPares;
+    }
+
+    public static boolean mayoresDiez(ArrayList<Integer> enteros){
+        for (Integer entero : enteros) {
+            if(entero <= 10){
+                return false;
+            }
+        }
         return true;
     }
-    return false;
-}
 
     public static void main(String[] args) {
         listaString = new ArrayList<>();
@@ -34,6 +55,7 @@ public class Ejercicio2 {
             if(comienzaPorA(cadena)){
                 contador++;
             }
+            System.out.println("Numero de palabras que empiezan con a: "+contador);
         }
     }
 }

@@ -1,14 +1,16 @@
-package main.java.ies.puerto.App;
+package ies.puerto.Ejercicio6;
 
-import java.util.List;
+import java.util.ArrayList;
 
-import main.java.ies.puerto.Curso;
+
+import ies.puerto.Ejercicio3.Alumno;
+
 
 public class AppCurso {
     public static void main(String[] args) {
         Curso curso = new Curso();
 
-        List<Float> calificaionesAlumno = new ArrayList<>();
+        ArrayList<Float> calificaionesAlumno = new ArrayList<>();
         Alumno alumno = new Alumno("Pepe", "Dominguez", calificaionesAlumno);
         calificaionesAlumno.add(6.5f);
         calificaionesAlumno.add(5.5f);
