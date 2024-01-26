@@ -1,6 +1,8 @@
-package main.java.ies.puerto.Ejercicios.Ejercicio2;
+package ies.puerto.Ejercicios.Ejercicio2;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Escribe un método en una clase llamada OperacionesArrayList que reciba 

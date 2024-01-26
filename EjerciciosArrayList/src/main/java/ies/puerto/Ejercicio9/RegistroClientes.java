@@ -10,7 +10,9 @@ public class RegistroClientes {
     }
 
     public void agregarCliente(Cliente cliente){
-        clientes.add(cliente);
+        if(!clientes.contains(cliente)){
+            clientes.add(cliente);
+        }
     }
 
     public Cliente buscarCliente(int numeroCliente){

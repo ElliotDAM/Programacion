@@ -10,39 +10,39 @@ import ies.puerto.Ejercicio3.Alumno;
 
 
 public class Curso {
-    private List<Alumno> listaAlumnos;
+    private List<Alumno> alumnos;
     private Alumno alumno;
 
     public Curso(){
-        this.listaAlumnos = new ArrayList<>();
+        this.alumnos = new ArrayList<>();
     }
 
-    public Curso(List<Alumno> listaAlumnos) {
-        this.listaAlumnos = listaAlumnos;
+    public Curso(List<Alumno> alumnos) {
+        this.alumnos = alumnos;
     }
     
     public void agregarAlumno(Alumno alumno){
-        listaAlumnos.add(alumno);
+        alumnos.add(alumno);
     }
 
     public void eliminarAlumno(Alumno alumno){
-        listaAlumnos.remove(alumno);
+        alumnos.remove(alumno);
     }
 
     public float calcularMedia(){
 
-        if(listaAlumnos.isEmpty()){
+        if(alumnos.isEmpty()){
             return 0;
         }
 
         float sumaTotal = 0;
         
-        for(Alumno alumno : listaAlumnos){
+        for(Alumno alumno : alumnos){
             sumaTotal += calcularPromedio(alumno);
             
         }
 
-        return sumaTotal / listaAlumnos.size();
+        return sumaTotal / alumnos.size();
 
     }
 

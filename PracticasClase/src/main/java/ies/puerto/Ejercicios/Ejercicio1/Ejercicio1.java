@@ -1,4 +1,4 @@
-package main.java.ies.puerto.Ejercicios.Ejercicio1;
+package ies.puerto.Ejercicios.Ejercicio1;
 
 import java.util.ArrayList;
 import java.util.List;

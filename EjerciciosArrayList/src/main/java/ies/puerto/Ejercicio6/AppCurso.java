@@ -2,7 +2,6 @@ package ies.puerto.Ejercicio6;
 
 import java.util.ArrayList;
 
-
 import ies.puerto.Ejercicio3.Alumno;
 
 
