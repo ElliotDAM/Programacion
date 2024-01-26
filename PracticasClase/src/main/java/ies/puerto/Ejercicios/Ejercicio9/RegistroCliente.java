@@ -40,12 +40,28 @@ public class RegistroCliente {
     }
 
     public void transaccion(String numeroCliente, float cantidad){
-        Cliente cliente = new Cliente(numeroCliente);
-        if(clientes.contains(cliente)){
-            
-        }
-        if(buscarCliente(cliente) != null){
+        Cliente clienteActualizar = new Cliente(numeroCliente);
 
+        if(!clientes.contains(clienteActualizar)){
+            return;
+        }
+        /** Primera opcion (mejor opcion) **/
+        int posicionCliente = clientes.indexOf(clienteActualizar);
+
+        clienteActualizar = buscarCliente(clienteActualizar);
+
+        clienteActualizar.actualizarSaldo(cantidad);//actualizamos su saldo, no vale el metodo setSaldo ya que eso sustituiria la cantidad que tiene el cliente, en cambio con actualizarSaldo se suma
+
+        clientes.add(posicionCliente, clienteActualizar); //actualizamos el cliente en la misma posicion en la que estaba
+        clientes.set(posicionCliente, clienteActualizar);
+
+        /** Segunda opcion **/
+
+        Cliente clienteActualizar2 = new Cliente(numeroCliente);
+        for (Cliente clienteLista : clientes) {
+            if(clienteLista.equals(clienteActualizar2)){
+                clienteLista.actualizarSaldo(cantidad);
+            }            
         }
     }
 }

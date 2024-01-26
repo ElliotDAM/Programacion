@@ -44,6 +44,10 @@ public class Cliente {
         this.saldo = saldo;
     }
 
+    public void actualizarSaldo(float cantidad){
+        this.saldo += cantidad;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
