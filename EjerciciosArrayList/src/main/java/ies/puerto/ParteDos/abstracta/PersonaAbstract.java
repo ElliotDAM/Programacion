@@ -9,7 +9,7 @@ import java.util.Date;
 public abstract class PersonaAbstract {
     private String nombre;
     private String dni;
-    private String fechaNacimiento;
+    private static String fechaNacimiento;
     
     public PersonaAbstract(){}
     
@@ -19,7 +19,7 @@ public abstract class PersonaAbstract {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public static int anios(String fechaNacimiento) throws ParseException{
+    public int anios() throws ParseException{
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         Date fechaNacimientoDate = formato.parse(fechaNacimiento);
         Calendar fechaNacimientoCalendar = Calendar.getInstance();

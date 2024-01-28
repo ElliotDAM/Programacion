@@ -23,6 +23,10 @@ public class Colegio {
     public float notaMaxima(){
         float maxima = 0f;
 
+        if(aulas.isEmpty()){
+            return 0f;
+        }
+
         for (Aula aula : aulas) {
             for (Alumno alumno : aula.getAlumnos()) {
                 for (Nota nota : alumno.getNotas()) {
@@ -33,6 +37,26 @@ public class Colegio {
             }
         }
         return maxima;
+    }
+
+    public float notaMedia(){
+
+        if(aulas.isEmpty()){
+            return 0f;
+        }
+
+        float suma = 0f;
+        int numeroNotas = 0;
+            for (Aula aula : aulas) {
+                for (Alumno alumno : aula.getAlumnos()) {
+                    for (Nota nota : alumno.getNotas()) {
+                        suma += nota.getValor();
+                        numeroNotas++;
+
+                    }
+                }
+            }
+        return suma / numeroNotas;
     }
     
     public String getNombre() {

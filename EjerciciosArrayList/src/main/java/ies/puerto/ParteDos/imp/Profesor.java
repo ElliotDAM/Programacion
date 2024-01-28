@@ -1,6 +1,10 @@
 package ies.puerto.ParteDos.imp;
 
+import java.text.ParseException;
+import java.util.List;
+
 import ies.puerto.ParteDos.abstracta.EmpleadoAbstract;
+
 
 public class Profesor extends EmpleadoAbstract {
     private String especialidad;
@@ -10,6 +14,77 @@ public class Profesor extends EmpleadoAbstract {
         this.especialidad = especialidad;
         
     }
+
+    public static float salarioMedio(List<Profesor> profesores){
+        
+        if(profesores.isEmpty()){
+            return 0f;
+        }
+
+        float suma = 0;
+
+        for (Profesor profesor : profesores) {
+            suma += profesor.getSalario();
+        }
+        return suma / profesores.size();
+    }
+
+    public static float salarioMaximo(List<Profesor> profesores){
+        if(profesores.isEmpty()){
+            return 0f;
+        }
+        float salarioMaximo = 0f;
+
+        for (Profesor profesor : profesores) {
+            if(salarioMaximo < profesor.getSalario()){
+                salarioMaximo = profesor.getSalario();
+            }
+        }
+        return salarioMaximo;
+
+    }
+
+    public static float salarioMinimo(List<Profesor> profesores){
+        if(profesores.isEmpty()){
+            return 0f;
+        }
+        float salarioMinimo = 0f;
+
+        for (Profesor profesor : profesores) {
+            if(salarioMinimo > profesor.getSalario()){
+                salarioMinimo = profesor.getSalario();
+            }
+        }
+        return salarioMinimo;
+
+    }
+
+    public static Profesor buscarPorDni(String dni, List<Profesor> profesores){
+        
+        if(profesores.isEmpty()){
+            return null;
+        }
+
+        for (Profesor profesor : profesores) {
+            if(profesor.getDni().equals(dni)){
+                return profesor;
+            }
+        }
+        return null;
+    }
+
+    public static int edadMediaProfesores(List<Profesor> profesores) throws ParseException{
+
+        int sumaEdades = 0;
+        for (Profesor profesor : profesores) {
+            
+            sumaEdades += profesor.anios();
+               
+        }
+
+        return sumaEdades / profesores.size();
+    }
+    
 
     public String getEspecialidad() {
         return especialidad;
