@@ -1,6 +1,7 @@
 package ies.puerto.imp;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,10 +9,13 @@ import java.util.Set;
 public class Concesionario {
     static Set<Coche> coches;
     static ArrayList<Motocicleta> motos;
+    static Map<String, Camion> camiones;
+    
 
     public Concesionario() {
         this.coches = new HashSet<>();
         this.motos = new ArrayList<>();
+        this.camiones = new HashMap<>();
     }
 
     public static boolean addMotocicleta(Motocicleta motocicleta){
@@ -30,6 +34,14 @@ public class Concesionario {
         return false;
     }
 
+    public static boolean addCamion(Camion camion){
+        if(!coches.contains(camion)){
+            return camiones.put(camion);
+        }
+        return true;
+    }
+
+
     public static boolean removeMotocicleta(Motocicleta motocicleta){
         
         if(motos.contains(motocicleta)){
@@ -38,9 +50,18 @@ public class Concesionario {
         return false;
     }
 
+
+
     public static boolean removeCoche(Coche coche){
         if(coches.contains(coche)){
             return coches.remove(coche);
+        }
+        return false;
+    }
+
+    public static boolean removeCamion(Camion camion){
+        if(camiones.contains(camion)){
+            return camiones.remove(camion);
         }
         return false;
     }
@@ -60,6 +81,15 @@ public class Concesionario {
         for (Coche coche : coches) {
             if(coche.getMatricula().equals(matricula)){
                 return coche;
+            }
+        }
+        return null;
+    }
+
+    public static Camion obtenerCamion(String matricula){
+        for (Camion camion : camiones) {
+            if(camion.getMatricula().equals(matricula)){
+                return camion;
             }
         }
         return null;
