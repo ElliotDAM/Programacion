@@ -6,7 +6,7 @@ import java.util.Set;
 
 
 public class Concesionario {
-    static Set<Coche> coches = new HashSet<>();
+    static Set<Coche> coches;
     static ArrayList<Motocicleta> motos;
 
     public Concesionario() {
