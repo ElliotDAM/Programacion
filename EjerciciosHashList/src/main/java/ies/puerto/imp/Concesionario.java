@@ -215,4 +215,20 @@ public class Concesionario {
     public String toString() {
         return "Concesionario []";
     }
+
+    public static Map<String, Camion> getCamiones() {
+        return camiones;
+    }
+
+    public static void setCamiones(Map<String, Camion> camiones) {
+        Concesionario.camiones = camiones;
+    }
+
+    public static Map<String, Bicicleta> getBicicletas() {
+        return bicicletas;
+    }
+
+    public static void setBicicletas(Map<String, Bicicleta> bicicletas) {
+        Concesionario.bicicletas = bicicletas;
+    }
 }
