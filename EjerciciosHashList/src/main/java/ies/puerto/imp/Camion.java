@@ -1,4 +1,4 @@
-package main.java.ies.puerto.imp;
+package ies.puerto.imp;
 import ies.puerto.abstracta.VehiculoAbstract;
 
 public class Camion extends VehiculoAbstract {

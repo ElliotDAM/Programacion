@@ -3,6 +3,7 @@ package ies.puerto.imp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -10,6 +11,7 @@ public class Concesionario {
     static Set<Coche> coches;
     static ArrayList<Motocicleta> motos;
     static Map<String, Camion> camiones;
+    static Map<String, Bicicleta> bicicletas;
     
 
     public Concesionario() {
@@ -35,9 +37,19 @@ public class Concesionario {
     }
 
     public static boolean addCamion(Camion camion){
-        if(!coches.contains(camion)){
-            return camiones.put(camion);
+        if(!camiones.containsKey(camion.getMatricula())){
+            camiones.put(camion.getMatricula(), camion);
+            return true;
         }
+        return true;
+    }
+
+    public static boolean addBicicleta(Bicicleta bicicleta){
+        if(!bicicletas.containsKey(bicicleta.getMatricula())){
+            bicicletas.put(bicicleta.getMatricula(), bicicleta);
+            return true;
+        }
+
         return true;
     }
 
@@ -60,11 +72,22 @@ public class Concesionario {
     }
 
     public static boolean removeCamion(Camion camion){
-        if(camiones.contains(camion)){
-            return camiones.remove(camion);
+        if(camiones.containsKey(camion.getMatricula())){
+            camiones.remove(camion.getMatricula(), camion);
+            return true;
         }
         return false;
     }
+    
+    public static boolean removeBicicleta(Bicicleta bicicleta){
+        if(bicicletas.containsKey(bicicleta.getMatricula())){
+            bicicletas.remove(bicicleta.getMatricula(), bicicleta);
+            return true;
+        }
+
+        return false;
+    }
+
 
     public static Motocicleta obtenerMotocicleta(String matricula){
         
@@ -87,12 +110,13 @@ public class Concesionario {
     }
 
     public static Camion obtenerCamion(String matricula){
-        for (Camion camion : camiones) {
-            if(camion.getMatricula().equals(matricula)){
-                return camion;
-            }
-        }
-        return null;
+
+        return camiones.get(matricula);
+    }
+
+    public static Bicicleta obtenerBicicleta(String matricula){
+        
+       return bicicletas.get(matricula);
     }
 
     public static float velocidadMediaMotocicletas(){
@@ -119,23 +143,56 @@ public class Concesionario {
         }
 
         for (Coche coche : coches) {
-            velocidad = coche.getVelocidad();
+            velocidad += coche.getVelocidad();
         }
 
         return velocidad / cantidadCoches;
+    }
+
+    public static float velocidadMediaCamiones(){
+        int velocidad = 0;
+        int cantidadCamiones = coches.size();
+        
+        if(cantidadCamiones == 0){
+            return 0;
+        }
+
+        for(Camion camion : camiones.values()){
+            velocidad += camion.getVelocidad();
+        }
+
+        return (float) velocidad / cantidadCamiones;
+    }
+
+    public static float velocidadMediaBicicletas(){
+        int velocidad = 0;
+        int cantidadBicicletas = coches.size();
+
+        if(cantidadBicicletas == 0){
+            return 0;
+        }
+
+        for(Bicicleta bicicleta : bicicletas.values()){
+            velocidad += bicicleta.getVelocidad();
+        }
+
+        return (float) velocidad / cantidadBicicletas;
     }
 
     public float velocidadMediaVehiculos(){
         
         float velocidadMediaCoches = velocidadMediaCoches();
         float velocidadMediaMotos = velocidadMediaMotocicletas();
-        int cantidadVehiculos = coches.size() + motos.size();
+        float velocidadMediaCamiones = velocidadMediaCamiones();
+        float velocidadMediaBicicletas = velocidadMediaBicicletas();
+
+        int cantidadVehiculos = coches.size() + motos.size() + camiones.size() + bicicletas.size();
 
         if(cantidadVehiculos == 0){
             return 0;
         }
         
-        return (velocidadMediaCoches + velocidadMediaMotos) / cantidadVehiculos;
+        return (velocidadMediaCoches + velocidadMediaMotos + velocidadMediaCamiones + velocidadMediaBicicletas) / cantidadVehiculos;
     }
 
     public static Set<Coche> getCoches() {
