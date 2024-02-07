@@ -3,10 +3,16 @@ package ies.puerto.imp;
 import java.util.*;
 
 public class Supermercado {
-    static Set<Alimento> alimentos = new HashSet<>();
-    static List<Electronica> electronicas = new ArrayList<>();
+    static Set<Alimento> alimentos;
+    static List<Electronica> electronicas;
     static Map<String, Souvenir> souvenirs = new HashMap<>();
 
+    public Supermercado(){
+        this.alimentos = new HashSet<>();
+        this.electronicas = new ArrayList<>();
+        this.souvenirs = new HashMap<>();
+
+    }
     public boolean addAlimento(Alimento alimento){
         if(!alimentos.contains(alimento)){
             alimentos.add(alimento);
@@ -76,23 +82,26 @@ public class Supermercado {
     }
 
     public Souvenir obtenerSouvenir(String udi){
-
-        for (Souvenir souvenir:souvenirs)
-            if (souvenirs.values().equals(udi)) {
+        for (Souvenir souvenir : souvenirs.values()) {
+            if(souvenir.getUdi().equals(udi)){
                 return souvenir;
-            }
-        return null;
-    }
-
-    public Alimento obtenerAlimentosCaducados(){
-
-//Fecha caducidad??
-        for (Alimento alimento: alimentos){
-            if(alimento.getFechaEntrada() < fechaCaducidad){
-                   return alimento;
             }
         }
         return null;
+        
+    }
+//preguntar profe
+    public List<Alimento> obtenerAlimentosCaducados(){
+        List<Alimento> alimentosCaducados = new ArrayList<>();
+        Date fechaActual = new Date();
+//Fecha caducidad??
+        for (Alimento alimento: alimentos){
+            Date fechaCaducidad = Alimento.caducado();
+            if(fechaActual < fechaCaducidad){
+                   alimentosCaducados.add(alimento);
+            }
+        }
+        return alimentosCaducados;
     }
 
     public static String precioAlimentos(){
@@ -115,7 +124,7 @@ public class Supermercado {
     }
 
     public static String precioSouvenir(){
-        for (Souvenir souvenir: souvenirs){
+        for (Souvenir souvenir: souvenirs.values()){
             return "Nombre: "+souvenir.getNombre()+", precio: "+souvenir.getPrecio();
         }
 

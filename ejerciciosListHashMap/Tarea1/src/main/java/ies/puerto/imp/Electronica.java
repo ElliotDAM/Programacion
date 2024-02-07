@@ -9,9 +9,7 @@ public class Electronica extends ProductoAbstract {
 
     @Override
     public float precioMaximo() {
-        double porcentaje = 0.6;
-        float precioMaximo = (float) (getPrecio() * porcentaje);
-        return precioMaximo;
+        return getPrecio() * 0.6f;
     }
 
     @Override

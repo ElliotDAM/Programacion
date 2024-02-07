@@ -5,7 +5,7 @@ import ies.puerto.interfaz.IProducto;
 public abstract class ProductoAbstract implements IProducto {
     private String nombre;
     private float precio;
-    private String fechaEntrada;
+    private static String fechaEntrada;
     private String udi;
 
     public abstract float precioMaximo();
@@ -35,7 +35,7 @@ public abstract class ProductoAbstract implements IProducto {
         this.precio = precio;
     }
 
-    public String getFechaEntrada() {
+    public static String getFechaEntrada() {
         return fechaEntrada;
     }
 

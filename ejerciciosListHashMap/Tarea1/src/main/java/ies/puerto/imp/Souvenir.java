@@ -3,11 +3,13 @@ package ies.puerto.imp;
 import ies.puerto.abstracta.ProductoAbstract;
 
 public class Souvenir extends ProductoAbstract {
+    public Souvenir(String nombre, float precio, String fechaEntrada, String udi) {
+        //TODO Auto-generated constructor stub
+    }
+
     @Override
     public float precioMaximo() {
-        double porcentaje = 0.4;
-        float precioMaximo = (float) (getPrecio() * porcentaje);
-        return precioMaximo;
+        return getPrecio() * 0.4f;
     }
 
     @Override
