@@ -5,12 +5,12 @@ import java.util.*;
 public class Supermercado {
     static Set<Alimento> alimentos;
     static List<Electronica> electronicas;
-    static Map<String, Souvenir> souvenirs = new HashMap<>();
+    static Map<String, Souvenir> souvenirs;
 
     public Supermercado(){
-        this.alimentos = new HashSet<>();
-        this.electronicas = new ArrayList<>();
-        this.souvenirs = new HashMap<>();
+        alimentos = new HashSet<>();
+        electronicas = new ArrayList<>();
+        souvenirs = new HashMap<>();
 
     }
     public boolean addAlimento(Alimento alimento){
@@ -90,14 +90,12 @@ public class Supermercado {
         return null;
         
     }
-//preguntar profe
-    public List<Alimento> obtenerAlimentosCaducados(){
+//preguntar profe(duda resuelta)
+    public List<Alimento> obtenerAlimentosCaducados(String udi){
         List<Alimento> alimentosCaducados = new ArrayList<>();
-        Date fechaActual = new Date();
-//Fecha caducidad??
+
         for (Alimento alimento: alimentos){
-            Date fechaCaducidad = Alimento.caducado();
-            if(fechaActual < fechaCaducidad){
+            if(alimento.caducado(udi)){
                    alimentosCaducados.add(alimento);
             }
         }

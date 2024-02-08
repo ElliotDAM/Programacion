@@ -77,7 +77,7 @@ static Scanner scanner = new Scanner(System.in);
         System.out.println("Introduzca su udi");
         String udi = scanner.nextLine();
 
-        Alimento alimento = new Alimento(nombre, precio, fechaEntrada, udi);
+       Alimento alimento = new Alimento(nombre, precio, fechaEntrada, udi);
        supermercado.addAlimento(alimento);
        System.out.println("Alimento aniadido correctamente.");
     }

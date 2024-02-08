@@ -4,7 +4,6 @@ import ies.puerto.abstracta.ProductoAbstract;
 
 public class Souvenir extends ProductoAbstract {
     public Souvenir(String nombre, float precio, String fechaEntrada, String udi) {
-        //TODO Auto-generated constructor stub
     }
 
     @Override
