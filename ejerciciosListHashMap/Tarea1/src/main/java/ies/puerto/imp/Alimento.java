@@ -36,12 +36,9 @@ public class Alimento extends ProductoAbstract{
             System.out.println("No se ha introducido o no se reconoce la fecha de entrada. ");
             return 0;//return -1;
         }
-
-        
-        
     }
 
-    public static boolean caducado(){
+    public boolean caducado(){
         return diasDisponible() > 30;
         
     }

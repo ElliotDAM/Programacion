@@ -2,15 +2,20 @@ package ies.puerto.imp;
 
 import java.util.*;
 
+import ies.puerto.abstracta.ProductoAbstract;
+
 public class Supermercado {
     static Set<Alimento> alimentos;
     static List<Electronica> electronicas;
     static Map<String, Souvenir> souvenirs;
+    static List<ProductoAbstract> productos;
 
     public Supermercado(){
         alimentos = new HashSet<>();
         electronicas = new ArrayList<>();
         souvenirs = new HashMap<>();
+        productos = new ArrayList<>();
+        
 
     }
     public boolean addAlimento(Alimento alimento){
@@ -90,12 +95,22 @@ public class Supermercado {
         return null;
         
     }
+/** 
+    public static ProductoAbstract obtenerProducto(String udi){
+        for(ProductoAbstract producto : productos){
+            if(producto.getUdi().equals(udi)){
+                return producto;
+            }
+        }
+        return null;
+    }
+**/
 //preguntar profe(duda resuelta)
-    public List<Alimento> obtenerAlimentosCaducados(String udi){
+    public List<Alimento> obtenerAlimentosCaducados(){
         List<Alimento> alimentosCaducados = new ArrayList<>();
 
         for (Alimento alimento: alimentos){
-            if(alimento.caducado(udi)){
+            if(alimento.caducado()){
                    alimentosCaducados.add(alimento);
             }
         }
@@ -116,7 +131,7 @@ public class Supermercado {
 
 
         for (Electronica electronica: electronicas) {
-            return "Nombre: "+electronica.getNombre()+", precio: "+electronica.getPrecio();
+            return electronica.toString();
         }
         return null;
     }

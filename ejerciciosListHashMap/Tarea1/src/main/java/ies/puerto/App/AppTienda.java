@@ -1,5 +1,6 @@
 package ies.puerto.App;
 
+import ies.puerto.abstracta.ProductoAbstract;
 import ies.puerto.imp.Alimento;
 import ies.puerto.imp.Electronica;
 import ies.puerto.imp.Souvenir;
@@ -157,49 +158,21 @@ static Scanner scanner = new Scanner(System.in);
         }
     }
     
-    public static void modificarAlimento(Alimento alimento){
+    public static void modificarProducto(ProductoAbstract producto) {
         System.out.println("Introduzca el nuevo nombre:");
-        scanner.nextLine(); // Consumir nueva línea pendiente
-        String nombre = scanner.nextLine();
+        String nombre = scanner.nextLine(); // Lee el nuevo nombre
+        producto.setNombre(nombre);
+
         System.out.println("Introduzca el nuevo precio:");
-        float precio = scanner.nextFloat();
+        float precio = scanner.nextFloat(); // Lee el nuevo precio
+        producto.setPrecio(precio);
+
         System.out.println("Introduzca la nueva fecha de entrada (YYYY-MM-DD):");
         scanner.nextLine(); // Consumir nueva línea pendiente
-        String fechaEntrada = scanner.nextLine();
-        alimento.setNombre(nombre);
-        alimento.setPrecio(precio);
-        alimento.setFechaEntrada(fechaEntrada);
-        System.out.println("Alimento modificado correctamente.");
-    }
-    
-    public static void modificarElectronica(Electronica electronica){
-        System.out.println("Introduzca el nuevo nombre:");
-        scanner.nextLine(); // Consumir nueva línea pendiente
-        String nombre = scanner.nextLine();
-        System.out.println("Introduzca el nuevo precio:");
-        float precio = scanner.nextFloat();
-        System.out.println("Introduzca la nueva fecha de entrada (YYYY-MM-DD):");
-        scanner.nextLine(); // Consumir nueva línea pendiente
-        String fechaEntrada = scanner.nextLine();
-        electronica.setNombre(nombre);
-        electronica.setPrecio(precio);
-        electronica.setFechaEntrada(fechaEntrada);
-        System.out.println("Electrónica modificada correctamente.");
-    }
-    
-    public static void modificarSouvenir(Souvenir souvenir){
-        System.out.println("Introduzca el nuevo nombre:");
-        scanner.nextLine(); // Consumir nueva línea pendiente
-        String nombre = scanner.nextLine();
-        System.out.println("Introduzca el nuevo precio:");
-        float precio = scanner.nextFloat();
-        System.out.println("Introduzca la nueva fecha de entrada (YYYY-MM-DD):");
-        scanner.nextLine(); // Consumir nueva línea pendiente
-        String fechaEntrada = scanner.nextLine();
-        souvenir.setNombre(nombre);
-        souvenir.setPrecio(precio);
-        souvenir.setFechaEntrada(fechaEntrada);
-        System.out.println("Souvenir modificado correctamente.");
+        String fechaEntrada = scanner.nextLine(); // Lee la nueva fecha de entrada
+        producto.setFechaEntrada(fechaEntrada);
+
+        System.out.println("Producto modificado correctamente.");
     }
 
 }
