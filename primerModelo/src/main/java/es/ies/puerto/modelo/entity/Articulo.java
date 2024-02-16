@@ -1,6 +1,7 @@
-package es.ies.puerto.presentacion;
+package es.ies.puerto.modelo.entity;
 
 public abstract class Articulo {
+    public static final String DELIMITADOR = ",";
     private String id;
     private String nombre;
     private float precio;
@@ -14,7 +15,13 @@ public abstract class Articulo {
         this.fechaEntrada = fechaEntrada;
         this.fechaCaducidad = fechaCaducidad;
     }
-
+    public Articulo(String id, String nombre, float precio, String fechaEntrada) {
+            this.id = id;
+            this.nombre = nombre;
+            this.precio = precio;
+            this.fechaEntrada = fechaEntrada;
+            
+        }
     public String getId() {
         return id;
     }
@@ -59,6 +66,10 @@ public abstract class Articulo {
     public String toString() {
         return "Articulo [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", fechaEntrada=" + fechaEntrada
                 + ", fechaCaducidad=" + fechaCaducidad + "]";
+    }
+
+    public String toCsv(){
+        return nombre+DELIMITADOR+precio+DELIMITADOR+fechaEntrada+DELIMITADOR+id+DELIMITADOR+fechaCaducidad;
     }
 
     @Override

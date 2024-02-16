@@ -1,4 +1,4 @@
-package es.ies.puerto.presentacion;
+package es.ies.puerto.modelo.entity;
 
 public class Alimento extends Articulo{
 

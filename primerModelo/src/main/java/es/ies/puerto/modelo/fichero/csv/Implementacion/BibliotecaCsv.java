@@ -1,13 +1,12 @@
-package main.java.es.ies.puerto.modelo.fichero.csv.Implementacion;
+package es.ies.puerto.modelo.fichero.csv.Implementacion;
 
 import java.io.File;
+import java.util.List;
 
 import es.ies.puerto.modelo.Interfaces.BibliotecaInterface;
-import es.ies.puerto.modelo.Interfaces.LibroEntity;
-import main.java.es.ies.puerto.modelo.Interfaces.List;
-import main.java.es.ies.puerto.modelo.entity.BibliotecaEntity;
+import es.ies.puerto.modelo.fichero.abstracta.BibliotecaAbstractFile;
 
-public class BibliotecaCsv extends BibliotecaAbstract implements BibliotecaInterface {
+public class BibliotecaCsv extends BibliotecaAbstractFile implements BibliotecaInterface {
 
     @Override
     public BibliotecaEntity actualizarBiblioteca(BibliotecaEntity bibliotecaEntity) {
@@ -33,6 +32,9 @@ public class BibliotecaCsv extends BibliotecaAbstract implements BibliotecaInter
     public BibliotecaEntity eliminarBiblioteca(BibliotecaEntity bibliotecaEntity) {
         return null;
     }
+
+
+    
 
     
     
