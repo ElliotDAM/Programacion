@@ -1,7 +1,5 @@
 package es.ies.puerto.modelo.entity;
 
-import static es.ies.puerto.modelo.entity.Articulo.DELIMITADOR;
-
 public class Aparato extends Articulo{
 
     private static final String DELIMITADOR = null;

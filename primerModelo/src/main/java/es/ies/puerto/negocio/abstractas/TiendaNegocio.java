@@ -3,6 +3,7 @@ package es.ies.puerto.negocio.abstractas;
 import java.util.List;
 
 import es.ies.puerto.modelo.entity.Articulo;
+import es.ies.puerto.modelo.fichero.csv.Implementacion.FileCsv;
 
 public abstract class TiendaNegocio {
 
