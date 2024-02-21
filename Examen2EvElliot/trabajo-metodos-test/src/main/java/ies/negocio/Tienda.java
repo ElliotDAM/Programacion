@@ -109,8 +109,67 @@ public class Tienda {
         return null;
     }
 
+    public static float calcularPrecioTotalAlimentos() {
+        float precioTotal = 0f;
+        for (Alimento alimento : alimentos) {
+            if (!alimento.caducado()) { 
+                precioTotal += alimento.precioMaximo();
+            }
+        }
+        return precioTotal;
+    }
+    
+    public static float calcularPrecioTotalAparatos() {
+        float precioTotal = 0f;
+        for (Aparato aparato : aparatos) {
+            precioTotal += aparato.precioMaximo();
+        }
+        return precioTotal;
+    }
+    
+    public static float calcularPrecioTotalCuidadosPersonales() {
+        float precioTotal = 0f;
+        for (CuidadoPersonal cuidado : cuidadosPersonales) {
+            precioTotal += cuidado.precioMaximo();
+        }
+        return precioTotal;
+    }
+    
+    public static float calcularPrecioTotalSouvenirs() {
+        float precioTotal = 0f;
+        for (Souvenir souvenir : souvenirs.values()) {
+            precioTotal += souvenir.precioMaximo();
+        }
+        return precioTotal;
+    }
+
     public static float precioTotalProductos(){
-        return 0f;
+        return calcularPrecioTotalAlimentos()  + calcularPrecioTotalAparatos() +
+        calcularPrecioTotalCuidadosPersonales() + calcularPrecioTotalSouvenirs();
+    }
+
+    public float calcularGananciaProductos(){
+        float gananciaTotal = 0f;
+    
+        for (Alimento alimento : alimentos) {
+            if (!alimento.caducado()) {
+                gananciaTotal += alimento.precioMaximo() - alimento.getPrecio();
+            }
+        }
+        
+        for (Aparato aparato : aparatos) {
+            gananciaTotal += aparato.precioMaximo() - aparato.getPrecio();
+        }
+        
+        for (CuidadoPersonal cuidado : cuidadosPersonales) {
+            gananciaTotal += cuidado.precioMaximo() - cuidado.getPrecio();
+        }
+        
+        for (Souvenir souvenir : souvenirs.values()) {
+            gananciaTotal += souvenir.precioMaximo() - souvenir.getPrecio();
+        }
+        
+        return gananciaTotal;
     }
 
     public static Set<CuidadoPersonal> mostrarProductosCuidadoPopulares(){
@@ -124,21 +183,12 @@ public class Tienda {
         }
         return null;
     }
-
-    public static int cantidadAlimentos(){
-      return alimentos.size();
-    }
-
-    public static int cantidadAparatos(){
-        return aparatos.size();
-    }
-
-    public static int cantidadCuidadosPersonales(){
-        return cuidadosPersonales.size();
-    }
-
-    public static int cantidadSouvenirs(){
-        return souvenirs.size();
+    public void mostrarCantidadProductosDisponibles() {
+        System.out.println("Cantidad de productos disponibles:");
+        System.out.println("Alimentos: " + alimentos.size());
+        System.out.println("Aparatos: " + aparatos.size());
+        System.out.println("Cuidados Personales: " + cuidadosPersonales.size());
+        System.out.println("Souvenirs: " + souvenirs.size());
     }
 
 }

@@ -39,10 +39,4 @@ public class CuidadoPersonal  extends ProductoRecomendableAbstract {
 
     ;
 
-
-    @Override
-    public int calcularPopularidad() {
-
-        return 0;
-    }
 }

@@ -86,6 +86,22 @@ public class AppTienda {
     }
 
     public static void main(String[] args) {
+        
+        tienda.addAlimento(new Alimento("Manzanas", 2.50f, "2024-01-09", "ALM001", "2024-01-15"));
+        tienda.addAlimento(new Alimento("Leche", 1.99f, "2024-02-09", "ALM002", "2024-02-14"));
+        tienda.addAlimento(new Alimento("Arroz", 3.75f, "2024-01-15", "ALM003", "2024-01-27"));
+
+        tienda.addAparato(new Aparato("Televisor LED", 499.99f, "2024-02-09", "APA001"));
+        tienda.addAparato(new Aparato("Smartphone", 799.99f, "2024-02-09", "APA002"));
+        tienda.addAparato(new Aparato("Cafetera", 39.99f, "2024-02-09", "APA003"));
+
+        tienda.addCuidadoPersonal(new CuidadoPersonal("Champú", 3.99f, "2024-02-09", "CUI001", 7));
+        tienda.addCuidadoPersonal(new CuidadoPersonal("Crema hidratante", 5.49f, "2024-02-09", "CUI002", 8));
+        tienda.addCuidadoPersonal(new CuidadoPersonal("Cepillo de dientes", 2.29f, "2024-02-09", "CUI003", 6));
+
+        tienda.addSouvenir("SOU001", new Souvenir("Imán de nevera", 1.99f, "2024-02-09", "SOU001"));
+        tienda.addSouvenir("SOU002", new Souvenir("Llavero", 0.99f, "2024-02-09", "SOU002"));
+        tienda.addSouvenir("SOU003", new Souvenir("Taza de café", 3.49f, "2024-02-09", "SOU003"));
         int opcion;
         do{
             menu();

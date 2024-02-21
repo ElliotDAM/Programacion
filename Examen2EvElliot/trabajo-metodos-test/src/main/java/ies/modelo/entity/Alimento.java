@@ -16,24 +16,21 @@ public class Alimento extends ProductoFrescoAbstract {
 
     @Override
     public int diasDisponible(){
-        SimpleDateFormat formato = new SimpleDateFormat("dd-mm-yyyy");
-        Date fechaActual = new Date();
-        Date fechaEntrada = null;
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         try {
-            fechaEntrada = formato.parse(getFechaEntrada());
+            Date fechaCaducidad = formato.parse(getFechaCaducidad());
+            Date fechaActual = new Date();
+            long diferenciaEnMillis = fechaCaducidad.getTime() - fechaActual.getTime();
+            return (int) (diferenciaEnMillis / (1000 * 60 * 60 * 24));
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return 0; // Considera manejar este caso de forma más adecuada
         }
-        long fechaMillis = (fechaActual.getTime() - fechaEntrada.getTime());
-        long diasDisponible = (fechaMillis / (1000*60*60*24));
-
-
-        return (int) diasDisponible;
     }
 
     @Override
     public boolean caducado(){
-        return diasDisponible() > 30;
+        return diasDisponible() < 0;
     }
 
     @Override
