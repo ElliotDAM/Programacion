@@ -1,8 +1,14 @@
-package ies.App;
+package ies.presentacion;
 
-import ies.imp.*;
 
 import java.util.Scanner;
+
+import ies.modelo.entity.Alimento;
+import ies.modelo.entity.Aparato;
+import ies.modelo.entity.CuidadoPersonal;
+import ies.modelo.entity.Souvenir;
+import ies.negocio.*;
+
 
 public class AppTienda {
     static Tienda tienda = new Tienda();
@@ -102,6 +108,7 @@ public class AppTienda {
         tienda.addSouvenir("SOU001", new Souvenir("Imán de nevera", 1.99f, "2024-02-09", "SOU001"));
         tienda.addSouvenir("SOU002", new Souvenir("Llavero", 0.99f, "2024-02-09", "SOU002"));
         tienda.addSouvenir("SOU003", new Souvenir("Taza de café", 3.49f, "2024-02-09", "SOU003"));
+        
         int opcion;
         do{
             menu();
@@ -127,18 +134,10 @@ public class AppTienda {
     }
 
     public static void removeAlimento(){
-        System.out.println("Introduzca el nombre del producto");
-        String nombre = scanner.nextLine();scanner.nextLine();
-        System.out.println("Introduzca el precio del producto");
-        float precio = scanner.nextFloat();
-        System.out.println("Introduzca la fecha de entrada(dd-mm-yyyy)");
-        String fechaEntrada = scanner.nextLine();scanner.nextLine();
+      
         System.out.println("Introduzca el identificador del producto");
         String identificador = scanner.nextLine();scanner.nextLine();
-        System.out.println("Introduzca la fecha de caducidad");
-        String fechaCaducidad = scanner.nextLine();scanner.nextLine();
-        Alimento alimento = new Alimento(nombre, precio, fechaEntrada, identificador, fechaCaducidad);
-        tienda.removeAlimento(alimento);
+        tienda.removeAlimento(identificador);
     }
 
     public static void obtenerAlimento(){
@@ -161,16 +160,9 @@ public class AppTienda {
     }
 
     public static void removeAparato(){
-        System.out.println("Introduzca el nombre del producto");
-        String nombre = scanner.nextLine();scanner.nextLine();
-        System.out.println("Introduzca el precio del producto");
-        float precio = scanner.nextFloat();
-        System.out.println("Introduzca la fecha de entrada(dd-mm-yyyy)");
-        String fechaEntrada = scanner.nextLine();scanner.nextLine();
         System.out.println("Introduzca el identificador del producto");
         String identificador = scanner.nextLine();scanner.nextLine();
-        Aparato aparato = new Aparato(nombre, precio, fechaEntrada, identificador);
-        tienda.removeAparatos(aparato);
+        tienda.removeAparatos(identificador);
     }
 
     public static void obtenerAparato(){

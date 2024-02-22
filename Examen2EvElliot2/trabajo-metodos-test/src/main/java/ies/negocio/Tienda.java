@@ -1,8 +1,16 @@
-package ies.imp;
+package ies.negocio;
 
-import ies.abstracta.ProductoAbstract;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import java.util.*;
+import ies.modelo.entity.Alimento;
+import ies.modelo.entity.Aparato;
+import ies.modelo.entity.CuidadoPersonal;
+import ies.modelo.entity.Souvenir;
 
 public class Tienda {
     static List<Alimento> alimentos;
@@ -24,13 +32,14 @@ public class Tienda {
         return true;
     }
 
-    public boolean removeAlimento(Alimento alimento){
-        if(alimentos.contains(alimento)){
-            return alimentos.remove(alimento);
+    public boolean removeAlimento(String id){
+        for (Alimento alimento : alimentos) {
+            if(alimento.getIdentificador().equals(id)){
+                return alimentos.remove(alimento);
+            }
         }
         return true;
     }
-
     public Alimento obtenerAlimento(String identificador){
         for (Alimento alimento: alimentos) {
             if(alimento.getIdentificador().equals(identificador)){
@@ -46,9 +55,11 @@ public class Tienda {
         return true;
     }
 
-    public boolean removeAparatos(Aparato aparato){
-        if(aparatos.contains(aparato)){
-            return aparatos.remove(aparato);
+    public boolean removeAparatos(String id, Aparato aparato){
+        for (Alimento alimento : alimentos) {
+            if(alimento.getIdentificador().equals(id)){
+                return alimentos.remove(alimento);
+            }
         }
         return true;
     }
@@ -70,6 +81,13 @@ public class Tienda {
 
     public boolean removeCuidadoPersonal(CuidadoPersonal cuidado){
         if(cuidadosPersonales.contains(cuidado)){
+            return cuidadosPersonales.remove(cuidado);
+        }
+        return true;
+    }
+
+    public boolean removeCuidado(String id, CuidadoPersonal cuidado){
+        if(cuidado.getIdentificador().equals(id)){
             return cuidadosPersonales.remove(cuidado);
         }
         return true;
@@ -183,6 +201,7 @@ public class Tienda {
         }
         return null;
     }
+    
     public void mostrarCantidadProductosDisponibles() {
         System.out.println("Cantidad de productos disponibles:");
         System.out.println("Alimentos: " + alimentos.size());

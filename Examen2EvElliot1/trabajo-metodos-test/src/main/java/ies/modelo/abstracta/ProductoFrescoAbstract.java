@@ -1,4 +1,4 @@
-package ies.abstracta;
+package ies.modelo.abstracta;
 
 import ies.interfaces.ISaludable;
 

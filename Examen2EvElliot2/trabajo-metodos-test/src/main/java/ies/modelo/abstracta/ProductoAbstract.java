@@ -1,8 +1,10 @@
-package ies.abstracta;
-
-import ies.interfaces.IVendible;
+package ies.modelo.abstracta;
 
 import java.util.Objects;
+
+import ies.modelo.interfaz.IVendible;
+
+
 
 public abstract class ProductoAbstract implements IVendible {
     private String nombre;
