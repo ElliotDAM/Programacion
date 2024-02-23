@@ -11,18 +11,28 @@ import ies.modelo.entity.Alimento;
 import ies.modelo.entity.Aparato;
 import ies.modelo.entity.CuidadoPersonal;
 import ies.modelo.entity.Souvenir;
+import ies.modelo.fichero.csv.implementacion.FileCsv;
 
 public class Tienda {
     static List<Alimento> alimentos;
     static List<Aparato> aparatos;
     static Set<CuidadoPersonal> cuidadosPersonales;
     static Map<String, Souvenir> souvenirs;
+    FileCsv csv;
 
     public Tienda(){
         alimentos = new ArrayList<>();
         aparatos = new ArrayList<>();
         cuidadosPersonales = new HashSet<>();
         souvenirs = new HashMap<>();
+        csv = new FileCsv();
+    }
+
+    public void aniadirArticulosCsv(){
+        csv.lectura("alimentos.csv", "alimento");
+        csv.lectura("aparatos.csv", "default");
+        csv.lectura("cuidado-personal.csv", "cuidado");
+        csv.lectura("souvenirs.csv", "default");
     }
 
     public boolean addAlimento(Alimento alimento){
