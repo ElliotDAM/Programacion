@@ -55,7 +55,7 @@ public class Tienda {
         return true;
     }
 
-    public boolean removeAparatos(String id, Aparato aparato){
+    public boolean removeAparatos(String id){
         for (Alimento alimento : alimentos) {
             if(alimento.getIdentificador().equals(id)){
                 return alimentos.remove(alimento);
@@ -79,18 +79,14 @@ public class Tienda {
         return true;
     }
 
-    public boolean removeCuidadoPersonal(CuidadoPersonal cuidado){
-        if(cuidadosPersonales.contains(cuidado)){
+    public boolean removeCuidadoPersonal(String id){
+        for (CuidadoPersonal cuidado : cuidadosPersonales) {
+             if(cuidado.getIdentificador().equals(id)){
             return cuidadosPersonales.remove(cuidado);
         }
-        return true;
-    }
-
-    public boolean removeCuidado(String id, CuidadoPersonal cuidado){
-        if(cuidado.getIdentificador().equals(id)){
-            return cuidadosPersonales.remove(cuidado);
         }
         return true;
+       
     }
 
     public CuidadoPersonal obtenerCuidadoPersonal(String identificador){
@@ -110,12 +106,17 @@ public class Tienda {
         return true;
     }
 
-    public boolean removeSouvenir(Souvenir souvenir){
-        if(souvenirs.containsKey(souvenir)){
-            souvenirs.remove(souvenir);
-            return true;
+    public boolean removeSouvenir(String id){
+        for (Souvenir souvenir :souvenirs.values() ) {
+             if(souvenirs.containsKey(id)){
+           souvenirs.remove(souvenir);
+           return true;
+           
+        }
+        
         }
         return true;
+       
     }
 
     public Souvenir obtenerSouvenir(String identificador){

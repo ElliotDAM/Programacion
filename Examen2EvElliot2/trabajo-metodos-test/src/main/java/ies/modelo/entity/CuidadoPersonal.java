@@ -40,7 +40,6 @@ public class CuidadoPersonal  extends ProductoRecomendableAbstract {
 
     @Override
     public int calcularPopularidad() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPopularidad'");
     }
 

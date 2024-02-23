@@ -187,18 +187,9 @@ public class AppTienda {
     }
 
     public static void removeCuidadoPersonal(){
-        System.out.println("Introduzca el nombre del producto");
-        String nombre = scanner.nextLine();scanner.nextLine();
-        System.out.println("Introduzca el precio del producto");
-        float precio = scanner.nextFloat();
-        System.out.println("Introduzca la fecha de entrada(dd-mm-yyyy)");
-        String fechaEntrada = scanner.nextLine();scanner.nextLine();
         System.out.println("Introduzca el identificador del producto");
         String identificador = scanner.nextLine();scanner.nextLine();
-        System.out.println("Introduzca su indice de popularidad");
-        int popularidad = scanner.nextInt();
-        CuidadoPersonal cuidadoPersonal = new CuidadoPersonal(nombre, precio, fechaEntrada, identificador, popularidad);
-        tienda.removeCuidadoPersonal(cuidadoPersonal);
+        tienda.removeCuidadoPersonal(identificador);
     }
 
     public static void obtenerCuidadoPersonal(){
@@ -220,16 +211,9 @@ public class AppTienda {
     }
 
     public static void removeSouvenir(){
-        System.out.println("Introduzca el nombre del producto");
-        String nombre = scanner.nextLine();scanner.nextLine();
-        System.out.println("Introduzca el precio del producto");
-        float precio = scanner.nextFloat();
-        System.out.println("Introduzca la fecha de entrada(dd-mm-yyyy)");
-        String fechaEntrada = scanner.nextLine();scanner.nextLine();
         System.out.println("Introduzca el identificador del producto");
         String identificador = scanner.nextLine();scanner.nextLine();
-        Souvenir souvenir = new Souvenir(nombre, precio, fechaEntrada, identificador);
-        tienda.removeSouvenir(souvenir);
+        tienda.removeSouvenir(identificador);
     }
 
     public static void obtenerSouvenir(){

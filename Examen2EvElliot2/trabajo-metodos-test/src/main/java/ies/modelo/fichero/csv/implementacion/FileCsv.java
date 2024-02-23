@@ -8,12 +8,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import ies.modelo.abstracta.ProductoAbstract;
 import ies.modelo.entity.Alimento;
 import ies.modelo.entity.Aparato;
 import ies.modelo.entity.CuidadoPersonal;
 import ies.modelo.fichero.abstractas.FicheroAbstract;
 import ies.modelo.fichero.interfaz.IFileInterface;
-import ies.modelo.entity.Articulo;
+
 
 public class FileCsv extends FicheroAbstract implements IFileInterface {
 
@@ -25,25 +26,25 @@ public class FileCsv extends FicheroAbstract implements IFileInterface {
 
     }
 
-    public List<Articulo> obtenerAlimentos(){
+    public List<ProductoAbstract> obtenerAlimentos(){
         return lectura(FICHERO_ALIMENTOS,"alimento");
     }
 
-    public List<Articulo> obtenerAparatos(){
+    public List<ProductoAbstract> obtenerAparatos(){
         return lectura(FICHERO_APARATOS,"aparato");
     }
 
-    public List<Articulo> obtenerSouvenirs(){
+    public List<ProductoAbstract> obtenerSouvenirs(){
         return lectura(FICHERO_SOUVENIRS,"souvernir");
     }
 
-    public List<Articulo> obtenerCuidados(){
+    public List<ProductoAbstract> obtenerCuidados(){
         return lectura(FICHERO_CUIDADO_PERSONAL,"cuidado");
     }
 
     @Override
-    public List<Articulo> lectura(String path, String articulo) {
-        List<Articulo> articulos = new ArrayList<>();
+    public List<ProductoAbstract> lectura(String path, String articulo) {
+        List<ProductoAbstract> articulos = new ArrayList<>();
         if (existeFichero(path)) {
             try (BufferedReader br = new BufferedReader(new FileReader(path))) {
                 String linea;
