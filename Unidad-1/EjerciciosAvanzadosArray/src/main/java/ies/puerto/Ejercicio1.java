@@ -1,5 +1,7 @@
 package ies.puerto;
 
+import java.util.Scanner;
+
 /**
  * Clase realizada para realizar varios metodos en base a las notas de un alumno contenidas en un array.
  * @author ElliotDAM
@@ -20,7 +22,7 @@ public class Ejercicio1{
         float temporal;
         do {
             System.out.println("Introduzca el valor" + (i + 1));
-            temporal = scanner.nextFloat();
+            temporal = sc.nextFloat();
             if((temporal <= 10) && (temporal >= 0)){
                 array[i] = temporal;
                 i++;
@@ -36,7 +38,7 @@ public class Ejercicio1{
     public void mostrarArray(float[] notas){
 
         for (int i = 0; i < notas.length; i++) {
-            System.out.println(nota[i] + ",");
+            System.out.println(notas[i] + ",");
         }
     }
 
@@ -50,7 +52,7 @@ public class Ejercicio1{
         float suma = 0;
 
         for (int i = 0; i < notas.length; i++) {
-            suma = suma + nota[i];
+            suma = suma + notas[i];
         }
 
         media = suma / notas.length;
@@ -83,7 +85,7 @@ public class Ejercicio1{
         float notaBaja = notas[0];
 
         for (int i = 0; i < notas.length ; i++) {
-            if(nota[i] > nota[i+1]){
+            if(notas[i] > notas[i+1]){
                 notaBaja = notas[i+1];
             }
         }

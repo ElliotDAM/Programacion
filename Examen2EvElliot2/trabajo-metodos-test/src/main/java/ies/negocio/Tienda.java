@@ -27,14 +27,14 @@ public class Tienda {
         souvenirs = new HashMap<>();
         csv = new FileCsv();
     }
-
+/** 
     public void aniadirArticulosCsv(){
         csv.lectura("alimentos.csv", "alimento");
         csv.lectura("aparatos.csv", "default");
         csv.lectura("cuidado-personal.csv", "cuidado");
         csv.lectura("souvenirs.csv", "default");
     }
-
+*/
     public boolean addAlimento(Alimento alimento){
         if(!alimentos.contains(alimento)){
             return alimentos.add(alimento);

@@ -1,5 +1,7 @@
 package ies.puerto;
 
+import java.util.Scanner;
+
 public class Ejercicio2 {
     /**
      * Metodo para pedir las notas al usuario
@@ -12,7 +14,7 @@ public class Ejercicio2 {
         boolean salir = false;
         do {
             System.out.println("Introduzca el valor" + (i + 1));
-            temporal = scanner.nextInt();
+            temporal = sc.nextInt();
 
             if(temporal < 0){
                salir = true;

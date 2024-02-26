@@ -4,6 +4,7 @@ package ies.modelo.fichero.csv.implementacion;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -97,5 +98,43 @@ public class FileCsv extends FicheroAbstract implements IFileInterface {
                 Float.parseFloat(splitArray[1]), splitArray[0],
                 splitArray[2], Integer.parseInt(splitArray[4]));
         return cuidadoPersonal;
+    }
+
+    @Override
+    public boolean borrar(String id) {
+        
+        return false;
+    }
+//CORREGIR EL CODIGO
+    @Override
+    public boolean crearProducto(ProductoAbstract productoAbstract) {
+        
+        try {
+            CSVReader reader = new CSVReader(new FileReader("data.csv"));
+            String[] nextLine;
+            StringBuilder updatedData = new StringBuilder();
+            boolean found = false;
+            while ((nextLine = reader.readNext()) != null) {
+                if (nextLine[0].equals(searchKey)) {
+                    found = true;
+                } else {
+                    updatedData.append(String.join(",", nextLine)).append("\n");
+                }
+            }
+            reader.close();
+            
+            if (!found) {
+                System.out.println("No se encontró ningún registro con la clave especificada.");
+                return false;
+            }
+            
+            CSVWriter writer = new CSVWriter(new FileWriter("data.csv"));
+            writer.writeAll(CSVReader.parse(nextLine));
+            writer.close();
+            System.out.println("Registro eliminado exitosamente.");
+            return true;
+        } catch (IOException e) {
+            System.out.println("Error al eliminar el registro del archivo CSV: " + e.getMessage());
+        }
     }
 }
