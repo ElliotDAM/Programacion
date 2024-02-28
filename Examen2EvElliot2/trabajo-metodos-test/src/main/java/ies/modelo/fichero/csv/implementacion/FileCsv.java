@@ -101,40 +101,22 @@ public class FileCsv extends FicheroAbstract implements IFileInterface {
     }
 
     @Override
-    public boolean borrar(String id) {
-        
+    public boolean borrar(String nombre, File file) {
+
+        file = new File(nombre);
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("Archivo eliminado exitosamente.");
+            } else {
+                System.out.println("No se pudo eliminar el archivo.");
+            }
+        } else {
+            System.out.println("El archivo no existe.");
+        }
         return false;
     }
-//CORREGIR EL CODIGO
-    @Override
-    public boolean crearProducto(ProductoAbstract productoAbstract) {
         
-        try {
-            CSVReader reader = new CSVReader(new FileReader("data.csv"));
-            String[] nextLine;
-            StringBuilder updatedData = new StringBuilder();
-            boolean found = false;
-            while ((nextLine = reader.readNext()) != null) {
-                if (nextLine[0].equals(searchKey)) {
-                    found = true;
-                } else {
-                    updatedData.append(String.join(",", nextLine)).append("\n");
-                }
-            }
-            reader.close();
-            
-            if (!found) {
-                System.out.println("No se encontró ningún registro con la clave especificada.");
-                return false;
-            }
-            
-            CSVWriter writer = new CSVWriter(new FileWriter("data.csv"));
-            writer.writeAll(CSVReader.parse(nextLine));
-            writer.close();
-            System.out.println("Registro eliminado exitosamente.");
-            return true;
-        } catch (IOException e) {
-            System.out.println("Error al eliminar el registro del archivo CSV: " + e.getMessage());
-        }
     }
-}
+//CORREGIR EL CODIGO
+    
+
