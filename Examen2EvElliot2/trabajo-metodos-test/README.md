@@ -57,4 +57,32 @@ Este proyecto mavenn tiene como objetivo ayudar a comprender al alumno el úso d
         - Calcular las ganancias de cada producto, y la ganancia total(precio total - precio sin igic);
         - Simplificar el codigo en app, haciendo que en removeArticulo(como en las otras eliminaciones) se busque por el id y se elimine todo el articulo.
         - Borrar todos los metodos estaticos(y entender por qué le quitamos el static)
+
+        Apuntes:
+        Inicializamos el fichero con File(FileWriter, FileReader)
+        Declaramos la lista: List<Producto> productos
+            -recorro
+            -transformo a producto
+            -añado en la lista
+            -obtenerProducto(productos)
+            - cantidad productos= productos.size()
+
+        Añadir:
+            -pedir datos productos
+            -comprobar si existe(productos.contains(productoAInsertar))
+            - añadir producto a la lista(productos.add(producto))
+            -añadir al fichero(Metodo escritura)
+
+
+        CRUD:
+            - pedirDatos(id)
+            - new Producto(id)
+            - se abre fichero(File)
+            - recorremos fichero(FileReader)
+            - Buffer
+            - obtengo linea
+            - linea.split(',') = String[] lineaProducto
+            - verificar si existe(if(lineaProducto[0] == producto.getId()))
+            - Cambiamos lo que queramos modificar si existe = producto.setNombre(lineaProducto[1])...
+            - retornamos producto
 </div>
