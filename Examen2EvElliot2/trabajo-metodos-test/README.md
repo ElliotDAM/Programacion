@@ -75,6 +75,7 @@ Este proyecto mavenn tiene como objetivo ayudar a comprender al alumno el úso d
 
 
         CRUD:
+        MODIFICAR
             - pedirDatos(id)
             - new Producto(id)
             - se abre fichero(File)
@@ -85,4 +86,21 @@ Este proyecto mavenn tiene como objetivo ayudar a comprender al alumno el úso d
             - verificar si existe(if(lineaProducto[0] == producto.getId()))
             - Cambiamos lo que queramos modificar si existe = producto.setNombre(lineaProducto[1])...
             - retornamos producto
+        ACTUALIZAR
+            - pedir datos(id)
+            - listaProductos.contains(datosActualizar)
+            - posicion = listaProductos.indexOF(datosActualizar)
+            - listaProductos.remove(datosActualizar)
+            - alimentos.add(posicion, datosActualizar)
+            lista actualizada. Ahora se actualiza el fichero
+            - actualizar = borrar fichero(linea del datoActualizar)
+            - mete todo los datos nuevos en el fichero(path, contenido)
+        BORRAR
+            - pedir datos(id)
+            - listaProductos.contains(datosActualizar)
+            - posicion = listaProductos.indexOF(datosActualizar)
+            - listaProductos.remove(datosActualizar)
+            lista actualizada. Ahora se actualiza el fichero
+            - actualizar = borrar fichero(linea del datoActualizar)
+
 </div>
