@@ -4,12 +4,23 @@ import es.ies.puerto.utilidades.UtilidadesClass;
 
 import java.util.Objects;
 
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
+
+@Root(name = "persona")
 public class Persona extends UtilidadesClass {
+
+    @Element()
     int id;
+    @Element()
     String nombre;
+    @Element()
     int edad;
+    @Element()
     String email;
 
+    public Persona(){}
+    
     public Persona (int id) {
         this.id= id;
     }

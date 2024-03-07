@@ -7,7 +7,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.simpleframework.xml.Element;
+
 public class FileCsv extends UtilidadesClass {
+    
+    @Element(name = "personas")
+    List<Persona> personas;
+
     String path="src/main/resources/data.csv";
 
     public List<Persona> obtenerPersonas() {
