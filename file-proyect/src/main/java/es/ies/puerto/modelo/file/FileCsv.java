@@ -1,6 +1,7 @@
 package es.ies.puerto.modelo.file;
 
 import es.ies.puerto.modelo.Persona;
+import es.ies.puerto.modelo.interfaces.ICrudOperaciones;
 import es.ies.puerto.utilidades.UtilidadesClass;
 
 import java.io.*;
@@ -9,7 +10,7 @@ import java.util.List;
 
 import org.simpleframework.xml.Element;
 
-public class FileCsv extends UtilidadesClass {
+public class FileCsv extends UtilidadesClass implements ICrudOperaciones{
     
     @Element(name = "personas")
     List<Persona> personas;
