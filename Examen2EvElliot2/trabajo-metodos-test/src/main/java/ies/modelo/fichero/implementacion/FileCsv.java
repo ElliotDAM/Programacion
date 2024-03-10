@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import ies.modelo.fichero.interfaz.ICrudOperaciones;
 import ies.modelo.abstracta.ProductoAbstract;
 import ies.modelo.entity.Alimento;
 import ies.modelo.entity.Aparato;
@@ -17,7 +17,7 @@ import ies.modelo.fichero.abstractas.FicheroAbstract;
 import ies.modelo.fichero.interfaz.IFileInterface;
 
 
-public class FileCsv extends FicheroAbstract implements IFileInterface {
+public class FileCsv extends FicheroAbstract implements ICrudOperaciones {
 
     public FileCsv() {
         FICHERO_ALIMENTOS = "src/main/resources/alimentos.csv";
