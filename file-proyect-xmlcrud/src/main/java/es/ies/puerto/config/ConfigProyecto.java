@@ -10,11 +10,11 @@ public class ConfigProyecto {
     }
 
     public void languageEs(){
-        bundle = ResourceBundle.getBundle("es-config");
+        bundle = ResourceBundle.getBundle("es-config.properties");
     }
 
     public void languageEn(){
-        bundle = ResourceBundle.getBundle("en-config");
+        bundle = ResourceBundle.getBundle("en-config.properties");
     }
 
 }

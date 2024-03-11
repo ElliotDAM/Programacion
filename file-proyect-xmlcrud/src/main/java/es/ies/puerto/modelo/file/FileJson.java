@@ -21,6 +21,11 @@ import com.google.gson.reflect.TypeToken;
 public class FileJson extends UtilidadesClass implements ICrudOperaciones {
     List<Persona> personas;
     String path="src/main/resources/data.json";
+
+    public FileJson(){
+        personas = new ArrayList<>();
+    }
+
     @Override
     public List<Persona> obtenerPersonas() {
         try{
@@ -38,11 +43,12 @@ public class FileJson extends UtilidadesClass implements ICrudOperaciones {
 
     @Override
     public Persona obtenerPersona(Persona persona) {
-        int posicion =  personas.indexOf(persona);
-        if (posicion > 0 ) {
-            return personas.get(posicion);
+        if(!personas.contains(persona)){
+            return null;
         }
-        return null;
+
+        int posicion =  personas.indexOf(persona);
+        return personas.get(posicion);
     }
 
     @Override
