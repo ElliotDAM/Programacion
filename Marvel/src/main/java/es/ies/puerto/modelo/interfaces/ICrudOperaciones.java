@@ -5,9 +5,9 @@ import es.ies.puerto.modelo.Persona;
 import java.util.List;
 
 public interface ICrudOperaciones {
-    public List<Persona> obtenerPersonas();
-    public Persona obtenerPersona(Persona persona);
-    public void addPersona(Persona persona);
-    public void deletePersona(Persona persona);
-    public void updatePersona(Persona persona);
+    public List<Personaje> obtenerPersonajes();
+    public Personaje obtenerPersonaje(Personaje personaje);
+    public void addPersonaje(Personaje personaje);
+    public void deletePersonaje(Personaje personaje);
+    public void updatePersonaje(Personaje personaje);
 }
