@@ -34,8 +34,6 @@ public class Join {
     }
 
     Map<Integer, List<Object>> innerJoin(Map<Integer, String> tabla1, Map<Integer, Integer> tabla2){
-        
-       
         return null;
     }
 

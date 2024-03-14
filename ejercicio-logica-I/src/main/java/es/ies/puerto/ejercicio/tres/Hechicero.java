@@ -1,91 +1,40 @@
 package es.ies.puerto.ejercicio.tres;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Hechicero {
-/** 
-    public char vocalMasPoderosa(String texto) {
-        char vocal = ' ';
-        char[] textoChar = texto.toCharArray();
-        int contador = 0;
 
-        for (int i = 0; i < textoChar.length - 1; i++) {
-            if(textoChar[i] == textoChar[i+1]){
-                textoChar[i+1] = vocal;
-                contador++;
+   public char vocalMasPoderosa(String frase) {
+        Map<Character, Integer> letras = new HashMap<>();
+        letras.put('a', 0);
+        letras.put('e', 0);
+        letras.put('i', 0);
+        letras.put('o', 0);
+        letras.put('u', 0);
+
+        for (int i = 0; i < frase.length(); i++) {
+            char letra = Character.toLowerCase(frase.charAt(i));
+            if (letras.containsKey(letra)) {
+                letras.put(letra, letras.get(letra) + 1);
             }
         }
-        return vocal;
-    }
-    */
-   String[] vocalesRepetidas;
-   int[] conteoVocales;
 
-    public Hechicero(){
-        vocalesRepetidas = new ArrayList<>();
-        conteoVocales = new Array();
-    }
-    
+        char vocalMasPoderosa = ' ';
+        int maxFrecuencia = 0;
 
-        public char vocalMasPoderosa(String texto){
-            char vocal = ' ';
-            texto = texto.toLowerCase();
-            char[] textoChar = texto.toCharArray();
-
-            for (String letra : textoChar) {
-                //Varios ifs para el calculo de la letra
+        for (Map.Entry<Character, Integer> letra : letras.entrySet()) {
+            if (letra.getValue() > maxFrecuencia) {
+                maxFrecuencia = letra.getValue();
+                vocalMasPoderosa = letra.getKey();
             }
-            for (int i = 0; i < textoChar.length - 1; i++) {
-                if(textoChar[i] == "aeiou"){
-                    textoChar[i] = vocalesRepetidas; 
-                }
-            }
-            int contadorA;
-            int contadorE;
-            int contadorI;
-            int contadorO;
-            int contadorU;
-
-            for (int i = 0; i < vocalesRepetidas.length - 1; i++) {
-                switch(vocalesRepetidas[i]){
-                    case 'a':
-                        contadorA++;
-                        break;
-                    case 'e':
-                        contadorE++;
-                        break;
-                    case 'i':
-                        contadorI++;
-                        break;
-                    case 'o':
-                        contadorO++;
-                        break;
-                    case 'u':
-                        contadorU++;
-                        break;
-                    default:
-                        break;
-                }
-            }
-            
-            conteoVocales.add(contadorA);
-            conteoVocales.add(contadorE);
-            conteoVocales.add(contadorI);
-            conteoVocales.add(contadorO);
-            conteoVocales.add(contadorU);
-            
-
-            for (int i = 0; i < conteoVocales.length; i++) {
-                if(conteoVocales[i] > conteoVocales[i+1]){
-
-                }
-            }
-            
-            return vocal;
         }
+
+        return vocalMasPoderosa;
+    }
+}
         
-    }
+    
 
 /**
  * Map<Character(String), Integer> letras = new HashMap<>();
