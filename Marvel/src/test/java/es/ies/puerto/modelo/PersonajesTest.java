@@ -1,27 +1,26 @@
 package es.ies.puerto.modelo;
 
-import es.ies.puerto.modelo.Persona;
-import es.ies.puerto.modelo.PersonaTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.File;
+import java.util.List;
 
-public class PersonasTest {
-    int id = 1;
+public class PersonajesTest {
     String nombre = "nombre";
-    int edad = 12;
-    String email = "test@tet.com";
+    String alias = "alias";
+    String genero = "genero";
+    List<String> poderes;
 
-    Persona persona;
-    PersonaList personaList;
+    Personaje personaje;
+    PersonajeList personajeList;
 
     @BeforeEach
     public void beforeEach() {
-        personaList =new PersonaList();
-        persona = new Persona(id, nombre, edad, email);
+        personajeList =new PersonajeList();
+        personaje = new Personaje(nombre, alias, genero, poderes);
     }
 
     @Test
@@ -29,7 +28,7 @@ public class PersonasTest {
 
         Persister serializer = new Persister();
         try {
-            serializer.write(persona, new File("src/main/resources/persona.xml"));
+            serializer.write(personaje, new File("src/main/resources/persona.xml"));
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
         }
@@ -41,10 +40,10 @@ public class PersonasTest {
         Persister serializer = new Persister();
         try {
             File file = new File("src/main/resources/personas.xml");
-            PersonaList personas = serializer.read(PersonaList.class, file);
+            PersonajeList personas = serializer.read(PersonajeList.class, file);
             Assertions.assertNotNull(personas,
                     "Se ha obtenido un valor nulo");
-            Assertions.assertTrue(!personas.getPersonas().isEmpty(),
+            Assertions.assertTrue(!personas.getPersonajes().isEmpty(),
                     "No ha obtenido una lista vacia");
         } catch (Exception e) {
             Assertions.fail(e.getMessage());

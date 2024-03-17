@@ -1,4 +1,9 @@
-package main.java.es.ies.puerto.modelo;
+package es.ies.puerto.modelo;
+
+import java.util.List;
+
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
 
 @Root(name = "personajes")
 public class PersonajeList {

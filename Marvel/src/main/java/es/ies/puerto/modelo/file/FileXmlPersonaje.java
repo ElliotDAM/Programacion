@@ -1,9 +1,14 @@
-package main.java.es.ies.puerto.modelo.file;
+package es.ies.puerto.modelo.file;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.simpleframework.xml.core.Persister;
+
 import es.ies.puerto.modelo.interfaces.ICrudOperaciones;
-import es.ies.puerto.modelo.interfaces.Personaje;
+import es.ies.puerto.modelo.PersonajeList;
+import es.ies.puerto.modelo.Personaje;
 
 public class FileXmlPersonaje implements ICrudOperaciones{
     
@@ -11,7 +16,7 @@ public class FileXmlPersonaje implements ICrudOperaciones{
     String path = "src/main/resources/data.xml";
 
     public FileXmlPersonaje(){
-        personas = new ArrayList<>();
+        personajes = new ArrayList<>();
     }
 
     @Override
@@ -29,25 +34,42 @@ public class FileXmlPersonaje implements ICrudOperaciones{
 
     @Override
     public Personaje obtenerPersonaje(Personaje personaje) {
-        // TODO Auto-generated method stub
-        return null;
+        if(!personajes.contains(personaje)){
+            return null;
+        }
+        int posicion = personajes.indexOf(personaje);
+        
+        return personajes.get(posicion);
     }
 
     @Override
     public void addPersonaje(Personaje personaje) {
-        // TODO Auto-generated method stub
+        if(personajes.contains(personaje)){
+            return;
+        }
+        personajes.add(personaje);
+        actualizarFichero(personajes);
         
     }
 
     @Override
     public void deletePersonaje(Personaje personaje) {
-        // TODO Auto-generated method stub
+        if(personajes.contains(personaje)){
+            return;
+        }
+        personajes.remove(personaje);
+        actualizarFichero(personajes);
         
     }
 
     @Override
     public void updatePersonaje(Personaje personaje) {
-        // TODO Auto-generated method stub
+        if (!personajes.contains(personaje)) {
+            return;
+        }
+        int posicion = personajes.indexOf(personaje);
+        personajes.set(posicion, personaje);
+        actualizarFichero(personajes);
         
     }
 

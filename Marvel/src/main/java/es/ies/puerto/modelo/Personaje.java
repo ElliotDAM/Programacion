@@ -1,4 +1,12 @@
-package main.java.es.ies.puerto.modelo;
+package es.ies.puerto.modelo;
+
+import java.util.List;
+
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
+
+import es.ies.puerto.utilidades.UtilidadesClass;
 
 @Root(name = "personaje")
 public class Personaje extends UtilidadesClass{
@@ -20,6 +28,10 @@ public class Personaje extends UtilidadesClass{
     }
 
     public Personaje(){}
+
+    public Personaje(String nombre) {
+        this.nombre = nombre;
+    }
 
     public String getNombre() {
         return nombre;
