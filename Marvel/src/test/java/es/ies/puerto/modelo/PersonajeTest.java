@@ -63,7 +63,7 @@ public class PersonajeTest {
     public void personajeToXml() {
         Persister serializer = new Persister();
         try {
-            serializer.write(personaje, new File("src/main/resources/personaje.xml"));
+            serializer.write(personaje, new File("src/main/resources/data.xml"));
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
         }
