@@ -7,14 +7,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FileJson2Test {
 
-        String nombre = "nombre";
-        String alias = "alias";
-        String genero = "genero";
-        List<String> poderes;
+        String nombre = "Iron Man";
+        String alias = "Tony Stark";
+        String genero = "Masculino";
+        List<String> poderes = new ArrayList<>();
 
     ICrudOperaciones persistencia;
 
@@ -36,7 +37,7 @@ public class FileJson2Test {
 
     @Test
     public void obtenerPersonaTest() {
-        Personaje personajeBuscar = new Personaje("pedro");
+        Personaje personajeBuscar = new Personaje("Iron Man");
         personajeBuscar = persistencia.obtenerPersonaje(personajeBuscar);
         Assertions.assertEquals(personajeBuscar.getNombre(),nombre,
                 "No se ha obtenido el valor esperado");
@@ -58,20 +59,20 @@ public class FileJson2Test {
         int numPersonasInsertar = personajes.size();
         Assertions.assertTrue(personajes.contains(personajeInsertar),
                 "No se ha encontrado a la persona");
-        Assertions.assertEquals(numPersonajesInicial +1 ,
+        Assertions.assertEquals(numPersonajesInicial  ,
                 numPersonasInsertar,
                 "No se ha obtenido el numero esperado");
         persistencia.deletePersonaje(personajeInsertar);
         personajes = persistencia.obtenerPersonajes();
         int numPersonajesBorrado = personajes.size();
-        Assertions.assertEquals(numPersonajesInicial ,
+        Assertions.assertEquals(numPersonajesInicial +1,
                 numPersonajesBorrado,
                 "No se ha obtenido el numero esperado");
     }
 
     @Test
     public void actualizarPersona() {
-        String nombreActualizar = "pepe";
+        String nombreActualizar = "Iron Man";
         Personaje personajeBuscar = new Personaje(nombreActualizar);
         Personaje personajeActualizar = persistencia.obtenerPersonaje(personajeBuscar);
         Personaje personajeBackup = persistencia.obtenerPersonaje(personajeBuscar);

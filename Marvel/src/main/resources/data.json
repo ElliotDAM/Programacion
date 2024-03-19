@@ -1,16 +1,5 @@
 [
   {
-    "nombre": "Iron Man",
-    "alias": "Tony Stark",
-    "genero": "Masculino",
-    "poderes": [
-      "Vuelo",
-      "Armadura tecnológica avanzada",
-      "Rayos láser"
-    ],
-    "DELIMITADOR": ","
-  },
-  {
     "nombre": "Spider-Man",
     "alias": "Peter Parker",
     "genero": "Masculino",
@@ -19,6 +8,13 @@
       "Trepamuros",
       "Sentido arácnido"
     ],
+    "DELIMITADOR": ","
+  },
+  {
+    "nombre": "Iron Man",
+    "alias": "Tony Stark",
+    "genero": "Masculino",
+    "poderes": [],
     "DELIMITADOR": ","
   }
 ]

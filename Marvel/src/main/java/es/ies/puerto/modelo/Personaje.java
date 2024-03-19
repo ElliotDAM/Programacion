@@ -1,5 +1,6 @@
 package es.ies.puerto.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.simpleframework.xml.Element;
@@ -24,7 +25,8 @@ public class Personaje extends UtilidadesClass{
         this.nombre = nombre;
         this.alias = alias;
         this.genero = genero;
-        this.poderes = poderes;
+        this.poderes = poderes != null ? new ArrayList<>(poderes) : new ArrayList<>();
+
     }
 
     public Personaje(){}
@@ -96,7 +98,11 @@ public class Personaje extends UtilidadesClass{
     }
 
     public String toCsv(){
-        return nombre + DELIMITADOR + alias + DELIMITADOR + genero + DELIMITADOR + poderes;
+        String csv = nombre + DELIMITADOR + alias + DELIMITADOR + genero + DELIMITADOR + poderes;
+        if (poderes != null && !poderes.isEmpty()) {
+            csv += String.join(",", poderes);
+        }
+        return csv;
     }
 
     

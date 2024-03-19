@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FileCsvTest {
@@ -14,7 +15,7 @@ public class FileCsvTest {
         String nombre = "nombre";
         String alias = "alias";
         String genero = "genero";
-        List<String> poderes;
+        List<String> poderes = new ArrayList<>();
 
     ICrudOperaciones persistencia;
 
@@ -71,7 +72,7 @@ public class FileCsvTest {
 
     @Test
     public void actualizarPersonaje() {
-        String nombreActualizar = "pepe";
+        String nombreActualizar = "Iron Man";
         Personaje personajeBuscar = new Personaje(nombreActualizar);
         Personaje personajeActualizar = persistencia.obtenerPersonaje(personajeBuscar);
         Personaje personajeBackup = persistencia.obtenerPersonaje(personajeBuscar);

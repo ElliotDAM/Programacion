@@ -43,21 +43,25 @@ public class FileCsvPersonaje extends UtilidadesClass implements ICrudOperacione
         
     }
 
-    public Personaje obtenerPersonaje(Personaje personaje){
+    public Personaje obtenerPersonaje(Personaje personaje) {
         boolean encontrado = false;
-        try (BufferedReader br = new BufferedReader(new FileReader(path))){
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String linea;
-            while(((linea = br.readLine()) != null) && !encontrado){
+            while (((linea = br.readLine()) != null) && !encontrado) {
                 String[] datos = linea.split(DELIMITADOR);
                 String nombre = datos[0];
-                if(personaje.getNombre().equals(nombre)){
+                if (personaje.getNombre().equals(nombre)) {
                     String alias = datos[1];
                     String genero = datos[2];
                     List<String> poderes = new ArrayList<>();
-                    for (int i = 3; i < poderes.size(); i++) {
-                        poderes.get(poderes[i]);
+                    for (int i = 3; i < datos.length; i++) {
+                        poderes.add(datos[i]);
                     }
                     encontrado = true;
+                    // Asignar los valores al objeto personaje
+                    personaje.setAlias(alias);
+                    personaje.setGenero(genero);
+                    personaje.setPoderes(poderes);
                 }
             }
         } catch (IOException ioException) {
@@ -65,6 +69,8 @@ public class FileCsvPersonaje extends UtilidadesClass implements ICrudOperacione
         }
         return personaje;
     }
+    
+    
 
     public void addPersonaje(Personaje personaje){
         Personaje personajeBuscado = new Personaje(personaje.getNombre());
