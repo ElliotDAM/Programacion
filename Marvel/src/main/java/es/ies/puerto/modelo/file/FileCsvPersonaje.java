@@ -16,9 +16,12 @@ import es.ies.puerto.modelo.Personaje;
 public class FileCsvPersonaje extends UtilidadesClass implements ICrudOperaciones {
     
     @Element(name = "personajes") 
-    List<Personaje> personajes = new ArrayList<>();
+    List<Personaje> personajes;
     String path = "src/main/resources/data.csv";
 
+    public FileCsvPersonaje(){
+        personajes = new ArrayList<>();
+    }
     
     public List<Personaje> obtenerPersonajes(){
         List<Personaje> personajes = new ArrayList<>();
@@ -30,7 +33,7 @@ public class FileCsvPersonaje extends UtilidadesClass implements ICrudOperacione
                 String alias = datos[1];
                 String genero = datos[2];
                 List<String> poderes = new ArrayList<>();
-                for (int i = 3; i < datos.length; i++) {
+                for (int i = 3; i < datos.length - 1; i++) {
                     poderes.add(datos[i]);
                 }
                 Personaje personaje = new Personaje(nombre, alias, genero, poderes);
