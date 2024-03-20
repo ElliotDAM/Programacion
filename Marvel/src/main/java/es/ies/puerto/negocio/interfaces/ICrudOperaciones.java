@@ -1,7 +1,7 @@
-package es.ies.puerto.modelo.interfaces;
+package es.ies.puerto.negocio.interfaces;
 
 
-import es.ies.puerto.modelo.Personaje;
+import es.ies.puerto.modelo.imp.Personaje;
 
 import java.util.List;
 

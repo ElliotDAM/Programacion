@@ -1,4 +1,4 @@
-package es.ies.puerto.modelo.file;
+package es.ies.puerto.negocio.imp;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,8 +12,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import es.ies.puerto.modelo.Personaje;
-import es.ies.puerto.modelo.interfaces.ICrudOperaciones;
+import es.ies.puerto.modelo.imp.Personaje;
+import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
 
 public class FileJsonPersonaje implements ICrudOperaciones{
     List<Personaje> personajes;

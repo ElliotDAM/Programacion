@@ -2,7 +2,9 @@ package es.ies.puerto.modelo.file;
 
 
 import es.ies.puerto.modelo.Personaje;
-import es.ies.puerto.modelo.interfaces.ICrudOperaciones;
+import es.ies.puerto.negocio.imp.FileJsonPersonaje;
+import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

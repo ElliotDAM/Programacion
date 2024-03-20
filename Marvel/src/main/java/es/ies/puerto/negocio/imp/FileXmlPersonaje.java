@@ -1,4 +1,4 @@
-package es.ies.puerto.modelo.file;
+package es.ies.puerto.negocio.imp;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.simpleframework.xml.core.Persister;
 
-import es.ies.puerto.modelo.interfaces.ICrudOperaciones;
-import es.ies.puerto.modelo.PersonajeList;
-import es.ies.puerto.modelo.Personaje;
+import es.ies.puerto.modelo.imp.PersonajeList;
+import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
+import es.ies.puerto.modelo.imp.Personaje;
 
 public class FileXmlPersonaje implements ICrudOperaciones{
     

@@ -1,4 +1,4 @@
-package es.ies.puerto.modelo;
+package es.ies.puerto.modelo.imp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,18 +7,27 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import com.google.gson.annotations.SerializedName;
+
 import es.ies.puerto.utilidades.UtilidadesClass;
 
 @Root(name = "personaje")
 public class Personaje extends UtilidadesClass{
     
+    @SerializedName("nombre")
     @Element(name = "nombre")
-    String nombre;
+    private String nombre;
+
+    @SerializedName("alias")
     @Element(name = "alias")
-    String alias;
+    private String alias;
+
+    @SerializedName("genero")
     @Element(name = "genero")
     private String genero;
-    @ElementList(inline = true)
+
+    @SerializedName("poderes")
+    @ElementList(name = "poderes", entry = "poder")
     private List<String> poderes;
 
     public Personaje(String nombre, String alias, String genero, List<String> poderes) {

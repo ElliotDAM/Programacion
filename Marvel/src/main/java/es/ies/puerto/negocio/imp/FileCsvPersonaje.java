@@ -1,4 +1,4 @@
-package es.ies.puerto.modelo.file;
+package es.ies.puerto.negocio.imp;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,9 +9,9 @@ import java.util.List;
 
 import org.simpleframework.xml.Element;
 
-import es.ies.puerto.modelo.interfaces.ICrudOperaciones;
 import es.ies.puerto.utilidades.UtilidadesClass;
-import es.ies.puerto.modelo.Personaje;
+import es.ies.puerto.modelo.imp.Personaje;
+import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
 
 public class FileCsvPersonaje extends UtilidadesClass implements ICrudOperaciones {
     
