@@ -1,87 +1,58 @@
 package es.ies.puerto.negocio.imp;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
-
-import org.simpleframework.xml.core.Persister;
-
-import es.ies.puerto.modelo.imp.PersonajeList;
-import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
+import es.ies.puerto.modelo.file.imp.ModeloXml;
 import es.ies.puerto.modelo.imp.Personaje;
+import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
 
 public class FileXmlPersonaje implements ICrudOperaciones{
-    
-    List<Personaje> personajes;
-    String path = "src/main/resources/data.xml";
 
-    public FileXmlPersonaje(){
-        personajes = new ArrayList<>();
+    private ModeloXml modelo;
+
+    public FileXmlPersonaje() {
+        this.modelo = new ModeloXml();
     }
 
-    @Override
     public List<Personaje> obtenerPersonajes() {
-        Persister serializer = new Persister();
-        try {
-            File file = new File(path);
-            PersonajeList personajeList = serializer.read(PersonajeList.class, file);
-            personajes = personajeList.getPersonajes();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return personajes;
+        return modelo.leer();
     }
 
-    @Override
     public Personaje obtenerPersonaje(Personaje personaje) {
-        if(!personajes.contains(personaje)){
-            return null;
+        List<Personaje> personajes = modelo.leer();
+        for (Personaje personaje1 : personajes) {
+            if (personaje1.equals(personaje)) {
+                return personaje1;
+            }
         }
-        int posicion = personajes.indexOf(personaje);
-        
-        return personajes.get(posicion);
+        return null;
     }
 
-    @Override
-    public void addPersonaje(Personaje personaje) {
-        if(personajes.contains(personaje)){
-            return;
+    public boolean addPersonaje(Personaje personaje) {
+        List<Personaje> personajes = modelo.leer();
+        if (personajes.contains(personaje)) {
+            return false;
         }
         personajes.add(personaje);
-        actualizarFichero(personajes);
-        
+        return modelo.escribir(personajes);
     }
 
-    @Override
-    public void deletePersonaje(Personaje personaje) {
-        if(personajes.contains(personaje)){
-            return;
-        }
-        personajes.remove(personaje);
-        actualizarFichero(personajes);
-        
-    }
-
-    @Override
-    public void updatePersonaje(Personaje personaje) {
+    public boolean deletePersonaje(Personaje personaje) {
+        List<Personaje> personajes = modelo.leer();
         if (!personajes.contains(personaje)) {
-            return;
+            return false;
         }
-        int posicion = personajes.indexOf(personaje);
-        personajes.set(posicion, personaje);
-        actualizarFichero(personajes);
-        
+            personajes.remove(personaje);
+            return modelo.actualizar(personajes);
     }
 
-    private void actualizarFichero(List<Personaje> personajes){
-        PersonajeList personajeList = new PersonajeList(personajes);
-        Persister serializer = new Persister();
-        try {
-            serializer.write(personajeList, new File(path));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public boolean updatePersonaje(Personaje personaje) {
+        List<Personaje> personajes = modelo.leer();
+        if (!personajes.contains(personaje)) {
+            return false;
         }
+        return modelo.actualizar(personajes);
     }
 
 
 }
+

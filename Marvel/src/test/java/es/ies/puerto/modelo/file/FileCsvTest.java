@@ -1,7 +1,7 @@
 package es.ies.puerto.modelo.file;
 
 
-import es.ies.puerto.modelo.Personaje;
+import es.ies.puerto.modelo.imp.Personaje;
 import es.ies.puerto.negocio.imp.FileCsvPersonaje;
 import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
 
@@ -14,9 +14,9 @@ import java.util.List;
 
 public class FileCsvTest {
 
-        String nombre = "nombre";
-        String alias = "alias";
-        String genero = "genero";
+        String nombre = "Tony Stark";
+        String alias = "Iron Man";
+        String genero = "";
         List<String> poderes = new ArrayList<>();
 
     ICrudOperaciones persistencia;

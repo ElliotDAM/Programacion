@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.simpleframework.xml.core.Persister;
 
+import es.ies.puerto.modelo.imp.Personaje;
+
 import java.io.File;
 import java.util.List;
 

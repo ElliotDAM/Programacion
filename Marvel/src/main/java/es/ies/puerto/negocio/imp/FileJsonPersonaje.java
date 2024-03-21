@@ -48,31 +48,34 @@ public class FileJsonPersonaje implements ICrudOperaciones{
     }
 
     @Override
-    public void addPersonaje(Personaje personaje) {
+    public boolean addPersonaje(Personaje personaje) {
         if (personajes.contains(personaje)) {
-            return;
+            return false;
         }
         personajes.add(personaje);
         guardarDatos(personajes);
+        return true;
     }
 
     @Override
-    public void deletePersonaje(Personaje personaje) {
+    public boolean deletePersonaje(Personaje personaje) {
         if (!personajes.contains(personaje)) {
-            return;
+            return false;
         }
         personajes.remove(personaje);
         guardarDatos(personajes);
+        return true;
     }
 
     @Override
-    public void updatePersonaje(Personaje personaje) {
+    public boolean updatePersonaje(Personaje personaje) {
         if (!personajes.contains(personaje)) {
-            return;
+            return false;
         }
         int posicion = personajes.indexOf(personaje);
         personajes.set(posicion,personaje);
         guardarDatos(personajes);
+        return true;
     }
 
     private void guardarDatos(List<Personaje> personajes) {

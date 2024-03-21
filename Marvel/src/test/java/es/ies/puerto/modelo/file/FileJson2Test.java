@@ -1,7 +1,7 @@
 package es.ies.puerto.modelo.file;
 
 
-import es.ies.puerto.modelo.Personaje;
+import es.ies.puerto.modelo.imp.Personaje;
 import es.ies.puerto.negocio.imp.FileJsonPersonaje;
 import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
 

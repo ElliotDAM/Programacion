@@ -8,7 +8,7 @@ import java.util.List;
 public interface ICrudOperaciones {
     public List<Personaje> obtenerPersonajes();
     public Personaje obtenerPersonaje(Personaje personaje);
-    public void addPersonaje(Personaje personaje);
-    public void deletePersonaje(Personaje personaje);
-    public void updatePersonaje(Personaje personaje);
+    public boolean addPersonaje(Personaje personaje);
+    public boolean deletePersonaje(Personaje personaje);
+    public boolean updatePersonaje(Personaje personaje);
 }

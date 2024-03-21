@@ -1,122 +1,57 @@
 package es.ies.puerto.negocio.imp;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-import org.simpleframework.xml.Element;
-
-import es.ies.puerto.utilidades.UtilidadesClass;
+import es.ies.puerto.modelo.file.imp.ModeloCsv;
 import es.ies.puerto.modelo.imp.Personaje;
 import es.ies.puerto.negocio.interfaces.ICrudOperaciones;
 
-public class FileCsvPersonaje extends UtilidadesClass implements ICrudOperaciones {
-    
-    @Element(name = "personajes") 
-    List<Personaje> personajes;
-    String path = "src/main/resources/data.csv";
+public class FileCsvPersonaje implements ICrudOperaciones{
+    private ModeloCsv modelo;
 
     public FileCsvPersonaje(){
-        personajes = new ArrayList<>();
-    }
-    
-    public List<Personaje> obtenerPersonajes(){
-        List<Personaje> personajes = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader(path))){
-            String linea;
-            while((linea = br.readLine()) != null){
-                String[] datos = linea.split(DELIMITADOR);
-                String nombre = datos[0];
-                String alias = datos[1];
-                String genero = datos[2];
-                List<String> poderes = new ArrayList<>();
-                for (int i = 3; i < datos.length - 1; i++) {
-                    poderes.add(datos[i]);
-                }
-                Personaje personaje = new Personaje(nombre, alias, genero, poderes);
-                personajes.add(personaje);
-            }
-            }catch(IOException ioException){
-                ioException.printStackTrace();
-            }
-            return personajes;
-        
+        this.modelo = new ModeloCsv();
     }
 
-    public Personaje obtenerPersonaje(Personaje personaje) {
-        boolean encontrado = false;
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String linea;
-            while (((linea = br.readLine()) != null) && !encontrado) {
-                String[] datos = linea.split(DELIMITADOR);
-                String nombre = datos[0];
-                if (personaje.getNombre().equals(nombre)) {
-                    String alias = datos[1];
-                    String genero = datos[2];
-                    List<String> poderes = new ArrayList<>();
-                    for (int i = 3; i < datos.length; i++) {
-                        poderes.add(datos[i]);
-                    }
-                    encontrado = true;
-                    // Asignar los valores al objeto personaje
-                    personaje.setAlias(alias);
-                    personaje.setGenero(genero);
-                    personaje.setPoderes(poderes);
-                }
+    public List<Personaje> obtenerPersonajes() {
+        return modelo.leer();
+    }
+
+    public Personaje obtenerPersonaje(Personaje personajeBuscado) {
+        List<Personaje> personajes = modelo.leer(); 
+        for (Personaje personaje : personajes) { 
+            if (personaje.getNombre().equals(personajeBuscado.getNombre())) { 
+                return personaje;
             }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
         }
-        return personaje;
+        return null; 
     }
-    
-    
 
-    public void addPersonaje(Personaje personaje){
-        Personaje personajeBuscado = new Personaje(personaje.getNombre());
-        personajeBuscado = obtenerPersonaje(personajeBuscado);
-        /** 
+    public boolean addPersonaje(Personaje personaje) {
+        List<Personaje> personajes = modelo.leer();
         if(personajes.contains(personaje)){
-            return;
+            return false;
         }
-        */
-        try (FileWriter writer = new FileWriter(path, true)){
-            writer.write(personaje.toCsv()+"\n");
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
+            personajes.add(personaje);
+            return modelo.escribir(personajes);
+     
     }
 
-    public void deletePersonaje(Personaje personaje){
-        Personaje personaBuscar = new Personaje(personaje.getNombre());
-        List<Personaje> personajes = obtenerPersonajes();
-        personajes.remove(personaje);
-
-        try (FileWriter writer = new FileWriter(path)){
-            for (Personaje personajeCsv : personajes) {
-                writer.write(personajeCsv.toCsv() + "\n");
-                }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+    public boolean deletePersonaje(Personaje personaje) {
+        List<Personaje> personajes = modelo.leer();
+        if(!personajes.contains(personaje)){
+            return false;
         }
+            personajes.remove(personaje);
+            return modelo.actualizar(personajes); 
     }
 
-    public void updatePersonaje(Personaje personaje){
-        List<Personaje> personajes = obtenerPersonajes();
-        try (FileWriter writer = new FileWriter(path)){
-            for (Personaje personajeCsv : personajes) {
-                if(personajeCsv.equals(personaje)){
-                    writer.write(personaje.toCsv() + "\n");
-                }else{
-                    writer.write(personajeCsv.toCsv() + "\n");
-                    }
-                }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+    public boolean updatePersonaje(Personaje personaje) {
+        List<Personaje> personajes = modelo.leer();
+        if (!personajes.contains(personaje)) {
+             return false;
         }
-    }
+        return modelo.actualizar(personajes);
     }
 
+
+}

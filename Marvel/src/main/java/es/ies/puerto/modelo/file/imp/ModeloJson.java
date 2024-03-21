@@ -32,8 +32,21 @@ public class ModeloJson extends FicherosAbstract {
 
     @Override
     public boolean actualizar(List<Personaje> personajes) {
-        return escribir(personajes);
+        List<Personaje> listaExistente = leer();
+        if (listaExistente.isEmpty()) {
+            return false; 
+        }
+    
+        for (Personaje personaje : personajes) {
+            int index = listaExistente.indexOf(personaje);
+            if (index != -1) {
+                listaExistente.set(index, personaje);
+            }
+        }
+    
+        return escribir(listaExistente);
     }
+    
 
     @Override
     public boolean escribir(List<Personaje> personajes) {
@@ -48,7 +61,7 @@ public class ModeloJson extends FicherosAbstract {
 
     @Override
     public boolean modificar(List<Personaje> personajes) {
-        return escribir(personajes);
+        return actualizar(personajes); 
     }
     
 }
