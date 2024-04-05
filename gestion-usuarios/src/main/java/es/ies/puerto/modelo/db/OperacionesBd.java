@@ -94,8 +94,9 @@ public class OperacionesBd extends Conexion{
         actualizar(query);
     }
 
-    public void actualizarUsuario(Usuario usuario) {
-
+    public void actualizarUsuario(Usuario usuario) throws UsuarioException {
+        String query = "update usuarios set nombre = '"+usuario.getNombre()+"' , edad= "+usuario.getEdad()+", ciudad = '"+usuario.getCiudad()+"' where id = '"+usuario.getId()+"'";
+        actualizar(query);
     }
 
     public void eliminarUsuario(Usuario usuario) {
@@ -103,7 +104,6 @@ public class OperacionesBd extends Conexion{
         try {
             actualizar(query);
         } catch (UsuarioException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

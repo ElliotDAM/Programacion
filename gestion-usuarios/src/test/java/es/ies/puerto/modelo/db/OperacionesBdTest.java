@@ -12,10 +12,12 @@ public class OperacionesBdTest {
     OperacionesBd operacionesBd;
     String urlBd = "src/main/resources/usuarios.db";
     String MESSAGE_ERROR = "NO SE HA OBTENIDO EL RESULTADO ESPERADO";
+    Usuario usuario;
 
     @BeforeEach
     public void beforeEach() {
         operacionesBd = new OperacionesBd(urlBd);
+        usuario = new Usuario("11","pepe",20,"miciudad");
     }
 
     @Test
@@ -45,7 +47,7 @@ public class OperacionesBdTest {
 
     @Test
     public void insertarUsuarioTest() {
-        Usuario usuario = new Usuario("11","pepe",20,"miciudad");
+        
         try {
             int numeroUsuarios = operacionesBd.obtenerUsuarios().size();
             operacionesBd.insertarUsuario(usuario);
@@ -57,6 +59,29 @@ public class OperacionesBdTest {
         } catch (UsuarioException e) {
             Assertions.fail(e.getMessage());
         }
+    }
+
+    @Test
+    public void actualizarUsuarioTest(){
+        String nombreUpdate = "Pepe Juan";
+        int edadUpdate = 22;
+        String ciudadUpdate = "Miami";
+        try {
+            operacionesBd.insertarUsuario(usuario);
+            usuario.setCiudad(ciudadUpdate);
+            usuario.setEdad(edadUpdate);
+            usuario.setNombre(nombreUpdate);
+            operacionesBd.actualizarUsuario(usuario);
+            Usuario usuarioEncontrado = operacionesBd.obtenerUsuario(usuario);
+            Assertions.assertEquals(usuario, usuarioEncontrado, MESSAGE_ERROR);
+            Assertions.assertEquals(usuario.getCiudad(), usuarioEncontrado.getCiudad(), MESSAGE_ERROR);
+            Assertions.assertEquals(usuario.getEdad(), usuarioEncontrado.getEdad(), MESSAGE_ERROR);
+            Assertions.assertEquals(usuario.getNombre(), usuarioEncontrado.getNombre(), MESSAGE_ERROR);
+            operacionesBd.eliminarUsuario(usuarioEncontrado);
+        } catch (UsuarioException e) {
+            Assertions.fail(MESSAGE_ERROR+":"+e.getMessage());
+        }
+
     }
 
 }
