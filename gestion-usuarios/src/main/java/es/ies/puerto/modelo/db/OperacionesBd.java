@@ -99,7 +99,13 @@ public class OperacionesBd extends Conexion{
     }
 
     public void eliminarUsuario(Usuario usuario) {
-
+        String query = "delete FROM usuarios as u where u.id='"+usuario.getId()+"'";
+        try {
+            actualizar(query);
+        } catch (UsuarioException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
 

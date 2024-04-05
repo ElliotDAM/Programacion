@@ -47,9 +47,13 @@ public class OperacionesBdTest {
     public void insertarUsuarioTest() {
         Usuario usuario = new Usuario("11","pepe",20,"miciudad");
         try {
+            int numeroUsuarios = operacionesBd.obtenerUsuarios().size();
             operacionesBd.insertarUsuario(usuario);
             Usuario usuarioObtenido = operacionesBd.obtenerUsuario(usuario);
             Assertions.assertEquals(usuario, usuarioObtenido, MESSAGE_ERROR);
+            operacionesBd.eliminarUsuario(usuarioObtenido);
+            int numeroUsuariosFinal = operacionesBd.obtenerUsuarios().size();
+            Assertions.assertEquals(numeroUsuarios, numeroUsuariosFinal, MESSAGE_ERROR);
         } catch (UsuarioException e) {
             Assertions.fail(e.getMessage());
         }
