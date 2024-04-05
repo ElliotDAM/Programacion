@@ -1,23 +1,20 @@
 package es.ies.puerto.modelo.db;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import es.ies.puerto.exception.UsuarioException;
+import es.ies.puerto.modelo.Usuario;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import es.ies.puerto.exception.UsuarioException;
-import es.ies.puerto.modelo.Usuario;
+import java.util.Set;
 
 public class OperacionesBdTest {
     OperacionesBd operacionesBd;
     String urlBd = "src/main/resources/usuarios.db";
-    String MESSAGE_ERROR = "No se ha obtenido el resultado esperado";
-    
+    String MESSAGE_ERROR = "NO SE HA OBTENIDO EL RESULTADO ESPERADO";
 
     @BeforeEach
-    public void BeforeEach() {
+    public void beforeEach() {
         operacionesBd = new OperacionesBd(urlBd);
     }
 
@@ -25,19 +22,18 @@ public class OperacionesBdTest {
     public void obtenerUsuariosAllTest() {
         try {
             Set<Usuario> lista = operacionesBd.obtenerUsuarios();
-            Assertions.assertEquals(10, lista.size(), MESSAGE_ERROR );
+            Assertions.assertEquals(10, lista.size(), MESSAGE_ERROR);
         } catch (UsuarioException e) {
             Assertions.fail(e.getMessage());
         }
-        
     }
-    
+
     @Test
     public void obtenerUsuarioTest() {
         Usuario usuario = new Usuario("5");
         try {
             usuario = operacionesBd.obtenerUsuario(usuario);
-            Assertions.assertNotNull(usuario, MESSAGE_ERROR );
+            Assertions.assertNotNull(usuario, MESSAGE_ERROR);
             Assertions.assertNotNull(usuario.getId(), MESSAGE_ERROR);
             Assertions.assertNotNull(usuario.getNombre(), MESSAGE_ERROR);
             Assertions.assertNotNull(usuario.getEdad(), MESSAGE_ERROR);
@@ -45,12 +41,11 @@ public class OperacionesBdTest {
         } catch (UsuarioException e) {
             Assertions.fail(e.getMessage());
         }
-        
     }
 
     @Test
     public void insertarUsuarioTest() {
-        Usuario usuario = new Usuario("11", "Pepe", 20, "miciudad");
+        Usuario usuario = new Usuario("11","pepe",20,"miciudad");
         try {
             operacionesBd.insertarUsuario(usuario);
             Usuario usuarioObtenido = operacionesBd.obtenerUsuario(usuario);
@@ -58,6 +53,6 @@ public class OperacionesBdTest {
         } catch (UsuarioException e) {
             Assertions.fail(e.getMessage());
         }
-        
     }
+
 }
