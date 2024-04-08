@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class OperacionesBd extends Conexion{
 
-    public OperacionesBd(String url) {
+    public OperacionesBd(String url) throws UsuarioException {
         super(url);
     }
 
@@ -94,18 +94,17 @@ public class OperacionesBd extends Conexion{
         actualizar(query);
     }
 
-    public void actualizarUsuario(Usuario usuario) throws UsuarioException {
-        String query = "update usuarios set nombre = '"+usuario.getNombre()+"' , edad= "+usuario.getEdad()+", ciudad = '"+usuario.getCiudad()+"' where id = '"+usuario.getId()+"'";
+    public void actualizarUsuario(Usuario usuario) throws UsuarioException{
+        String query = "update usuarios set nombre='"+usuario.getNombre()+"', " +
+                "ciudad='"+usuario.getCiudad()+"', edad="+usuario.getEdad()+" " +
+                "where id='"+usuario.getId()+"'";
         actualizar(query);
     }
 
-    public void eliminarUsuario(Usuario usuario) {
-        String query = "delete FROM usuarios as u where u.id='"+usuario.getId()+"'";
-        try {
-            actualizar(query);
-        } catch (UsuarioException e) {
-            e.printStackTrace();
-        }
+    public void eliminarUsuario(Usuario usuario) throws UsuarioException{
+        String query = "delete FROM usuarios as u" +
+                " where u.id='"+usuario.getId()+"'";
+        actualizar(query);
     }
 
 
