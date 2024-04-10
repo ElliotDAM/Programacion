@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import es.ies.puerto.exception.PersonajeException;
@@ -49,12 +50,59 @@ public class OperacionesBd extends Conexion {
             statement = getConexion().createStatement();
             rs = statement.executeQuery(query);
             while(rs.next()){
-                String 
+                String userName = rs.getString("nombre");
+                String userAlias = rs.getString("alias");
+                String userGenero = rs.getString("genero");
+                List<String> userPoderes =(List) rs.getArray("poderes");
+                Personaje personaje = new Personaje(userName, userAlias, userGenero, userPoderes);
+                lista.add(personaje);
             }
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            throw new PersonajeException(e.getMessage(), e);
+        }finally{
+            try {
+                if(rs != null && !rs.isClosed()){
+                    rs.close();
+                }
+                if(statement != null && !statement.isClosed()){
+                    statement.close();
+                }
+                if(!getConexion().isClosed()){
+                    getConexion().close();
+                }
+            } catch (SQLException e) {
+                throw new PersonajeException(e.getMessage(), e);
+            }
         }
         return lista;
+    }
+
+    public Set<Personaje> obtenerPersonajes() throws PersonajeException{
+        String query = "";
+        return obtener(query);
+    }
+
+    public Personaje obtenerPersonaje(Personaje personaje) throws PersonajeException{
+        String query = "select * from personajes";
+        Set<Personaje> lista = obtener(query);
+        if(lista.isEmpty()){
+            return null;
+        }
+        return lista.iterator().next();
+    }
+
+    public void insertarPersonaje(Personaje personaje) throws PersonajeException{
+        String query = "";
+        actualizar(query);
+    }
+
+    public void actualizarPersonaje(Personaje personaje) throws PersonajeException{
+        String query = "";
+        actualizar(query);
+    }
+
+    public void eliminarPersonaje(Personaje personaje) throws PersonajeException{
+        String query = "";
+        actualizar(query);
     }
 }
