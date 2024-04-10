@@ -1,8 +1,10 @@
 package es.ies.puerto.modelo.db;
 
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -53,7 +55,12 @@ public class OperacionesBd extends Conexion {
                 String userName = rs.getString("nombre");
                 String userAlias = rs.getString("alias");
                 String userGenero = rs.getString("genero");
-                List<String> userPoderes =(List) rs.getArray("poderes");
+                Array arrayPoderes = rs.getArray("poderes");
+                String[] poderesArray = (String[]) arrayPoderes.getArray();
+                List<String> userPoderes = new ArrayList<>();
+                for (String poder : poderesArray) {
+                    userPoderes.add(poder);
+                }
                 Personaje personaje = new Personaje(userName, userAlias, userGenero, userPoderes);
                 lista.add(personaje);
             }
@@ -78,7 +85,7 @@ public class OperacionesBd extends Conexion {
     }
 
     public Set<Personaje> obtenerPersonajes() throws PersonajeException{
-        String query = "";
+        String query = "select from personaje as per, poderes as p";
         return obtener(query);
     }
 
