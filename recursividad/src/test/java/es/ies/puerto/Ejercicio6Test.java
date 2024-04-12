@@ -14,7 +14,17 @@ public class Ejercicio6Test {
     }
 
     @Test
-    public void ejercicio6Test() {
+    public void ejercicio6RecursivoTest() {
         Assertions.assertEquals(resultadoEsperado, ejercicio.potenciaRecursiva(5, 3));
+    }
+
+    @Test
+    public void ejercicio6ExponenteCeroRecursivoTest() {
+        Assertions.assertEquals(1, ejercicio.potenciaRecursiva(1, 0));
+    }
+
+    @Test
+    public void ejercicio6ExponenteCeroTest() {
+        Assertions.assertEquals(1, ejercicio.potencia(1, 0));
     }
 }

@@ -6,19 +6,26 @@ package es.ies.puerto;
 public class Ejercicio6 {
 
     public int potencia(int numero, int exponente){
+        if(exponente == 0){
+            return 1;
+        }
         int potencia = numero;
-        for (int i = 1; i <= exponente; i++) {
+        for (int i = 1; i < exponente; i++) {
             potencia *= numero;
         }
         return potencia;
     }
 
     public int potenciaRecursiva(int numero, int potencia){
-        int resultado = 1;
         if(potencia == 0){
             return 1;
         }
-        resultado = numero * potenciaRecursiva(numero, potencia - 1);
-        return resultado;
+
+        if(potencia == 1){
+            return numero;
+        }
+
+        return numero * potenciaRecursiva(numero, potencia - 1);
+        
     }
 }
