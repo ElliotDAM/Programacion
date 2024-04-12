@@ -19,7 +19,7 @@ public class Ejercicio3Test {
     }
 
     @Test
-    public void ejercicio1Test() {
+    public void ejercicio3Test() {
         Assertions.assertEquals(resultadoEsperado, ejercicio.imprimirPares(10), "No se ha obtenido el resultado esperado");
     }
 }

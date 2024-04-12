@@ -9,6 +9,29 @@ import java.util.List;
  */
 public class Ejercicio3 {
 
+
+
+    public List<Integer> paresRecursivo(int numero){
+        List<Integer> resultado = new ArrayList<>();
+        int numeroIncremental = 1;
+        if(numero == 0){
+            resultado.add(numero);
+            return resultado;
+        }
+
+        if(numero % 2 == 0){
+            resultado.add(numero);
+            resultado.addAll(numero, resultado);
+        }
+        numero--;
+        
+        
+
+        return resultado;
+
+        
+    }
+
     public List<Integer> imprimirPares(int numero){
         List<Integer> listaPares = new ArrayList<>();
         for (int i = 0; i < numero + 1; i+=2) {
@@ -18,16 +41,4 @@ public class Ejercicio3 {
         
     }
 
-    public List<Integer> paresRecursivo(int numero){
-        List<Integer> listaParesRecursivos = new ArrayList<>();
-        if(numero % 2 == 0){
-            listaParesRecursivos.add(numero);
-        }
-        if(numero == 0){
-            return listaParesRecursivos;
-        }
-
-        listaParesRecursivos.addAll(paresRecursivo(numero - 1));
-        return listaParesRecursivos;
-    }
 }
