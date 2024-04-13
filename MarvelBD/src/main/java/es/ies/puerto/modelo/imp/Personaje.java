@@ -5,24 +5,25 @@ import java.util.List;
 
 public class Personaje {
     
-
+    private int id;
     private String nombre;
     private String alias;
     private String genero;
-    private List<String> poderes;
+    private Set<String> poderes;
 
-    public Personaje(String nombre, String alias, String genero, List<String> poderes) {
+    public Personaje(int id, String nombre, String alias, String genero, Set<String> poderes) {
+        this.id = id;
         this.nombre = nombre;
         this.alias = alias;
         this.genero = genero;
-        this.poderes = poderes != null ? new ArrayList<>(poderes) : new ArrayList<>();
+        this.poderes = poderes;
 
     }
 
     public Personaje(){}
 
-    public Personaje(String nombre) {
-        this.nombre = nombre;
+    public int getId(){
+        return id;
     }
 
     public String getNombre() {
@@ -49,24 +50,24 @@ public class Personaje {
         this.genero = genero;
     }
 
-    public List<String> getPoderes() {
+    public Set<String> getPoderes() {
         return poderes;
     }
 
-    public void setPoderes(List<String> poderes) {
+    public void setPoderes(Set<String> poderes) {
         this.poderes = poderes;
     }
 
     @Override
     public String toString() {
-        return "Personaje [nombre=" + nombre + ", alias=" + alias + ", genero=" + genero + ", poderes=" + poderes + "]";
+        return "Personaje [id"+ id +"nombre=" + nombre + ", alias=" + alias + ", genero=" + genero + ", poderes=" + poderes + "]";
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((alias == null) ? 0 : alias.hashCode());
+        result = prime * result + id;
         return result;
     }
 
@@ -79,13 +80,12 @@ public class Personaje {
         if (getClass() != obj.getClass())
             return false;
         Personaje other = (Personaje) obj;
-        if (alias == null) {
-            if (other.alias != null)
-                return false;
-        } else if (!alias.equals(other.alias))
+        if (id != other.id)
             return false;
         return true;
     }
+
+
 
 
 

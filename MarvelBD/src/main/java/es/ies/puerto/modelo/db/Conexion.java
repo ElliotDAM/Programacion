@@ -3,9 +3,10 @@ package es.ies.puerto.modelo.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import es.ies.puerto.config.AppConfig;
 import es.ies.puerto.exception.PersonajeException;
 
-public class Conexion {
+public class Conexion extends AppConfig{
     private Connection con;
 
     private String url;
