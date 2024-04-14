@@ -4,13 +4,13 @@ import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import es.ies.puerto.exception.PersonajeException;
 import es.ies.puerto.modelo.imp.Personaje;
+import es.ies.puerto.modelo.imp.Poder;
 
 public class OperacionesBd extends Conexion {
     
@@ -58,10 +58,7 @@ public class OperacionesBd extends Conexion {
                 String userGenero = rs.getString("genero");
                 Array arrayPoderes = rs.getArray("poderes");
                 String[] poderesArray = (String[]) arrayPoderes.getArray();
-                List<String> userPoderes = new ArrayList<>();
-                for (String poder : poderesArray) {
-                    userPoderes.add(poder);
-                }
+                Set<String> userPoderes = new HashSet<>(Arrays.asList(poderesArray));
                 Personaje personaje = new Personaje(idName, userName, userAlias, userGenero, userPoderes);
                 lista.add(personaje);
             }
@@ -86,12 +83,12 @@ public class OperacionesBd extends Conexion {
     }
 
     public Set<Personaje> obtenerPersonajes() throws PersonajeException{
-        String query = "select per.id, per.nombre, per.alias, per.genero, per.poderes from personajes as per";
+        String query = "select per.id, per.nombre, per.alias, per.genero from personajes as per";
         return obtener(query);
     }
 
     public Personaje obtenerPersonaje(Personaje personaje) throws PersonajeException{
-        String query = "select per.id, per.nombre, per.alias, per.genero, per.poderes from personajes as per where u.id ="+personaje.getId()+"";
+        String query = "select per.id, per.nombre, per.alias, per.genero from personajes as per where per.id ="+personaje.getId()+"";
         Set<Personaje> lista = obtener(query);
         if(lista.isEmpty()){
             return null;
@@ -100,40 +97,42 @@ public class OperacionesBd extends Conexion {
     }
 
     public void insertarPersonaje(Personaje personaje) throws PersonajeException{
-        String query = "insert into personajes as per (nombre, alias, genero) values ('"+personaje.getNombre()+"',"+personaje.getAlias()+"','"+personaje.getGenero()+"')";
+        String query = "insert into personajes as per (nombre, alias, genero) values ('"+personaje.getNombre()+"','"+personaje.getAlias()+"','"+personaje.getGenero()+"')";
         actualizar(query);
-        Set<Poder> poderes = personaje.getPoderes();
-        for(Poder poder: poderes){
-            insertarPoderes(poder);
+        Set<String> poderesString = personaje.getPoderes();
+        Set<Poder> poderes = new HashSet<>();
+        
+        for (String poderString : poderesString) {
+            Poder poder = new Poder(); 
+            poder.setNombrePoder(poderString); 
+            poderes.add(poder); 
         }
     }
 
     public void actualizarPersonaje(Personaje personaje) throws PersonajeException{
         String query = "update personajes set nombre='"+personaje.getNombre()+"', " +
-        "alias='"+personaje.getAlias()+"', genero ='"+personaje.getGenero()+"'' " +
+        "alias='"+personaje.getAlias()+"', genero ='"+personaje.getGenero()+"' " +
         "where id="+personaje.getId()+"";
         actualizar(query);
-        Set<Poder> poderes = personaje.getPoderes();
-        for (Poder poder : poderes) {
-            actualizarPoderes(poder);
+        eliminarPoderes(personaje.getId());
+
+        for (String poderString : personaje.getPoderes()) {
+            insertarPoderes(new Poder(4,personaje.getId(), poderString));
         }
     }
 
     public void eliminarPersonaje(Personaje personaje) throws PersonajeException{
         String query = "delete from personajes as per where per.id = "+personaje.getId()+"";
         actualizar(query);
-        Set<Poder> poderes = personaje.getPoderes();
-        for (Poder poder : poderes) {
-            eliminarPoderes(poder);
-        }
+        eliminarPoderes(personaje.getId());
     }
 
-    private Set<Poder> obtenerPoderes(String query){
+    private Set<Poder> obtenerPoderes(String query) throws PersonajeException{
         Set<Poder> poderes = new HashSet<>();
         Statement statement = null;
-        ResulSet rs = null;
+        ResultSet rs = null;
         try{
-            statement = getConection().createStatement();
+            statement = getConexion().createStatement();
             rs = statement.executeQuery(query);
             while(rs.next()){
                 int idPoder = rs.getInt("id");
@@ -162,29 +161,29 @@ public class OperacionesBd extends Conexion {
         return poderes;
     }
 
-    public Set<Poder> obtenerPoderesPersonajes() throw PersonajeException{
+    public Set<Poder> obtenerPoderesPersonajes() throws PersonajeException{
         String query = "select id, personaje_id, poder from poderes";
         return obtenerPoderes(query);
     }
 
     public Set<Poder> obtenerPoderesPersonaje(int id) throws PersonajeException{
-        String query = "select poderes.id, poderes.personaje_id, poderes.poder from poderes"+
-        "inner join personajes on personajes.id = poderes.personaje_id where poderes.personaje_id = "+ id +"";
+        String query = "select poderes.id, poderes.personaje_id, poderes.poder from poderes "+
+        " inner join personajes on personajes.id = poderes.personaje_id where poderes.personaje_id = "+ id +"";
         return obtenerPoderes(query);
     }
 
     public void insertarPoderes(Poder poder) throws PersonajeException{
-        String query = "insert into poderes (personaje_id, poder) values ("+poder.getIdPersonaje()+", '"+poder.getNombre()+"')";
+        String query = "insert into poderes (personaje_id, poder) values ("+poder.getIdPersonajePoder()+", '"+poder.getNombrePoder()+"')";
         actualizar(query);
     }
 
     public void actualizarPoderes(Poder poder) throws PersonajeException{
-        String query = "update poderes set personaje_id = "+poder.getIdPersonaje()+", poder = '"+poder.getNombre()+"'";
+        String query = "update poderes set personaje_id = "+poder.getIdPersonajePoder()+", poder = '"+poder.getNombrePoder()+"'";
         actualizar(query);
     }
 
-    public void eliminarPoderes(Poder poder) throws PersonajeException {
-        String query = "delete from poderes where poder.id = "+poder.getIdPersonaje()+"";
+    public void eliminarPoderes(int idPersonaje) throws PersonajeException {
+        String query = "delete from poderes where poderes.personaje_id = "+idPersonaje+"";
         actualizar(query);
     }
 }

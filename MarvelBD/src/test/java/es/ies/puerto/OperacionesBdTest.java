@@ -1,7 +1,6 @@
 package es.ies.puerto;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Assertions;
@@ -11,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import es.ies.puerto.exception.PersonajeException;
 import es.ies.puerto.modelo.db.OperacionesBd;
 import es.ies.puerto.modelo.imp.Personaje;
-import es.ies.puerto.modelo.imp.PersonajeList;
+
 
 public class OperacionesBdTest {
     OperacionesBd operacionesBd;
@@ -23,10 +22,10 @@ public class OperacionesBdTest {
     public void beforeEach(){
         
         try {
-            List<String> poderes = new ArrayList<>();
+            Set<String> poderes = new HashSet<>();
             poderes.add("lanzar");
             poderes.add("puñetazo");
-            personaje = new Personaje("Bernardo", "berni", "masculino", poderes);
+            personaje = new Personaje(5,"Bernardo", "berni", "masculino", poderes);
             operacionesBd = new OperacionesBd(urlBd);
         } catch (PersonajeException e) {
             Assertions.fail(e.getMessage());
@@ -46,7 +45,11 @@ public class OperacionesBdTest {
 
     @Test
     public void ObtenerPersonajeTest() {
-        Personaje personaje = new Personaje("Ironman");
+        Set<String> poderes = new HashSet<>();
+        poderes.add("Vuelo");
+        poderes.add("Armadura tecnológica avanzada");
+        poderes.add("Rayos láser");
+        Personaje personaje = new Personaje(1, "Ironman", "Tony Stark", "Masculino", poderes);
         try {
             personaje = operacionesBd.obtenerPersonaje(personaje);
             Assertions.assertNotNull(personaje, MESSAGE_ERROR);
@@ -80,7 +83,7 @@ public class OperacionesBdTest {
         String nombreUpdate = "Pepe";
         String aliasUpdate = "Joseluis";
         String generoUpdate = "masculino";
-        List<String> poderes = new ArrayList<>();
+        Set<String> poderes = new HashSet<>();
         poderes.add("botar");
         poderes.add("tirar");
 
