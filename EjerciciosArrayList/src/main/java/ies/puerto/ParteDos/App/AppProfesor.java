@@ -7,7 +7,7 @@ import java.util.List;
 import ies.puerto.ParteDos.imp.Profesor;
 
 public class AppProfesor {
-    static List<Profesor> profesores;
+     List<Profesor> profesores;
         Profesor profesor1 = new Profesor("Maria", "78345678A", "01/01/1980", 3000f, "Matemáticas");
         Profesor profesor2 = new Profesor("Jonny", "44456789B", "15/05/1975", 2000f, "Historia");
         
@@ -39,4 +39,4 @@ public class AppProfesor {
             e.printStackTrace();
         }
 }
-}
+
