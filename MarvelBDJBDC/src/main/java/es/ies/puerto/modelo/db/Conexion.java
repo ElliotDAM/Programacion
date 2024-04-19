@@ -15,7 +15,7 @@ public class Conexion extends AppConfig{
 
     public Conexion(String url) throws PersonajeException {
         super();
-        this.url = "jdbc:sqlite:"+url;
+        this.url = "jdbc:sqlite:"+getUrlBd();
     }
 
     public Conexion(String url, String user, String password) throws PersonajeException {

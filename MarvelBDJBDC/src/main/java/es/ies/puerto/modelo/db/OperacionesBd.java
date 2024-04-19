@@ -82,12 +82,12 @@ public class OperacionesBd extends Conexion {
     }
 
     public Set<Personaje> obtenerPersonajes() throws PersonajeException{
-        String query = "select per.id, per.nombre, per.genero, p.poder from Personajes as per, Poderes as p, Personajes_poderes as podper where per.id = podper.personaje_id and p.id = podper.poder_id; ";
+        String query = "select per.id, per.nombre, per.genero, p.poder from Personajes as per, Poderes as p, Personajes_poderes as podper where per.id = podper.personaje_id and p.id = podper.poder_id ";
         return obtener(query);
     }
 
     public Personaje obtenerPersonaje(Personaje personaje) throws PersonajeException{
-        String query = "select per.id, per.nombre, per.alias, per.genero from Personajes as per, from poderes as p where per.id ="+personaje.getId()+"";
+        String query = "select per.id, per.nombre, per.genero, p.poder from Personajes as per, Poderes as p, Personajes_Poderes as perpod where perpod.personaje_id = per.id  and perpod.poder_id = p.id and per.id = "+personaje.getId();
         Set<Personaje> lista = obtener(query);
         if(lista.isEmpty()){
             return null;

@@ -2,34 +2,34 @@ package es.ies.puerto.modelo.imp;
 
 public class Poder {
     
-    private int idPoder;
-    private String nombrePoder;
+    private int id;
+    private String nombre;
     
     public Poder() {
     }
     
     public Poder(int idPoder, String nombrePoder) {
-        this.idPoder = idPoder;
-        this.nombrePoder = nombrePoder;
+        this.id = idPoder;
+        this.nombre = nombrePoder;
     }
     public int getIdPoder() {
-        return idPoder;
+        return id;
     }
     public void setIdPoder(int idPoder) {
-        this.idPoder = idPoder;
+        this.id = idPoder;
     }
     public String getNombrePoder() {
-        return nombrePoder;
+        return nombre;
     }
     public void setNombrePoder(String nombrePoder) {
-        this.nombrePoder = nombrePoder;
+        this.nombre = nombrePoder;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + idPoder;
+        result = prime * result + id;
         return result;
     }
 
@@ -42,14 +42,14 @@ public class Poder {
         if (getClass() != obj.getClass())
             return false;
         Poder other = (Poder) obj;
-        if (idPoder != other.idPoder)
+        if (id != other.id)
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Poder [idPoder=" + idPoder + ", nombrePoder=" + nombrePoder
+        return "Poder [idPoder=" + id + ", nombrePoder=" + nombre
                 + "]";
     }
     
