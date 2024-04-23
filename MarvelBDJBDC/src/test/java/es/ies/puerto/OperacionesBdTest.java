@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import es.ies.puerto.exception.PersonajeException;
 import es.ies.puerto.modelo.db.OperacionesBd;
 import es.ies.puerto.modelo.imp.Personaje;
+import es.ies.puerto.modelo.imp.Poder;
 
 
 public class OperacionesBdTest {
@@ -22,9 +23,9 @@ public class OperacionesBdTest {
     public void beforeEach(){
         
         try {
-            Set<String> poderes = new HashSet<>();
-            poderes.add("lanzar");
-            poderes.add("puñetazo");
+            Set<Poder> poderes = new HashSet<>();
+            poderes.add(new Poder(0, "lanzar"));
+            poderes.add(new Poder(0, "puñetazo"));
             personaje = new Personaje(5,"Bernardo", "masculino", poderes);
             operacionesBd = new OperacionesBd(urlBd);
         } catch (PersonajeException e) {
@@ -45,10 +46,10 @@ public class OperacionesBdTest {
 
     @Test
     public void ObtenerPersonajeTest() {
-        Set<String> poderes = new HashSet<>();
-        poderes.add("Vuelo");
-        poderes.add("Armadura tecnológica avanzada");
-        poderes.add("Rayos láser");
+        Set<Poder> poderes = new HashSet<>();
+        poderes.add(new Poder(0, "Vuelo"));
+        poderes.add(new Poder(0, "Armadura tecnológica avanzada"));
+        poderes.add(new Poder(0,"Rayos láser"));
         Personaje personaje = new Personaje(1, "Ironman", "Masculino", poderes);
         try {
             personaje = operacionesBd.obtenerPersonaje(personaje);
@@ -81,9 +82,9 @@ public class OperacionesBdTest {
     public void actualizarPersonajeTest() {
         String nombreUpdate = "Pepe";
         String generoUpdate = "masculino";
-        Set<String> poderes = new HashSet<>();
-        poderes.add("botar");
-        poderes.add("tirar");
+        Set<Poder> poderes = new HashSet<>();
+        poderes.add(new Poder(0, "botar"));
+        poderes.add(new Poder(0, "tirar"));
 
         try {
             operacionesBd.insertarPersonaje(personaje);
