@@ -7,13 +7,11 @@ public class Personaje {
     private int id;
     private String nombre;
     private String genero;
-    private Set<Poder> poderes;
 
-    public Personaje(int id, String nombre, String genero, Set<Poder> poderes) {
+    public Personaje(int id, String nombre, String genero) {
         this.id = id;
         this.nombre = nombre;
         this.genero = genero;
-        this.poderes = poderes;
     }
 
     public Personaje(){}
@@ -40,7 +38,7 @@ public class Personaje {
 
     @Override
     public String toString() {
-        return "Personaje [id"+ id +"nombre=" + nombre + ", genero=" + genero + "poderes = "+poderes+"]";
+        return "Personaje [id"+ id +" nombre=" + nombre + ", genero=" + genero +"]";
     }
 
     @Override
@@ -69,13 +67,7 @@ public class Personaje {
         this.id = id;
     }
 
-    public Set<Poder> getPoderes() {
-        return this.poderes;
-    }
 
-    public void setPoderes(Set<Poder> poderes) {
-        this.poderes = poderes;
-    }
 
 
 

@@ -26,7 +26,7 @@ public class OperacionesBd extends Conexion {
 
         try {
             statement = getConexion().createStatement();
-            statement.executeQuery(query);
+            statement.executeUpdate(query);
         } catch (SQLException exception) {
             throw new PersonajeException(exception.getMessage(), exception);
         }finally{
@@ -57,8 +57,7 @@ public class OperacionesBd extends Conexion {
                 int idName = rs.getInt("id");
                 String userName = rs.getString("nombre");
                 String userGenero = rs.getString("genero");
-                Set<Poder> userPoderes = obtenerPoderesPersonaje(idName);
-                Personaje personaje = new Personaje(idName, userName, userGenero, userPoderes);
+                Personaje personaje = new Personaje(idName, userName, userGenero);
                 lista.add(personaje);
             }
         } catch (SQLException e) {
@@ -82,7 +81,9 @@ public class OperacionesBd extends Conexion {
     }
 
     public Set<Personaje> obtenerPersonajes() throws PersonajeException{
-        String query = "SELECT per.id, per.nombre, per.genero FROM Personajes AS per";
+        String query = "SELECT per.id, per.nombre, per.genero FROM Personajes AS per"+
+        "INNER JOIN Personajes_Poderes AS perpod ON perpod.personaje_id = per.id " +
+        "INNER JOIN Poderes AS p ON perpod.poder_id = p.id ";
         return obtener(query);
     }
 
@@ -99,26 +100,20 @@ public class OperacionesBd extends Conexion {
     }
 
     public void insertarPersonaje(Personaje personaje) throws PersonajeException{
-        String query = "insert into personajes as per (nombre, genero) values ('"+personaje.getNombre()+"','"+personaje.getGenero()+"')";
+        String query = "insert into Personajes as per (nombre, genero) values ('"+personaje.getNombre()+"','"+personaje.getGenero()+"')";
         actualizar(query);
-        Set<Poder> poderes = personaje.getPoderes();
-        
-        personaje.setPoderes(poderes);
+
     }
 
     public void actualizarPersonaje(Personaje personaje) throws PersonajeException{
-        String query = "update personajes set nombre='"+personaje.getNombre()+"', genero ='"+personaje.getGenero()+"' " +
+        String query = "update Personajes set nombre='"+personaje.getNombre()+"', genero ='"+personaje.getGenero()+"' " +
         "where id="+personaje.getId()+"";
         actualizar(query);
-        eliminarPoderes(personaje.getId());
 
-        for (Poder poder: personaje.getPoderes()) {
-            insertarPoderes(new Poder(personaje.getId(), poder.getNombrePoder()));
-        }
     }
 
     public void eliminarPersonaje(Personaje personaje) throws PersonajeException{
-        String query = "delete from personajes as per where per.id = "+personaje.getId()+"";
+        String query = "delete from Personajes as per where per.id = "+personaje.getId()+"";
         actualizar(query);
         eliminarPoderes(personaje.getId());
     }

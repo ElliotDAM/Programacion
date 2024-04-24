@@ -4,7 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
 import es.ies.puerto.exception.PersonajeException;
@@ -12,22 +13,27 @@ import es.ies.puerto.modelo.db.OperacionesBd;
 import es.ies.puerto.modelo.imp.Personaje;
 import es.ies.puerto.modelo.imp.Poder;
 
-
 public class OperacionesBdTest {
-    OperacionesBd operacionesBd;
-    String urlBd = "src/main/resources/personajes.db";
+    static OperacionesBd operacionesBd;
+    static String urlBd = "src/main/resources/personajes.db";
     String MESSAGE_ERROR = "NO SE HA OBTENIDO EL RESULTADO ESPERADO";
-    Personaje personaje;
+    static Personaje personaje;
 
-    @BeforeEach
-    public void beforeEach(){
-        
+    @BeforeAll
+    public static void beforeAll() {
         try {
-            Set<Poder> poderes = new HashSet<>();
-            poderes.add(new Poder(0, "lanzar"));
-            poderes.add(new Poder(0, "puñetazo"));
-            personaje = new Personaje(5,"Bernardo", "masculino", poderes);
             operacionesBd = new OperacionesBd(urlBd);
+            personaje = new Personaje(3, "Bernardo", "masculino");
+            operacionesBd.insertarPersonaje(personaje);
+        } catch (PersonajeException e) {
+            Assertions.fail(e.getMessage());
+        }
+    }
+
+    @AfterAll
+    public static void afterAll() {
+        try {
+            operacionesBd.eliminarPersonaje(personaje);
         } catch (PersonajeException e) {
             Assertions.fail(e.getMessage());
         }
@@ -37,26 +43,20 @@ public class OperacionesBdTest {
     public void obtenerPersonajesAllTest() {
         try {
             Set<Personaje> lista = operacionesBd.obtenerPersonajes();
-            Assertions.assertEquals(2, lista.size(), MESSAGE_ERROR);
+            Assertions.assertEquals(3, lista.size(), MESSAGE_ERROR);
         } catch (PersonajeException e) {
             Assertions.fail(e.getMessage());
         }
-        
     }
 
     @Test
     public void ObtenerPersonajeTest() {
-        Set<Poder> poderes = new HashSet<>();
-        poderes.add(new Poder(0, "Vuelo"));
-        poderes.add(new Poder(0, "Armadura tecnológica avanzada"));
-        poderes.add(new Poder(0,"Rayos láser"));
-        Personaje personaje = new Personaje(1, "Ironman", "Masculino", poderes);
+        Personaje personaje = new Personaje(1, "Ironman", "Masculino");
         try {
             personaje = operacionesBd.obtenerPersonaje(personaje);
             Assertions.assertNotNull(personaje, MESSAGE_ERROR);
             Assertions.assertNotNull(personaje.getNombre(), MESSAGE_ERROR);
             Assertions.assertNotNull(personaje.getGenero(), MESSAGE_ERROR);
-            Assertions.assertNotNull(personaje.getPoderes(), MESSAGE_ERROR);
         } catch (PersonajeException e) {
             Assertions.fail(e.getMessage());
         }
@@ -64,7 +64,6 @@ public class OperacionesBdTest {
 
     @Test
     public void insertarEliminarPersonajeTest() {
-
         try {
             int numeroPersonajes = operacionesBd.obtenerPersonajes().size();
             operacionesBd.insertarPersonaje(personaje);
@@ -80,26 +79,22 @@ public class OperacionesBdTest {
 
     @Test
     public void actualizarPersonajeTest() {
+        int idUpdate = 3;
         String nombreUpdate = "Pepe";
         String generoUpdate = "masculino";
-        Set<Poder> poderes = new HashSet<>();
-        poderes.add(new Poder(0, "botar"));
-        poderes.add(new Poder(0, "tirar"));
 
         try {
             operacionesBd.insertarPersonaje(personaje);
+            personaje.setId(idUpdate);
             personaje.setNombre(nombreUpdate);
             personaje.setGenero(generoUpdate);
-            personaje.setPoderes(poderes);
             Personaje personajeEncontrado = operacionesBd.obtenerPersonaje(personaje);
             Assertions.assertEquals(personaje, personajeEncontrado, MESSAGE_ERROR);
             Assertions.assertEquals(personaje.getNombre(), personajeEncontrado.getNombre(), MESSAGE_ERROR);
             Assertions.assertEquals(personaje.getGenero(), personajeEncontrado.getGenero(), MESSAGE_ERROR);
-            Assertions.assertEquals(personaje.getPoderes(), personajeEncontrado.getPoderes(), MESSAGE_ERROR);
             operacionesBd.eliminarPersonaje(personajeEncontrado);
         } catch (PersonajeException e) {
             Assertions.fail(MESSAGE_ERROR+":"+e.getMessage());
         }
     }
-
 }
