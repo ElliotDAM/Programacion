@@ -11,15 +11,14 @@ public class Alias {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
-    @Column(name = "personaje_id")
-    private int personaje_id;
+    @ManyToOne
+    @JoinColumn(name = "personaje_id")
+    private Personaje personaje;
     @Column(name = "alias")
     private String alias;
 
     public Alias(){}
 
-    @OneToMany
-    private Set<Personaje> personajes;
 
     public int getId() {
         return id;
@@ -29,12 +28,12 @@ public class Alias {
         this.id = id;
     }
 
-    public int getPersonaje_id() {
-        return personaje_id;
+    public Personaje getPersonaje() {
+        return personaje;
     }
 
-    public void setPersonaje_id(int personaje_id) {
-        this.personaje_id = personaje_id;
+    public void setPersonaje(Personaje personaje) {
+        this.personaje = personaje;
     }
 
     public String getAlias() {
@@ -69,7 +68,7 @@ public class Alias {
 
     @Override
     public String toString() {
-        return "Alias [id=" + id + ", personaje_id=" + personaje_id + ", alias=" + alias + "]";
+        return "Alias [id=" + id + ", personaje=" + personaje + ", alias=" + alias + "]";
     }
 
 

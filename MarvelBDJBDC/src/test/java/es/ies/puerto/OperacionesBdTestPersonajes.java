@@ -69,8 +69,8 @@ public class OperacionesBdTestPersonajes {
             Personaje personajeObtenido = operacionesBd.obtenerPersonaje(personaje);
             Assertions.assertEquals(personaje, personajeObtenido, MESSAGE_ERROR);
             operacionesBd.eliminarPersonaje(personajeObtenido);
-            int numeroPersonajesFinal = operacionesBd.obtenerPersonajes().size();
-            Assertions.assertEquals(personaje, personajeObtenido, MESSAGE_ERROR);
+            personajeObtenido = operacionesBd.obtenerPersonaje(personaje); 
+            Assertions.assertNull(personajeObtenido, MESSAGE_ERROR);
         } catch (PersonajeException e) {
             Assertions.fail(e.getMessage());
         }

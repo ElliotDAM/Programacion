@@ -20,8 +20,8 @@ public class Personaje implements Serializable{
 
     public Personaje(){}
 
-    @OneToMany(mappedBy = "personajes")
-    private Alias alias;
+    @OneToMany(mappedBy = "personaje")
+    private Set<Alias> alias;
 
     @ManyToMany(mappedBy = "personajes")
     private Set<Poderes> poderes;
