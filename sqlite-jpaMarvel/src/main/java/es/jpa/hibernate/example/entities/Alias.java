@@ -1,4 +1,6 @@
 package es.jpa.hibernate.example.entities;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +19,7 @@ public class Alias {
     public Alias(){}
 
     @OneToMany
-    private Personaje personaje;
+    private Set<Personaje> personajes;
 
     public int getId() {
         return id;

@@ -12,7 +12,7 @@ import es.ies.puerto.modelo.db.OperacionesBd;
 import es.ies.puerto.modelo.imp.Personaje;
 
 
-public class OperacionesBdTest {
+public class OperacionesBdTestPersonajes {
     static OperacionesBd operacionesBd;
     static String urlBd = "src/main/resources/personajes.db";
     String MESSAGE_ERROR = "NO SE HA OBTENIDO EL RESULTADO ESPERADO";
