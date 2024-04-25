@@ -26,11 +26,11 @@ public class PoderesTest {
 	public void initEntityManager() {
 		em = emf.createEntityManager();
 		poder = new Poderes();
-		alumno.setName("personTest");
+		poder.setPoder("poderTest");
 		try {
 			// Persist in database
 			em.getTransaction().begin();
-			em.persist(alumno);
+			em.persist(poder);
 			em.getTransaction().commit();
 		} catch (Throwable e) {
 			Assertions.fail("Se ha producido un error:"+e.getMessage());
@@ -40,8 +40,8 @@ public class PoderesTest {
 	@Test
 	public void testPersistFind() {
 		try {
-			Alumno alumnoDB = em.find(Alumno.class, alumno.getId());
-			Assertions.assertEquals(alumno.getName(), alumnoDB.getName());
+			Poderes poderDB = em.find(Poderes.class, poder.getId());
+			Assertions.assertEquals(poder.getPoder(), poderDB.getPoder());
 		} catch (Throwable e) {
 			Assertions.fail("Se ha producido un error:"+e.getMessage());
 		}
@@ -50,17 +50,17 @@ public class PoderesTest {
 	@Test
 	public void testUpdate() {
 		try {
-			Alumno alumnoFind = em.find(Alumno.class, alumno.getId()); // See file import.sql
-			alumnoFind.setAge(22);
+			Poderes poderFind = em.find(Poderes.class, poder.getId()); // See file import.sql
+			poderFind.setPoder("poderUpdate");
 
 			// Persist in database
 			em.getTransaction().begin();
-			em.merge(alumnoFind);
+			em.merge(poderFind);
 			em.getTransaction().commit();
 
 			// Find by id
-			Alumno alumnoDBUpdate = em.find(Alumno.class, alumno.getId());
-			Assertions.assertEquals(alumnoFind.getAge(), alumnoDBUpdate.getAge());
+			Poderes poderDBUpdate = em.find(Poderes.class, poder.getId());
+			Assertions.assertEquals(poderFind.getPoder(), poderDBUpdate.getPoder());
 		} catch (Throwable e) {
 			e.printStackTrace();
 			Assertions.fail();
@@ -70,16 +70,16 @@ public class PoderesTest {
 	@AfterEach
 	public void removePerson() {
 		try {
-			int personId = this.alumno.getId();
-			Alumno alumno = em.find(Alumno.class, personId); // See file import.sql
+			int poderId = this.poder.getId();
+			Poderes poder = em.find(Poderes.class, poderId); // See file import.sql
 			em.getTransaction().begin();
-			em.remove(alumno);
+			em.remove(poder);
 			em.getTransaction().commit(); // TODO java.sql.SQLException: database is locked (sometimes)
 
 			// Find by id
-			Alumno alumnoDB = em.find(Alumno.class, personId); // See file import.sql
+			Poderes poderDB = em.find(Poderes.class, poderId); // See file import.sql
 
-			Assertions.assertNull(alumnoDB);
+			Assertions.assertNull(poderDB);
 
 		} catch (Throwable e) {
 			e.printStackTrace();

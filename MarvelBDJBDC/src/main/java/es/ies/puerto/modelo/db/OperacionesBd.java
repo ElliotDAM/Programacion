@@ -81,9 +81,7 @@ public class OperacionesBd extends Conexion {
     }
 
     public Set<Personaje> obtenerPersonajes() throws PersonajeException{
-        String query = "SELECT per.id, per.nombre, per.genero FROM Personajes AS per"+
-        "INNER JOIN Personajes_Poderes AS perpod ON perpod.personaje_id = per.id " +
-        "INNER JOIN Poderes AS p ON perpod.poder_id = p.id ";
+        String query = "SELECT per.id, per.nombre, per.genero FROM Personajes AS per";
         return obtener(query);
     }
 

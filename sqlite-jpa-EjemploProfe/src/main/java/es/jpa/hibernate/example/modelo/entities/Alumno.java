@@ -1,4 +1,7 @@
-package es.jpa.hibernate.example.entities;
+package es.jpa.hibernate.example.modelo.entities;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -33,11 +36,13 @@ public class Alumno implements Serializable {
 					CascadeType.MERGE
 			})
 	 **/
-	@ManyToMany
+	@ManyToMany(cascade = { CascadeType.ALL },
+			fetch = FetchType.LAZY)
+	@Fetch(FetchMode.SELECT)
 	@JoinTable(name = "alumno_profesor",
 			joinColumns = { @JoinColumn(name = "alumno_id") },
 			inverseJoinColumns = { @JoinColumn(name = "profesor_id")})
-	private Set<Alumno> profesores;
+	private Set<Profesor> profesores;
 
 	public Integer getId() {
 		return id;
@@ -71,11 +76,11 @@ public class Alumno implements Serializable {
 		this.aula = aula;
 	}
 
-	public Set<Alumno> getProfesores() {
+	public Set<Profesor> getProfesores() {
 		return profesores;
 	}
 
-	public void setProfesores(Set<Alumno> profesores) {
+	public void setProfesores(Set<Profesor> profesores) {
 		this.profesores = profesores;
 	}
 }

@@ -1,6 +1,5 @@
 package es.ies.puerto;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Assertions;
@@ -11,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import es.ies.puerto.exception.PersonajeException;
 import es.ies.puerto.modelo.db.OperacionesBd;
 import es.ies.puerto.modelo.imp.Personaje;
-import es.ies.puerto.modelo.imp.Poder;
+
 
 public class OperacionesBdTest {
     static OperacionesBd operacionesBd;
@@ -80,7 +79,7 @@ public class OperacionesBdTest {
     @Test
     public void actualizarPersonajeTest() {
         int idUpdate = 3;
-        String nombreUpdate = "Pepe";
+        String nombreUpdate = "Pepex";
         String generoUpdate = "masculino";
 
         try {
