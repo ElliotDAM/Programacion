@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import es.ies.puerto.exception.PersonajeException;
 import es.ies.puerto.modelo.db.OperacionesBd;
-import es.ies.puerto.modelo.imp.Poder;
 
 public class OperacionesBdTestAlias {
     static OperacionesBd operacionesBd;
@@ -74,6 +73,7 @@ public class OperacionesBdTestAlias {
         try {
             operacionesBd.insertarAlias(alias);
             alias.setId(idUpdate);
+            alias.setPersonaje_id(personajeIdUpdate);
             alias.setAlias(nombreAliasUpdate);
             Alias aliasEncontrado = (Alias) operacionesBd.obtenerAliasPorPersonaje(alias.getId());
             Assertions.assertEquals(alias, aliasEncontrado, MESSAGE_ERROR);

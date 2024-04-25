@@ -1,11 +1,9 @@
 package es.ies.puerto.modelo.db;
 
-import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -98,13 +96,15 @@ public class OperacionesBd extends Conexion {
     }
 
     public void insertarPersonaje(Personaje personaje) throws PersonajeException{
-        String query = "insert into Personajes as per (nombre, genero) values ('"+personaje.getNombre()+"','"+personaje.getGenero()+"')";
+        String query = "insert into Personajes as per (id, nombre, genero) values ("+personaje.getId()+"'"+personaje.getNombre()+"','"+personaje.getGenero()+"')";
+        String query2 = "";
         actualizar(query);
+        actualizar(query2);
 
     }
 
     public void actualizarPersonaje(Personaje personaje) throws PersonajeException{
-        String query = "update Personajes set nombre='"+personaje.getNombre()+"', genero ='"+personaje.getGenero()+"' " +
+        String query = "update Personajes set id = "+personaje.getId()+"nombre='"+personaje.getNombre()+"', genero ='"+personaje.getGenero()+"' " +
         "where id="+personaje.getId()+"";
         actualizar(query);
 
